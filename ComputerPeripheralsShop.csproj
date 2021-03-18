@@ -66,6 +66,9 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.PowerShell.5.ReferenceAssemblies.1.1.0\lib\net4\System.Management.Automation.dll</HintPath>
+    </Reference>
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
     </Reference>
@@ -94,11 +97,67 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Controls\Menu\Menu.xaml">
+    <Page Include="ResourceDictionaries\MenuDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Menu\MenuBarItem.xaml">
+    <Page Include="Views\Pages\MenuPages\AboutUs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\MenuPages\Belarus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\MenuPages\Contacts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\MenuPages\Cooperation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\MenuPages\GamingHeadsets.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\MenuPages\Keyboards.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\MenuPages\Mices.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\MenuPages\Microphones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\MenuPages\MousePads.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\MenuPages\ProductVerification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\MenuPages\ReturnPolicy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\MenuPages\Russia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\MenuPages\Ukraine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SideMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopRightToolBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -110,16 +169,56 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Menu\ItemMenu.cs" />
-    <Compile Include="Controls\Menu\Menu.xaml.cs">
-      <DependentUpon>Menu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Menu\MenuBarItem.xaml.cs">
-      <DependentUpon>MenuBarItem.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Menu\SubItem.cs" />
+    <Compile Include="ViewModels\CommandViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
+    <Compile Include="ViewModels\SideMenuViewModel.cs" />
+    <Compile Include="ViewModels\TopRightToolBar.cs" />
+    <Compile Include="Views\Pages\MenuPages\AboutUs.xaml.cs">
+      <DependentUpon>AboutUs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\MenuPages\Belarus.xaml.cs">
+      <DependentUpon>Belarus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\MenuPages\Contacts.xaml.cs">
+      <DependentUpon>Contacts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\MenuPages\Cooperation.xaml.cs">
+      <DependentUpon>Cooperation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\MenuPages\GamingHeadsets.xaml.cs">
+      <DependentUpon>GamingHeadsets.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\MenuPages\Keyboards.xaml.cs">
+      <DependentUpon>Keyboards.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\MenuPages\Mices.xaml.cs">
+      <DependentUpon>Mices.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\MenuPages\Microphones.xaml.cs">
+      <DependentUpon>Microphones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\MenuPages\MousePads.xaml.cs">
+      <DependentUpon>MousePads.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\MenuPages\ProductVerification.xaml.cs">
+      <DependentUpon>ProductVerification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\MenuPages\ReturnPolicy.xaml.cs">
+      <DependentUpon>ReturnPolicy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\MenuPages\Russia.xaml.cs">
+      <DependentUpon>Russia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\MenuPages\Ukraine.xaml.cs">
+      <DependentUpon>Ukraine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SideMenu.xaml.cs">
+      <DependentUpon>SideMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopRightToolBar.xaml.cs">
+      <DependentUpon>TopRightToolBar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

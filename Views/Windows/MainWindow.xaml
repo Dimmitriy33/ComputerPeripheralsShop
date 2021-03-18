@@ -6,14 +6,62 @@
         xmlns:local="clr-namespace:ComputerPeripheralsShop"
         xmlns:vm="clr-namespace:ComputerPeripheralsShop.ViewModels.Base"
         
-        xmlns:controls="clr-namespace:ComputerPeripheralsShop.Controls.Menu" 
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:views="clr-namespace:ComputerPeripheralsShop.Views"
         mc:Ignorable="d"
-        Title="{Binding Title}" Height="700" Width="1200">
+        Title="{Binding Title}" Height="600" Width="1000">
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
     <Grid Background="#FFEEEEEE">
-        <controls:Menu/>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="130" Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition MinWidth="100"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <Grid Grid.Row="0">
+                
+            </Grid>
+            
+            <Grid Grid.Row="1">
+                <views:SideMenu/>
+            </Grid>
+        </Grid>
+        
+        <Grid Grid.Column="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Frame x:Name="MainWindowFrame" NavigationUIVisibility="Hidden"/>
+            </Grid>
+            
+        </Grid>
+
+        <Grid Grid.Column="2">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                
+            </Grid>
+            
+        </Grid>
     </Grid>
 </Window>
