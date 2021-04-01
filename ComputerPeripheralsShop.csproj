@@ -66,6 +66,7 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.PowerShell.5.ReferenceAssemblies.1.1.0\lib\net4\System.Management.Automation.dll</HintPath>
     </Reference>
@@ -98,6 +99,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="ResourceDictionaries\MenuDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\MenuPageItemsDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -172,8 +177,9 @@
     <Compile Include="ViewModels\CommandViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
+    <Compile Include="ViewModels\MenuPagesViewModels\MicesViewModel.cs" />
     <Compile Include="ViewModels\SideMenuViewModel.cs" />
-    <Compile Include="ViewModels\TopRightToolBar.cs" />
+    <Compile Include="ViewModels\TopRightToolBarViewModel.cs" />
     <Compile Include="Views\Pages\MenuPages\AboutUs.xaml.cs">
       <DependentUpon>AboutUs.xaml</DependentUpon>
     </Compile>
@@ -241,18 +247,46 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="ResourceDictionaries\fonts\OpenSans-Regular.ttf" />
+    <Resource Include="ResourceDictionaries\fonts\OpenSans-SemiBold.ttf" />
+    <Resource Include="ResourceDictionaries\fonts\Roboto-Medium.ttf" />
+    <Resource Include="ResourceDictionaries\fonts\Roboto-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TechMarket.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mice2.png" />
+    <Resource Include="Resources\mice3.png" />
+    <Resource Include="Resources\mice4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mice1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\haste.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\core-mice.jpg" />
+    <Resource Include="Resources\g305.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\surge.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />

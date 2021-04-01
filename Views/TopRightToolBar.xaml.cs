@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using ComputerPeripheralsShop.ViewModels;
+using System.Windows.Controls;
 
 namespace ComputerPeripheralsShop.Views
 {
@@ -10,7 +11,7 @@ namespace ComputerPeripheralsShop.Views
         public TopRightToolBar()
         {
             InitializeComponent();
-            this.DataContext = new TopRightToolBar();
+            this.DataContext = new TopRightToolBarViewModel();
         }
     }
 }

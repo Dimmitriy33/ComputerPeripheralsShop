@@ -3,12 +3,79 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:vm="clr-namespace:ComputerPeripheralsShop.ViewModels.MenuPagesViewModels"
       xmlns:local="clr-namespace:ComputerPeripheralsShop.Views.Pages.MenuPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Mices">
-
-    <Grid>
-        
-    </Grid>
+      d:DesignHeight="1200" d:DesignWidth="800"
+      Title="Mices" Background="#242424" MinHeight="1400">
+    <Page.Resources>
+        <ResourceDictionary Source="/ResourceDictionaries/MenuPageItemsDictionary.xaml"/>
+    </Page.Resources>
+    <Border BorderThickness="0" >
+        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*" MinHeight="320"/>
+                <RowDefinition Height="5*" MinHeight="320"/>
+                <RowDefinition Height="5*" MinHeight="320"/>
+                <RowDefinition Height="5*" MinHeight="320"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Style="{StaticResource TopMenuItem}">
+                    <Image Style="{StaticResource ImageStyle}" Source="/Resources/mice1.png"/>
+                    <TextBlock Style="{StaticResource TextStyle}">Hyperx Pulsfire Haste</TextBlock>
+                </Grid>
+                <Grid Grid.Column="1" Style="{StaticResource TopMenuItem}">
+                    <Image Style="{StaticResource ImageStyle}" Source="/Resources/mice4.png"/>
+                    <TextBlock Style="{StaticResource TextStyle}">Hyperx Pulsfire Surge</TextBlock>
+                </Grid>
+                <Grid Grid.Column="2" Style="{StaticResource TopMenuItem}">
+                    <Image Style="{StaticResource ImageStyle}" Source="/Resources/mice3.png" />
+                    <TextBlock Style="{StaticResource TextStyle}">Hyperx Core</TextBlock>
+                </Grid>
+                <Grid Grid.Column="3" Style="{StaticResource TopMenuItem}">
+                    <Image Style="{StaticResource ImageStyle}" Source="/Resources/mice2.png"/>
+                    <TextBlock Style="{StaticResource TextStyle}">Logitech G 305</TextBlock>
+                </Grid>
+            </Grid>
+           <Grid Grid.Row="1">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Resources/haste.jpg"/>
+                </Grid.Background>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 50">Pulsfire Haste</TextBlock>
+                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="41 0 0 0">Aim quicker, game better.</TextBlock>
+                <Button Style="{StaticResource RoundCorner}" Command="{Binding Haste_InfoButton}" Content="Learn more" Margin="40 80 0 0"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Resources/surge.jpg"/>
+                </Grid.Background>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 80" HorizontalAlignment="Left">Pulsfire Surge</TextBlock>
+                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="42 0 0 25" HorizontalAlignment="Left">Pinpoint precision paired with 360° RGB lighting</TextBlock>
+                <Button Style="{StaticResource RoundCorner}" Command="{Binding Surge_InfoButton}" Content="Learn more" Margin="40 60 0 0" HorizontalAlignment="Left"/>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Resources/core-mice.jpg"/>
+                </Grid.Background>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="0 0 99 100" HorizontalAlignment="Right" >Pulsfire Core</TextBlock>
+                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="0 0 55 35" HorizontalAlignment="Right" >Solid gaming-grade optical mouse with<LineBreak/>customisable RGB lighting.</TextBlock>
+                <Button Style="{StaticResource RoundCorner}" Margin="0 60 175 0" Command="{Binding Core_InfoButton}" Content="Learn more" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Resources/g305.jpg"/>
+                </Grid.Background>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 80" HorizontalAlignment="Left">G 305</TextBlock>
+                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="42 0 0 0" HorizontalAlignment="Left">Wireless gaming mouse designed<LineBreak/> for serious performance with<LineBreak/> latest technology innovations</TextBlock>
+                <Button Style="{StaticResource RoundCorner}" Command="{Binding G305_InfoButton}" Content="Learn more" Margin="40 110 0 0" HorizontalAlignment="Left"/>
+            </Grid>
+        </Grid>
+    </Border>
 </Page>
