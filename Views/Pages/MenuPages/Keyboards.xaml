@@ -3,12 +3,100 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
       xmlns:local="clr-namespace:ComputerPeripheralsShop.Views.Pages.MenuPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Keyboards">
+      d:DesignHeight="1500" d:DesignWidth="800"
+      Title="Keyboards" Background="#242424" MinHeight="1400">
 
-    <Grid>
-        
-    </Grid>
+    <Page.Resources>
+        <ResourceDictionary Source="/ResourceDictionaries/MenuPageItemsDictionary.xaml"/>
+    </Page.Resources>
+    <Border BorderThickness="0" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="5*" MinHeight="320"/>
+                <RowDefinition Height="5*" MinHeight="320"/>
+                <RowDefinition Height="5*" MinHeight="320"/>
+                <RowDefinition Height="5*" MinHeight="320"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Style="{StaticResource TopMenuItem}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDown" >
+                            <i:InvokeCommandAction Command="{Binding AlloyCore_InfoButton}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <Image Style="{StaticResource ImageStyle}" Source="/Resources/alloycorergb-icon.png"/>
+                    <TextBlock Style="{StaticResource TextStyle}">Hyperx Alloy Core RGB</TextBlock>
+                </Grid>
+                <Grid Grid.Column="1" Style="{StaticResource TopMenuItem}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDown" >
+                            <i:InvokeCommandAction Command="{Binding AlloyElite_InfoButton}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <Image Style="{StaticResource ImageStyle}" Source="/Resources/alloyelite2-icon.png"/>
+                    <TextBlock Style="{StaticResource TextStyle}">Hyperx Alloy Elite 2</TextBlock>
+                </Grid>
+                <Grid Grid.Column="2" Style="{StaticResource TopMenuItem}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDown" >
+                            <i:InvokeCommandAction Command="{Binding AlloyOrigins_InfoButton}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <Image Style="{StaticResource ImageStyle}" Source="/Resources/alloyorigins60-icon.png" />
+                    <TextBlock Style="{StaticResource TextStyle}">Hyperx Alloy Origins 60</TextBlock>
+                </Grid>
+                <Grid Grid.Column="3" Style="{StaticResource TopMenuItem}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDown" >
+                            <i:InvokeCommandAction Command="{Binding ProX_InfoButton}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <Image Style="{StaticResource ImageStyle}" Source="/Resources/PROX-keyboard-icon.png"/>
+                    <TextBlock Style="{StaticResource TextStyle}">Logitech Pro X</TextBlock>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Resources/alloycorergb-keyboard.jpg"/>
+                </Grid.Background>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="0 0 155 80" HorizontalAlignment="Right">Alloy Core 60</TextBlock>
+                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="0 0 143 0" HorizontalAlignment="Right">Signature HyperX light<LineBreak/> bar and RGB style for core gamers.</TextBlock>
+                <Button Style="{StaticResource RoundCorner}" Command="{Binding AlloyCore_InfoButton}" Content="Learn more" Margin="0 100 240 0" HorizontalAlignment="Right"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Resources/alloyelite2-keyboard.jpg"/>
+                </Grid.Background>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="0 0 70 80" HorizontalAlignment="Right">Alloy Elite 2</TextBlock>
+                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="0 0 40 25" HorizontalAlignment="Right">For play. For work. For everything.</TextBlock>
+                <Button Style="{StaticResource RoundCorner}" Command="{Binding AlloyElite_InfoButton}" Content="Learn more" Margin="0 60 130 0" HorizontalAlignment="Right"/>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Resources/alloyorigins60-keyboard.jpg"/>
+                </Grid.Background>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="0 0 59 100" HorizontalAlignment="Right" >Alloy Origins 60</TextBlock>
+                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="0 0 55 35" HorizontalAlignment="Right" >Solid gaming-grade optical mouse with<LineBreak/>customisable RGB lighting.</TextBlock>
+                <Button Style="{StaticResource RoundCorner}" Margin="0 60 175 0" Command="{Binding AlloyOrigins_InfoButton}" Content="Learn more" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Resources/PROX-keyboard.jpg"/>
+                </Grid.Background>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 80" HorizontalAlignment="Left">PRO X</TextBlock>
+                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="42 5 0 0" HorizontalAlignment="Left">Advanced GX mechanical switches—engineered and 100% tested for <LineBreak/> performance, responsiveness, and durability. Customize the feel <LineBreak/> of your PRO X keyboard with three removable switch variants.</TextBlock>
+                <Button Style="{StaticResource RoundCorner}" Command="{Binding ProX_InfoButton}" Content="Learn more" Margin="40 120 0 0" HorizontalAlignment="Left"/>
+            </Grid>
+        </Grid>
+    </Border>
 </Page>

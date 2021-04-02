@@ -3,12 +3,100 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
       xmlns:local="clr-namespace:ComputerPeripheralsShop.Views.Pages.MenuPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="GamingHeadsets">
+      d:DesignHeight="1200" d:DesignWidth="800"
+      Title="GamingHeadsets" Background="#242424" MinHeight="1580">
 
-    <Grid>
-        
-    </Grid>
+    <Page.Resources>
+        <ResourceDictionary Source="/ResourceDictionaries/MenuPageItemsDictionary.xaml"/>
+    </Page.Resources>
+    <Border BorderThickness="0" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="5*" MinHeight="350"/>
+                <RowDefinition Height="5*" MinHeight="350"/>
+                <RowDefinition Height="5*" MinHeight="350"/>
+                <RowDefinition Height="5*" MinHeight="350"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Style="{StaticResource TopMenuItem}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDown" >
+                            <i:InvokeCommandAction Command="{Binding Revolver_InfoButton}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <Image Style="{StaticResource ImageStyle}" Source="/Resources/revolver-icon.png"/>
+                    <TextBlock Style="{StaticResource TextStyle}">Hyperx Cloud Revolver</TextBlock>
+                </Grid>
+                <Grid Grid.Column="1" Style="{StaticResource TopMenuItem}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDown" >
+                            <i:InvokeCommandAction Command="{Binding Stinger_InfoButton}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <Image Style="{StaticResource ImageStyle}" Source="/Resources/stinger-icon.png"/>
+                    <TextBlock Style="{StaticResource TextStyle}">Hyperx Cloud Stinger</TextBlock>
+                </Grid>
+                <Grid Grid.Column="2" Style="{StaticResource TopMenuItem}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDown" >
+                            <i:InvokeCommandAction Command="{Binding Cloud2_InfoButton}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <Image Style="{StaticResource ImageStyle}" Source="/Resources/cloud2-icon.png" />
+                    <TextBlock Style="{StaticResource TextStyle}">Hyperx Cloud 2</TextBlock>
+                </Grid>
+                <Grid Grid.Column="3" Style="{StaticResource TopMenuItem}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDown" >
+                            <i:InvokeCommandAction Command="{Binding ProX_InfoButton}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <Image Style="{StaticResource ImageStyle}" Source="/Resources/prox-icon.png"/>
+                    <TextBlock Style="{StaticResource TextStyle}">Logitech Pro X</TextBlock>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Resources/Revolver-headsets.jpg"/>
+                </Grid.Background>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 70">Cloud Revolver</TextBlock>
+                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="41 0 0 0">Studio-grade sound stage and HyperX 7.1<LineBreak/>Surround Sound</TextBlock>
+                <Button Style="{StaticResource RoundCorner}" Command="{Binding Revolver_InfoButton}" Content="Learn more" Margin="40 100 0 0"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Resources/Stinger-headsets.jpg"/>
+                </Grid.Background>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="0 0 99 100" HorizontalAlignment="Right" Foreground="#353535">Cloud Stinger</TextBlock>
+                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="0 0 153 35" HorizontalAlignment="Right" Foreground="#353535">Ready to Play: Wireless</TextBlock>
+                <Button Style="{StaticResource RoundCorner}" Margin="0 60 180 0" Command="{Binding Stinger_InfoButton}" Content="Learn more" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Resources/Cloud2-headsets.jpg"/>
+                </Grid.Background>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 80" HorizontalAlignment="Left">Cloud 2</TextBlock>
+                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="42 0 0 25" HorizontalAlignment="Left">Legendary comfort goes wireless.</TextBlock>
+                <Button Style="{StaticResource RoundCorner}" Command="{Binding Cloud2_InfoButton}" Content="Learn more" Margin="40 60 0 0" HorizontalAlignment="Left"/>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Resources/ProX-headsets.jpg"/>
+                </Grid.Background>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 80" HorizontalAlignment="Left">Pro X</TextBlock>
+                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="42 0 0 0" HorizontalAlignment="Left">Evolved with surround <LineBreak/>sound and adjustable<LineBreak/>bass</TextBlock>
+                <Button Style="{StaticResource RoundCorner}" Command="{Binding ProX_InfoButton}" Content="Learn more" Margin="40 110 0 0" HorizontalAlignment="Left"/>
+            </Grid>
+        </Grid>
+    </Border>
 </Page>

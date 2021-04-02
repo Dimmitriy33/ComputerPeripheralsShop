@@ -10,6 +10,7 @@ namespace ComputerPeripheralsShop
         public MainWindow()
         {
             InitializeComponent();
+
         }
     }
 }

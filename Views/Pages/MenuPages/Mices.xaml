@@ -4,9 +4,10 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:vm="clr-namespace:ComputerPeripheralsShop.ViewModels.MenuPagesViewModels"
+      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
       xmlns:local="clr-namespace:ComputerPeripheralsShop.Views.Pages.MenuPages"
       mc:Ignorable="d" 
-      d:DesignHeight="1200" d:DesignWidth="800"
+      d:DesignHeight="1500" d:DesignWidth="800"
       Title="Mices" Background="#242424" MinHeight="1400">
     <Page.Resources>
         <ResourceDictionary Source="/ResourceDictionaries/MenuPageItemsDictionary.xaml"/>
@@ -14,7 +15,7 @@
     <Border BorderThickness="0" >
         <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
                 <RowDefinition Height="5*" MinHeight="320"/>
                 <RowDefinition Height="5*" MinHeight="320"/>
                 <RowDefinition Height="5*" MinHeight="320"/>
@@ -28,18 +29,38 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0" Style="{StaticResource TopMenuItem}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDown" >
+                            <i:InvokeCommandAction Command="{Binding Haste_InfoButton}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
                     <Image Style="{StaticResource ImageStyle}" Source="/Resources/mice1.png"/>
                     <TextBlock Style="{StaticResource TextStyle}">Hyperx Pulsfire Haste</TextBlock>
                 </Grid>
                 <Grid Grid.Column="1" Style="{StaticResource TopMenuItem}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDown" >
+                            <i:InvokeCommandAction Command="{Binding Surge_InfoButton}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
                     <Image Style="{StaticResource ImageStyle}" Source="/Resources/mice4.png"/>
                     <TextBlock Style="{StaticResource TextStyle}">Hyperx Pulsfire Surge</TextBlock>
                 </Grid>
                 <Grid Grid.Column="2" Style="{StaticResource TopMenuItem}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDown" >
+                            <i:InvokeCommandAction Command="{Binding Core_InfoButton}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
                     <Image Style="{StaticResource ImageStyle}" Source="/Resources/mice3.png" />
                     <TextBlock Style="{StaticResource TextStyle}">Hyperx Core</TextBlock>
                 </Grid>
                 <Grid Grid.Column="3" Style="{StaticResource TopMenuItem}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDown" >
+                            <i:InvokeCommandAction Command="{Binding G305_InfoButton}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
                     <Image Style="{StaticResource ImageStyle}" Source="/Resources/mice2.png"/>
                     <TextBlock Style="{StaticResource TextStyle}">Logitech G 305</TextBlock>
                 </Grid>
