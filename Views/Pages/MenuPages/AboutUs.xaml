@@ -5,27 +5,28 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ComputerPeripheralsShop.Views.Pages.MenuPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="AboutUs" Background="#242424" MinHeight="800" FontFamily="fonts/#BrownMedium Regular">
+      d:DesignHeight="450" d:DesignWidth="1000"
+      Title="AboutUs" Background="#161616" MinHeight="1200" FontFamily="fonts/#BrownMedium Regular">
     <Page.Resources>
-        <ResourceDictionary Source="/ResourceDictionaries/ContactsDictionary.xaml"/>
+        <ResourceDictionary Source="/ResourceDictionaries/MenuPagesDictionary.xaml"/>
     </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
             <Grid.Background>
                 <ImageBrush ImageSource="/Resources/Background-Gradient.jpg"/>
             </Grid.Background>
-            <TextBlock Style="{StaticResource MainText}" FontSize="40" Margin="50 20" HorizontalAlignment="Left">
-                Modern and convenient store<LineBreak/> of computer peripherals
+            <TextBlock Style="{StaticResource MainText}" FontSize="46" Margin="50 20 60 20" HorizontalAlignment="Left" TextWrapping="Wrap">
+                We are modern and convenient store of computer peripherals
             </TextBlock>
         </Grid>
 
-        <Grid Grid.Row="1" Background="#161616">
+        <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -37,7 +38,33 @@
 
             <Grid Grid.Row="0" Grid.Column="0">
                 <TextBlock Style="{StaticResource AboutUsBlockText}" Text="Our mission" FontSize="40"/>
+                <TextBlock Style="{StaticResource AboutUsAdditionalText}">TechMarkets mission has been<LineBreak/> to develop gaming solutions <LineBreak/>for every type of gamer and<LineBreak/> the company is consistently <LineBreak/>recognized for delivering <LineBreak/>products that provide<LineBreak/>superior comfort, aesthetics,<LineBreak/>performance, and reliability.</TextBlock>
             </Grid>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <TextBlock Style="{StaticResource AboutUsBlockText}" Text="Our essence" FontSize="40"/>
+                <TextBlock Style="{StaticResource AboutUsAdditionalText}">At our core, TechMarket<LineBreak/> operates on Imagination,<LineBreak/> Individuality, Inclusivity,<LineBreak/> and Impact.</TextBlock>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="0">
+                <TextBlock Style="{StaticResource AboutUsBlockText}" Text="Our promise" FontSize="40"/>
+                <TextBlock Style="{StaticResource AboutUsAdditionalText}">We promise to handle your<LineBreak/> information in line with our<LineBreak/> privacy policy. If we <LineBreak/>ever get boring, you can <LineBreak/>'unsubscribe' from us</TextBlock>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <TextBlock Style="{StaticResource AboutUsBlockText}" Text="Our vibe" FontSize="40"/>
+                <TextBlock Style="{StaticResource AboutUsAdditionalText}">At TechMarket, we make magic.<LineBreak/> We dream it, and then do<LineBreak/>  it together every day <LineBreak/>reinventing what's possible</TextBlock>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <TextBlock  Style="{StaticResource MainText}" FontSize="40" Margin="50 20" HorizontalAlignment="Center" TextWrapping="Wrap" Text="   It takes months to find a customer... seconds to lose one"/>
+            <Canvas>
+                <Path Stroke="#b261dc" Fill="#b261dc" StrokeThickness="3" 
+        Data="M 241,200 
+              A 20,20 0 0 0 200,240
+              C 210,250 240,270 240,270
+              C 240,270 260,260 280,240
+              A 20,20 0 0 0 239,200
+              " Canvas.Left="67.2" Canvas.Top="36.783" Height="30.3" Stretch="Fill" Width="29.9" RenderTransformOrigin="2.714,0.709" />
+            </Canvas>
         </Grid>
     </Grid>
 </Page>

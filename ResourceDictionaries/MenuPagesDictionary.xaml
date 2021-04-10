@@ -12,12 +12,13 @@
 
     <Style x:Key="AboutUsBlockText" TargetType="TextBlock">
         <Setter Property="Foreground" Value="#FFEEEEEE"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="FontFamily" Value="fonts/#Brown Bold"/>
         <Setter Property="FontSize" Value="34"/>
         <Setter Property="FontWeight" Value="ExtraBold"/>
         <Setter Property="Padding" Value="0 10"/>
-        <Setter Property="Margin" Value="40 20"/>
+        <Setter Property="Margin" Value="40 30 40 0"/>
     </Style>
 
     <Style x:Key="TableHeadText" TargetType="TextBlock">
@@ -48,6 +49,18 @@
         <Setter Property="FontWeight" Value="Normal"/>
         <Setter Property="Padding" Value="0 10"/>
     </Style>
+
+    <Style x:Key="AboutUsAdditionalText" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#FFEEEEEE"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="FontFamily" Value="fonts/#BrownLight Regular"/>
+        <Setter Property="FontSize" Value="26"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="Padding" Value="0 10"/>
+        <Setter Property="Margin" Value="10 90 0 0"/>
+    </Style>
+    
     <Style x:Key="ButtonStyle" TargetType="Button">
         <Setter Property="Height" Value="50"/>
         <Setter Property="Width" Value="300"/>
