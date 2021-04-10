@@ -5,10 +5,190 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ComputerPeripheralsShop.Views.Pages.MenuPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Contacts">
+      d:DesignHeight="1800" d:DesignWidth="800"
+      Title="Contacts" Background="#242424" MinHeight="1800" FontFamily="fonts/#Roboto Regular">
+    <Page.Resources>
+        <ResourceDictionary>
+            <Style x:Key="MainText" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="#FFEEEEEE"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="FontFamily" Value="fonts/#Roboto Regular"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Padding" Value="0 10"/>
+            </Style>
 
+            <Style x:Key="TableHeadText" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="#202020"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontFamily" Value="fonts/#Roboto Regular"/>
+                <Setter Property="FontSize" Value="24"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Padding" Value="40 20 0 10"/>
+            </Style>
+
+            <Style x:Key="TableText" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="#202020"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontFamily" Value="fonts/#Roboto Regular"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+                <Setter Property="Padding" Value="40 10 0 10"/>
+            </Style>
+
+            <Style x:Key="AdditionalText" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="#FFEEEEEE"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="FontFamily" Value="fonts/#Roboto Regular"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+                <Setter Property="Padding" Value="0 10"/>
+            </Style>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="Height" Value="50"/>
+                <Setter Property="Width" Value="300"/>
+                <Setter Property="Foreground" Value="#242424"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Margin" Value="0 50 0 0"/>
+            </Style>
+        </ResourceDictionary>
+    </Page.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2.5*" MinHeight="200"/>
+            <RowDefinition Height="1*" MinHeight="80"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="2*" MinHeight="200"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Resources/ContactsHeadering.jpg"/>
+            </Grid.Background>
+            <TextBlock Style="{StaticResource MainText}" VerticalAlignment="Center" Margin="30 -70 0 0" FontSize="26" Foreground="#ffffff" Text="Welcome to TechMarket Contacts">
+                <TextBlock.Effect>
+                    <DropShadowEffect
+                        ShadowDepth="3"
+                        Direction="330"
+                        Color="#242424"
+                        Opacity="0.5"
+                        BlurRadius="4"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="1" Background="#202020">
+            <TextBlock Style="{StaticResource MainText}" FontSize="24" VerticalAlignment="Center" Text="Global Contacts"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Background="#ffffff">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TableHeadText}" Text="Contact"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="USA"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Canada"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Argentina"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Brasil"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Mexico"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="United Kingdom"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Austria"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Belgium"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="France"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Germany"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Italy"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Netherlands"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Russia"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Ireland"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Spain"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Sweden"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Switzerland"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Ukraine"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Belarus"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Denmark"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="China"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="India"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Japan"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Singapore"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Other countries / regions"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TableHeadText}" Text="Phone"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="+1 (800) 835-6575"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="+1(877) 546-4786"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="0800 333 0792"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="55 11 2127 8600"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="55 11 05 29 11 05 30"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="+44 1932 73 9055"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="0800 0706182 "/>
+                    <TextBlock Style="{StaticResource TableText}" Text="0707 07975"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="0825 120 326"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="0800 7243564 "/>
+                    <TextBlock Style="{StaticResource TableText}" Text="02 69 430 150"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="0900 0400266"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="8-800-550-34-45"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="0818 462003"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="902 02 20 52"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="0771 455 466"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="0848 000 198"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="+38 044 486 40 40"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="+375 29 2901184"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="701 00113"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="400-810-1972"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="1860-233-4515"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="00531-88-0038"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="800-8861063"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="+886-3-566-7718"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Column="2">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TableHeadText}" Text="FAX"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="+1(714) 438-1845"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="+1(877) 546-4786"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="+1(746) 511-4231"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="+1(812) 851-4113"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="+1(788) 546-4786"/>
+                    <TextBlock Style="{StaticResource TableText}" Text=""/>
+                    <TextBlock Style="{StaticResource TableText}" Text=""/>
+                    <TextBlock Style="{StaticResource TableText}" Text=""/>
+                    <TextBlock Style="{StaticResource TableText}" Text=""/>
+                    <TextBlock Style="{StaticResource TableText}" Text=""/>
+                    <TextBlock Style="{StaticResource TableText}" Text=""/>
+                    <TextBlock Style="{StaticResource TableText}" Text=""/>
+                    <TextBlock Style="{StaticResource TableText}" Text=""/>
+                    <TextBlock Style="{StaticResource TableText}" Text=""/>
+                    <TextBlock Style="{StaticResource TableText}" Text=""/>
+                    <TextBlock Style="{StaticResource TableText}" Text=""/>
+                    <TextBlock Style="{StaticResource TableText}" Text=""/>
+                    <TextBlock Style="{StaticResource TableText}" Text=""/>
+                    <TextBlock Style="{StaticResource TableText}" Text=""/>
+                    <TextBlock Style="{StaticResource TableText}" Text=""/>
+                    <TextBlock Style="{StaticResource TableText}" Text=""/>
+                    <TextBlock Style="{StaticResource TableText}" Text=""/>
+                    <TextBlock Style="{StaticResource TableText}" Text=""/>
+                    <TextBlock Style="{StaticResource TableText}" Text=""/>
+                    <TextBlock Style="{StaticResource TableText}" Text=""/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        
+        <Grid Grid.Row="3" Background="#6610f2">
+            <TextBlock Style="{StaticResource MainText}" Text="Community" Margin="20"/>
+            <TextBlock Style="{StaticResource AdditionalText}" Text="Want to ask other users with the same product a question? Join the conversation." Margin="50"/>
+            <Button Command="{Binding ToForum}" Style="{StaticResource ButtonStyle}" Content="Go To The Forums"/>
+        </Grid>
         
     </Grid>
 </Page>
