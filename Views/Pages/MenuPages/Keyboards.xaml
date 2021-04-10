@@ -69,33 +69,33 @@
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/alloycorergb-keyboard.jpg"/>
                 </Grid.Background>
-                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="0 0 155 80" HorizontalAlignment="Right">Alloy Core 60</TextBlock>
-                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="0 0 143 0" HorizontalAlignment="Right">Signature HyperX light<LineBreak/> bar and RGB style for core gamers.</TextBlock>
-                <Button Style="{StaticResource RoundCorner}" Command="{Binding AlloyCore_InfoButton}" Content="Learn more" Margin="0 100 240 0" HorizontalAlignment="Right"/>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="0 0 155 90" HorizontalAlignment="Right">Alloy Core 60</TextBlock>
+                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="0 0 133 0" HorizontalAlignment="Right">Signature HyperX light<LineBreak/> bar and RGB style for core gamers.</TextBlock>
+                <Button Style="{StaticResource RoundCorner}" Command="{Binding AlloyCore_InfoButton}" Content="Learn more" Margin="0 110 290 0" HorizontalAlignment="Right"/>
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/alloyelite2-keyboard.jpg"/>
                 </Grid.Background>
-                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="0 0 70 80" HorizontalAlignment="Right">Alloy Elite 2</TextBlock>
-                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="0 0 40 25" HorizontalAlignment="Right">For play. For work. For everything.</TextBlock>
-                <Button Style="{StaticResource RoundCorner}" Command="{Binding AlloyElite_InfoButton}" Content="Learn more" Margin="0 60 130 0" HorizontalAlignment="Right"/>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="0 0 70 90" HorizontalAlignment="Right">Alloy Elite 2</TextBlock>
+                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="0 0 29 25" HorizontalAlignment="Right">For play. For work. For everything.</TextBlock>
+                <Button Style="{StaticResource RoundCorner}" Command="{Binding AlloyElite_InfoButton}" Content="Learn more" Margin="0 60 180 0" HorizontalAlignment="Right"/>
             </Grid>
             <Grid Grid.Row="3">
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/alloyorigins60-keyboard.jpg"/>
                 </Grid.Background>
-                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="0 0 59 100" HorizontalAlignment="Right" >Alloy Origins 60</TextBlock>
-                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="0 0 55 35" HorizontalAlignment="Right" >Solid gaming-grade optical mouse with<LineBreak/>customisable RGB lighting.</TextBlock>
-                <Button Style="{StaticResource RoundCorner}" Margin="0 60 175 0" Command="{Binding AlloyOrigins_InfoButton}" Content="Learn more" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="0 0 55 120" HorizontalAlignment="Right" >Alloy Origins 60</TextBlock>
+                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="0 0 47 35" HorizontalAlignment="Right" >Solid gaming-grade optical mouse with<LineBreak/>customisable RGB lighting.</TextBlock>
+                <Button Style="{StaticResource RoundCorner}" Margin="0 70 235 0" Command="{Binding AlloyOrigins_InfoButton}" Content="Learn more" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             </Grid>
             <Grid Grid.Row="4">
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/PROX-keyboard.jpg"/>
                 </Grid.Background>
-                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 80" HorizontalAlignment="Left">PRO X</TextBlock>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 95" HorizontalAlignment="Left">PRO X</TextBlock>
                 <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="42 5 0 0" HorizontalAlignment="Left">Advanced GX mechanical switches—engineered and 100% tested for <LineBreak/> performance, responsiveness, and durability. Customize the feel <LineBreak/> of your PRO X keyboard with three removable switch variants.</TextBlock>
-                <Button Style="{StaticResource RoundCorner}" Command="{Binding ProX_InfoButton}" Content="Learn more" Margin="40 120 0 0" HorizontalAlignment="Left"/>
+                <Button Style="{StaticResource RoundCorner}" Command="{Binding ProX_InfoButton}" Content="Learn more" Margin="40 135 0 0" HorizontalAlignment="Left"/>
             </Grid>
         </Grid>
     </Border>

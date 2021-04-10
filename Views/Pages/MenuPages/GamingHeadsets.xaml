@@ -69,23 +69,23 @@
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/Revolver-headsets.jpg"/>
                 </Grid.Background>
-                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 70">Cloud Revolver</TextBlock>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 80">Cloud Revolver</TextBlock>
                 <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="41 0 0 0">Studio-grade sound stage and HyperX 7.1<LineBreak/>Surround Sound</TextBlock>
-                <Button Style="{StaticResource RoundCorner}" Command="{Binding Revolver_InfoButton}" Content="Learn more" Margin="40 100 0 0"/>
+                <Button Style="{StaticResource RoundCorner}" Command="{Binding Revolver_InfoButton}" Content="Learn more" Margin="40 110 0 0"/>
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/Stinger-headsets.jpg"/>
                 </Grid.Background>
-                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="0 0 99 100" HorizontalAlignment="Right" Foreground="#353535">Cloud Stinger</TextBlock>
-                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="0 0 153 35" HorizontalAlignment="Right" Foreground="#353535">Ready to Play: Wireless</TextBlock>
-                <Button Style="{StaticResource RoundCorner}" Margin="0 60 180 0" Command="{Binding Stinger_InfoButton}" Content="Learn more" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="0 0 65 100" HorizontalAlignment="Right" Foreground="#353535">Cloud Stinger</TextBlock>
+                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="0 0 133 35" HorizontalAlignment="Right" Foreground="#353535">Ready to Play: Wireless</TextBlock>
+                <Button Style="{StaticResource RoundCorner}" Margin="0 60 205 0" Command="{Binding Stinger_InfoButton}" Content="Learn more" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             </Grid>
             <Grid Grid.Row="3">
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/Cloud2-headsets.jpg"/>
                 </Grid.Background>
-                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 80" HorizontalAlignment="Left">Cloud 2</TextBlock>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 90" HorizontalAlignment="Left">Cloud 2</TextBlock>
                 <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="42 0 0 25" HorizontalAlignment="Left">Legendary comfort goes wireless.</TextBlock>
                 <Button Style="{StaticResource RoundCorner}" Command="{Binding Cloud2_InfoButton}" Content="Learn more" Margin="40 60 0 0" HorizontalAlignment="Left"/>
             </Grid>
@@ -93,8 +93,8 @@
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/ProX-headsets.jpg"/>
                 </Grid.Background>
-                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 80" HorizontalAlignment="Left">Pro X</TextBlock>
-                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="42 0 0 0" HorizontalAlignment="Left">Evolved with surround <LineBreak/>sound and adjustable<LineBreak/>bass</TextBlock>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 90" HorizontalAlignment="Left">Pro X</TextBlock>
+                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="42 0 0 0" HorizontalAlignment="Left">Evolved with surround <LineBreak/>sound and adjustable bass</TextBlock>
                 <Button Style="{StaticResource RoundCorner}" Command="{Binding ProX_InfoButton}" Content="Learn more" Margin="40 110 0 0" HorizontalAlignment="Left"/>
             </Grid>
         </Grid>

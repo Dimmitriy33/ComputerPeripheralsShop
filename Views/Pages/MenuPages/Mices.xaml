@@ -69,15 +69,15 @@
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/haste.jpg"/>
                 </Grid.Background>
-                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 50">Pulsfire Haste</TextBlock>
-                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="41 0 0 0">Aim quicker, game better.</TextBlock>
-                <Button Style="{StaticResource RoundCorner}" Command="{Binding Haste_InfoButton}" Content="Learn more" Margin="40 80 0 0"/>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 60">Pulsfire Haste</TextBlock>
+                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="43 0 0 0">Aim quicker, game better.</TextBlock>
+                <Button Style="{StaticResource RoundCorner}" Command="{Binding Haste_InfoButton}" Content="Learn more" Margin="40 85 0 0"/>
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/surge.jpg"/>
                 </Grid.Background>
-                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 80" HorizontalAlignment="Left">Pulsfire Surge</TextBlock>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 90" HorizontalAlignment="Left">Pulsfire Surge</TextBlock>
                 <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="42 0 0 25" HorizontalAlignment="Left">Pinpoint precision paired with 360° RGB lighting</TextBlock>
                 <Button Style="{StaticResource RoundCorner}" Command="{Binding Surge_InfoButton}" Content="Learn more" Margin="40 60 0 0" HorizontalAlignment="Left"/>
             </Grid>
@@ -85,17 +85,17 @@
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/core-mice.jpg"/>
                 </Grid.Background>
-                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="0 0 99 100" HorizontalAlignment="Right" >Pulsfire Core</TextBlock>
-                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="0 0 55 35" HorizontalAlignment="Right" >Solid gaming-grade optical mouse with<LineBreak/>customisable RGB lighting.</TextBlock>
-                <Button Style="{StaticResource RoundCorner}" Margin="0 60 175 0" Command="{Binding Core_InfoButton}" Content="Learn more" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="0 0 99 110" HorizontalAlignment="Right" >Pulsfire Core</TextBlock>
+                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="0 0 35 30" HorizontalAlignment="Right" >Solid gaming-grade optical mouse with<LineBreak/>customisable RGB lighting.</TextBlock>
+                <Button Style="{StaticResource RoundCorner}" Margin="0 75 225 0" Command="{Binding Core_InfoButton}" Content="Learn more" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             </Grid>
             <Grid Grid.Row="4">
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/g305.jpg"/>
                 </Grid.Background>
-                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 80" HorizontalAlignment="Left">G 305</TextBlock>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="38 0 0 100" HorizontalAlignment="Left">G 305</TextBlock>
                 <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="42 0 0 0" HorizontalAlignment="Left">Wireless gaming mouse designed<LineBreak/> for serious performance with<LineBreak/> latest technology innovations</TextBlock>
-                <Button Style="{StaticResource RoundCorner}" Command="{Binding G305_InfoButton}" Content="Learn more" Margin="40 110 0 0" HorizontalAlignment="Left"/>
+                <Button Style="{StaticResource RoundCorner}" Command="{Binding G305_InfoButton}" Content="Learn more" Margin="40 125 0 0" HorizontalAlignment="Left"/>
             </Grid>
         </Grid>
     </Border>

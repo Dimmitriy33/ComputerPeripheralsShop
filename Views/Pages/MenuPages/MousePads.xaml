@@ -47,15 +47,15 @@
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/furysspeed-mousepad.jpg"/>
                 </Grid.Background>
-                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="0 0 75 75" HorizontalAlignment="Right">Fury S Pro</TextBlock>
-                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="41 0 40 0" HorizontalAlignment="Right">Seamlessly stitched and <LineBreak/> textured for precision or speed.</TextBlock>
-                <Button Style="{StaticResource RoundCorner}" Command="{Binding FurySPro_InfoButton}" Content="Learn more" Margin="0 100 115 0" HorizontalAlignment="Right"/>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="0 0 85 85" HorizontalAlignment="Right">Fury S Pro</TextBlock>
+                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="41 0 35 0" HorizontalAlignment="Right">Seamlessly stitched and <LineBreak/> textured for precision or speed.</TextBlock>
+                <Button Style="{StaticResource RoundCorner}" Command="{Binding FurySPro_InfoButton}" Content="Learn more" Margin="0 110 165 0" HorizontalAlignment="Right"/>
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/furyultra-mousepad.jpg"/>
                 </Grid.Background>
-                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 100" HorizontalAlignment="Left">Fury Ultra</TextBlock>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 110" HorizontalAlignment="Left">Fury Ultra</TextBlock>
                 <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="42 0 0 25" HorizontalAlignment="Left">Hard surface mouse pad with 360°<LineBreak/> RGB lighting</TextBlock>
                 <Button Style="{StaticResource RoundCorner}" Command="{Binding FuryUltra_InfoButton}" Content="Learn more" Margin="40 90 0 0" HorizontalAlignment="Left"/>
             </Grid>

@@ -47,15 +47,15 @@
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/solocast-micro.jpg"/>
                 </Grid.Background>
-                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 70">SoloCast</TextBlock>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 80">SoloCast</TextBlock>
                 <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="41 0 0 0">Easy-to-use USB microphone<LineBreak/> for streamers and content creators.</TextBlock>
-                <Button Style="{StaticResource RoundCorner}" Command="{Binding SoloCast_InfoButton}" Content="Learn more" Margin="40 100 0 0"/>
+                <Button Style="{StaticResource RoundCorner}" Command="{Binding SoloCast_InfoButton}" Content="Learn more" Margin="40 110 0 0"/>
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/quadcast-micro.jpg"/>
                 </Grid.Background>
-                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 100" HorizontalAlignment="Left">QuadCast</TextBlock>
+                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 110" HorizontalAlignment="Left">QuadCast</TextBlock>
                 <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="42 0 0 25" HorizontalAlignment="Left">Full-featured standalone mic for<LineBreak/> streamers, content creators, and gamers.</TextBlock>
                 <Button Style="{StaticResource RoundCorner}" Command="{Binding QuadCast_InfoButton}" Content="Learn more" Margin="40 90 0 0" HorizontalAlignment="Left"/>
             </Grid>

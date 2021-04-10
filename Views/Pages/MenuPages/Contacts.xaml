@@ -6,54 +6,9 @@
       xmlns:local="clr-namespace:ComputerPeripheralsShop.Views.Pages.MenuPages"
       mc:Ignorable="d" 
       d:DesignHeight="1800" d:DesignWidth="800"
-      Title="Contacts" Background="#242424" MinHeight="1800" FontFamily="fonts/#Roboto Regular">
+      Title="Contacts" Background="#242424" MinHeight="1800" FontFamily="fonts/#BrownMedium Regular">
     <Page.Resources>
-        <ResourceDictionary>
-            <Style x:Key="MainText" TargetType="TextBlock">
-                <Setter Property="Foreground" Value="#FFEEEEEE"/>
-                <Setter Property="HorizontalAlignment" Value="Center"/>
-                <Setter Property="FontFamily" Value="fonts/#Roboto Regular"/>
-                <Setter Property="FontSize" Value="20"/>
-                <Setter Property="FontWeight" Value="Bold"/>
-                <Setter Property="Padding" Value="0 10"/>
-            </Style>
-
-            <Style x:Key="TableHeadText" TargetType="TextBlock">
-                <Setter Property="Foreground" Value="#202020"/>
-                <Setter Property="HorizontalAlignment" Value="Left"/>
-                <Setter Property="VerticalAlignment" Value="Center"/>
-                <Setter Property="FontFamily" Value="fonts/#Roboto Regular"/>
-                <Setter Property="FontSize" Value="24"/>
-                <Setter Property="FontWeight" Value="Bold"/>
-                <Setter Property="Padding" Value="40 20 0 10"/>
-            </Style>
-
-            <Style x:Key="TableText" TargetType="TextBlock">
-                <Setter Property="Foreground" Value="#202020"/>
-                <Setter Property="HorizontalAlignment" Value="Left"/>
-                <Setter Property="VerticalAlignment" Value="Center"/>
-                <Setter Property="FontFamily" Value="fonts/#Roboto Regular"/>
-                <Setter Property="FontSize" Value="20"/>
-                <Setter Property="FontWeight" Value="Normal"/>
-                <Setter Property="Padding" Value="40 10 0 10"/>
-            </Style>
-
-            <Style x:Key="AdditionalText" TargetType="TextBlock">
-                <Setter Property="Foreground" Value="#FFEEEEEE"/>
-                <Setter Property="HorizontalAlignment" Value="Center"/>
-                <Setter Property="FontFamily" Value="fonts/#Roboto Regular"/>
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="FontWeight" Value="Normal"/>
-                <Setter Property="Padding" Value="0 10"/>
-            </Style>
-            <Style x:Key="ButtonStyle" TargetType="Button">
-                <Setter Property="Height" Value="50"/>
-                <Setter Property="Width" Value="300"/>
-                <Setter Property="Foreground" Value="#242424"/>
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="Margin" Value="0 50 0 0"/>
-            </Style>
-        </ResourceDictionary>
+        <ResourceDictionary Source="/ResourceDictionaries/ContactsDictionary.xaml"/>
     </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
