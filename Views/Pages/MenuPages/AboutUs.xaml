@@ -17,16 +17,16 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
-            <Grid.Background>
-                <ImageBrush ImageSource="/Resources/Background-Gradient.jpg"/>
-            </Grid.Background>
+        <Grid Grid.Row="0" Background="#a20520">
             <TextBlock Style="{StaticResource MainText}" FontSize="46" Margin="50 20 60 20" HorizontalAlignment="Left" TextWrapping="Wrap">
                 We are modern and convenient store of computer peripherals
             </TextBlock>
         </Grid>
 
         <Grid Grid.Row="1">
+            <Grid.Background>
+                <ImageBrush ImageSource="\Resources\BGAboutUs.jpg" Opacity="0.07"/>
+            </Grid.Background>
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -55,16 +55,7 @@
         </Grid>
 
         <Grid Grid.Row="2">
-            <TextBlock  Style="{StaticResource MainText}" FontSize="40" Margin="50 20" HorizontalAlignment="Center" TextWrapping="Wrap" Text="   It takes months to find a customer... seconds to lose one"/>
-            <Canvas>
-                <Path Stroke="#b261dc" Fill="#b261dc" StrokeThickness="3" 
-        Data="M 241,200 
-              A 20,20 0 0 0 200,240
-              C 210,250 240,270 240,270
-              C 240,270 260,260 280,240
-              A 20,20 0 0 0 239,200
-              " Canvas.Left="67.2" Canvas.Top="36.783" Height="30.3" Stretch="Fill" Width="29.9" RenderTransformOrigin="2.714,0.709" />
-            </Canvas>
+            <TextBlock  Style="{StaticResource MainText}" FontSize="40" Margin="50 20" HorizontalAlignment="Left" TextWrapping="Wrap">It takes months to find a customer...<LineBreak/>seconds to lose one</TextBlock>
         </Grid>
     </Grid>
 </Page>

@@ -91,6 +91,7 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -199,6 +200,7 @@
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
     <Compile Include="ViewModels\MenuPagesViewModels\ContactsViewModel.cs" />
+    <Compile Include="ViewModels\MenuPagesViewModels\CooperationViewModel.cs" />
     <Compile Include="ViewModels\MenuPagesViewModels\HeadsetsViewModel.cs" />
     <Compile Include="ViewModels\MenuPagesViewModels\KeyboardsViewModel.cs" />
     <Compile Include="ViewModels\MenuPagesViewModels\MicesViewModel.cs" />
@@ -354,6 +356,24 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Background-Gradient.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Cooperation-Header.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CooperationBlockBG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PartnerIcon_1.jpg" />
+    <Resource Include="Resources\PartnerIcon_2.jpg" />
+    <Resource Include="Resources\PartnerIcon_3.jpg" />
+    <Resource Include="Resources\PartnerIcon_4.jpg" />
+    <Resource Include="Resources\PartnerIcon_5.jpg" />
+    <Resource Include="Resources\PartnerIcon_6.jpg" />
+    <Resource Include="Resources\PartnerIcon_7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BGAboutUs.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />

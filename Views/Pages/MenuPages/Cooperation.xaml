@@ -5,10 +5,56 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ComputerPeripheralsShop.Views.Pages.MenuPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Cooperation">
+      d:DesignHeight="450" d:DesignWidth="1000"
+      Title="Cooperation" Background="#161616" MinHeight="1400" FontFamily="fonts/#BrownMedium Regular">
 
+    <Page.Resources>
+        <ResourceDictionary Source="/ResourceDictionaries/MenuPagesDictionary.xaml"/>
+    </Page.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" >
+            <TextBlock Style="{StaticResource AboutUsBlockText}" Margin="0" FontSize="40" TextWrapping="Wrap" VerticalAlignment="Center">Welcome to the TechMarket Partner Program</TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Resources/CooperationBlockBG.jpg" Opacity="0.3"/>
+            </Grid.Background>
+            
+            <StackPanel>
+                <TextBlock Style="{StaticResource AboutUsAdditionalText}" Margin="50 20">
+                    TechMarket® has tools to help you create a presence, define your brand and fuel a career doing what you love. The TechMarket Partner Program is designed to help streamers and content creators reach new heights. Joining the #TechMarketFamily means more than getting your hands on amazing gaming gear.
+                </TextBlock>
+                <TextBlock Style="{StaticResource AboutUsAdditionalText}" Margin="50 20 50 0">
+                    Thank you for your interest in the TechMarket Influencer program! Unfortunately, at this time the program is not active in your region. We may expand the program to new regions in the future, so check with us again to see if your locale has been added.
+                </TextBlock>
+                <TextBlock Style="{StaticResource AboutUsAdditionalText}" Margin="50 20 50 0">
+                    In order to get yourself hyped up for your own potential day in the sun, why not take the opportunity to get to know some of our top influencers?
+                </TextBlock>
+            </StackPanel>
+         </Grid>
+
+        <Grid Grid.Row="2" Background="#a20520">
+            <TextBlock Style="{StaticResource AboutUsBlockText}" Margin="0" FontSize="40" TextWrapping="Wrap" VerticalAlignment="Center">TechMarket Partners</TextBlock>
+         </Grid>
+
+        <Grid Grid.Row="3" Margin="0 0 0 30">
+            <WrapPanel HorizontalAlignment="Center">
+                <Image Style="{StaticResource ImageBlockStyle1}" Source="/Resources/PartnerIcon_1.jpg"/>
+                <Image Style="{StaticResource ImageBlockStyle1}" Source="/Resources/PartnerIcon_2.jpg"/>
+                <Image Style="{StaticResource ImageBlockStyle1}" Source="/Resources/PartnerIcon_3.jpg"/>
+                <Image Style="{StaticResource ImageBlockStyle1}" Source="/Resources/PartnerIcon_4.jpg"/>
+                <Image Style="{StaticResource ImageBlockStyle1}" Source="/Resources/PartnerIcon_5.jpg"/>
+                <Image Style="{StaticResource ImageBlockStyle1}" Source="/Resources/PartnerIcon_6.jpg"/>
+                <Image Style="{StaticResource ImageBlockStyle1}" Source="/Resources/PartnerIcon_7.jpg"/>
+            </WrapPanel>
+        </Grid>
     </Grid>
 </Page>

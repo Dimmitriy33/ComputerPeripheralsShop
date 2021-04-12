@@ -138,8 +138,8 @@
                 </StackPanel>
             </Grid>
         </Grid>
-        
-        <Grid Grid.Row="3" Background="#6610f2">
+
+        <Grid Grid.Row="3" Background="#a20520">
             <TextBlock Style="{StaticResource MainText}" Text="Community" Margin="20"/>
             <TextBlock Style="{StaticResource AdditionalText}" Text="Want to ask other users with the same product a question? Join the conversation." Margin="50"/>
             <Button Command="{Binding ToForum}" Style="{StaticResource ButtonStyle}" Content="Go To The Forums"/>
