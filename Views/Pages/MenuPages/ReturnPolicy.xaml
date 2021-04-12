@@ -5,10 +5,67 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ComputerPeripheralsShop.Views.Pages.MenuPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="ReturnPolicy">
-
+      d:DesignHeight="1200" d:DesignWidth="1000"
+      Title="ReturnPolicy" Background="#242424" MinHeight="1200" FontFamily="fonts/#BrownMedium Regular">
+    <Page.Resources>
+        <ResourceDictionary Source="/ResourceDictionaries/MenuPagesDictionary.xaml"/>
+    </Page.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#a20520">
+            <TextBlock Style="{StaticResource MainText}" FontSize="40" Margin="50 20 60 20" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap">
+                Returns and Cancellations
+            </TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="1" Background="#161616">
+            <StackPanel>
+                
+                <StackPanel Margin="0 20 0 0">
+                    <TextBlock Style="{StaticResource ReturnPolicyBlockText}" Text="What is your Refund and Warranty Policy for new products?"/>
+                    <TextBlock Style="{StaticResource ReturnPolicyAdditionalText}" Text="The TechMarket online store by Digital River offers a 30-day money back guarantee. The refund will include the purchase price and original shipping and handling charges if applicable."/>
+                </StackPanel>
+
+                <StackPanel Margin="0 20 0 0">
+                    <TextBlock Style="{StaticResource ReturnPolicyBlockText}" Text="What is your Return and Warranty Policy for Refurbished, Open-box and Dented Box products?"/>
+                    <TextBlock Style="{StaticResource ReturnPolicyAdditionalText}" Padding="0 0 0 5" Text="TechMarket dented Box items are products whose outer box has been torn, scratched, dented, or has other markings on it. The product itself is guaranteed to be in brand new condition and fully warranted and carry a limited 30-day return policy."/>
+                    <TextBlock Style="{StaticResource ReturnPolicyAdditionalText}" Padding="0 0 0 5" Text="TechMarket refurbished products are physical items which have been returned to TechMarket for testing, inspection, and repair by certified technicians. Please note that some refurbished items may have dents, scratches, or other slight signs of wear. TechMarket refurbished products carry a 90-day warranty and a limited 30-day return policy. The refund will include the purchase price and original shipping and handling charges if applicable."/>
+                    <TextBlock Style="{StaticResource ReturnPolicyAdditionalText}" Padding="0 0 0 5" Text="TechMarket open box items are previously owned physical products that have been returned to TechMarket. Therefore these items have been opened and touched. These items may not include documentation or retail packaging. See our support section to download instruction manuals, drivers or other updates."/>
+                    <TextBlock Style="{StaticResource ReturnPolicyAdditionalText}" Padding="0 0 0 5" Text="Open box items carry a limited 30-day refund-only policy (no exchanges). The refund will include the purchase price and original shipping and handling charges if applicable. Please inspect and test your products immediately upon receipt."/>
+                    <TextBlock Style="{StaticResource ReturnPolicyAdditionalText}" Padding="0 0 0 5" Text="To obtain a refund on a product purchased online, you will need to contact Customer Service"/>
+                </StackPanel>
+
+                <StackPanel Margin="0 20 0 0">
+                    <TextBlock Style="{StaticResource ReturnPolicyBlockText}" Text="Extended Holiday Return Policy."/>
+                    <TextBlock Style="{StaticResource ReturnPolicyAdditionalText}" Text="Shop with confidence during the holiday season! Each year we extended our normal 30-day return policy so that the holiday gifts you purchase from November 15 through December 23 can be returned for any reason until January 31 of the following year. Your refund will include the purchase price and original shipping and handling charges"/>
+                </StackPanel>
+
+                <StackPanel Margin="0 20 0 0">
+                    <TextBlock Style="{StaticResource ReturnPolicyBlockText}" Text="How do I cancel my order?"/>
+                    <TextBlock Style="{StaticResource ReturnPolicyAdditionalText}" Text="After each order is processed, it is sent immediately to our fulfillment warehouse for shipment. Orders cannot be cancelled after they have been shipped."/>
+                </StackPanel>
+
+                <StackPanel Margin="0 20 0 0">
+                    <TextBlock Style="{StaticResource ReturnPolicyBlockText}" Text="How do I make a return?"/>
+                    <TextBlock Style="{StaticResource ReturnPolicyAdditionalText}" Text="Simply enter your order number and billing zip code and follow the instructions."/>
+                </StackPanel>
+
+                <StackPanel Margin="0 20 0 0">
+                    <TextBlock Style="{StaticResource ReturnPolicyBlockText}" Text="When will the refund credit appear on my credit card?"/>
+                    <TextBlock Style="{StaticResource ReturnPolicyAdditionalText}" Text="Your refund credit will appear on your account within 3 weeks of us receiving your returned product."/>
+                </StackPanel>
+
+                <StackPanel Margin="0 20 0 0">
+                    <TextBlock Style="{StaticResource ReturnPolicyBlockText}" Text="How do I cancel my pre-order?"/>
+                    <TextBlock Style="{StaticResource ReturnPolicyAdditionalText}" >To request cancellation of pre-ordered products, please contact us at <Hyperlink Style="{StaticResource HyperlinkStyle}" Command="{Binding ToContacts}">Contacts</Hyperlink> </TextBlock>
+                    <TextBlock Style="{StaticResource ReturnPolicyAdditionalText}" Text="Orders for in-stock items are sent to our warehouse for shipping immediately after you place the order, therefore, in-stock items cannot be cancelled."/>
+                </StackPanel>
+                
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>
