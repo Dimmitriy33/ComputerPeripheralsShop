@@ -5,10 +5,41 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ComputerPeripheralsShop.Views.Pages.MenuPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="ProductVerification">
-
+      d:DesignHeight="1000" d:DesignWidth="1000"
+      Title="ProductVerification" Background="#242424" MinHeight="600" FontFamily="fonts/#BrownMedium Regular">
+    <Page.Resources>
+        <ResourceDictionary Source="/ResourceDictionaries/MenuPagesDictionary.xaml"/>
+    </Page.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#a20520">
+            <TextBlock Style="{StaticResource MainText}" FontSize="40" Margin="50 20 60 20" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap">
+                Products Verification
+            </TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="1" Background="#161616">
+            <StackPanel>
+
+                <StackPanel Margin="0 20 0 0">
+                    <TextBlock Style="{StaticResource ReturnPolicyBlockText}" Text="Identifying a TechMarket Products"/>
+                    <TextBlock Style="{StaticResource ReturnPolicyAdditionalText}" Padding="0 0 0 5" Text="TechMarket® has become synonymous with quality memory products worldwide. However,like other global companies that manufacture quality products, TechMarket's brand recognition has not made it immune to counterfeiting. TechMarket has found a number of fraudulent items being falsely represented as TechMarket products in the worldwide market."/>
+                    <TextBlock Style="{StaticResource ReturnPolicyAdditionalText}" Padding="0 0 0 5" Text="To protect our customers and TechMarket's image as a quality brand, we have produced this guide to allow you to instantly verify whether the product you have purchased or are planning to buy is a genuine TechMarket product."/>
+                    <TextBlock Style="{StaticResource ReturnPolicyAdditionalText}" Padding="0 0 0 5" Text="Product labels for SSDNow solid-state drives are designed using both colour-shift and Phantom technologies. For these drives, the Phantom technology area changes colour from light red to dark red, or grey to dark grey when held at different angles."/>
+                    <TextBlock Style="{StaticResource ReturnPolicyAdditionalText}" Padding="0 0 0 5" Text="The following products do not feature Phantom or color shift technology: microSD, microSDHC (4GB-32GB), IronKey drives, DataTraveler 2000, DataTraveler SE9, DataTraveler SE9 G2, DataTraveler microDuo 3.0, DataTraveler microDuo 3C, DataTraveler Elite G2, DataTraveler Vault Privacy 3.0, DataTraveler Valut Privacy 3.0 Anti-Virus and Management-Ready, DataTraveler 4000G2 and DataTraveler 4000G2 Management Ready, USB 3.0 Media Reader, MobileLite G4 Reader, USB microSD/SDHC/SDXC Reader and MobileLite Duo 3C."/>
+                </StackPanel>
+
+                <StackPanel Margin="0 20 0 0">
+                    <TextBlock Style="{StaticResource ReturnPolicyBlockText}" TextWrapping="Wrap">
+                        For information about how COVID-19 has affected our business operations, <Hyperlink Style="{StaticResource HyperlinkStyle}" Command="{Binding ToMoreInfoLink}"> click here</Hyperlink>
+                    </TextBlock>
+                </StackPanel>
+
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>

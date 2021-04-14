@@ -206,6 +206,7 @@
     <Compile Include="ViewModels\MenuPagesViewModels\MicesViewModel.cs" />
     <Compile Include="ViewModels\MenuPagesViewModels\MicrophonesViewModel.cs" />
     <Compile Include="ViewModels\MenuPagesViewModels\MousePadsViewModel.cs" />
+    <Compile Include="ViewModels\MenuPagesViewModels\ProductVerificationViewModel.cs" />
     <Compile Include="ViewModels\MenuPagesViewModels\ReturnPolicyViewModel.cs" />
     <Compile Include="ViewModels\SideMenuViewModel.cs" />
     <Compile Include="ViewModels\TopRightToolBarViewModel.cs" />
