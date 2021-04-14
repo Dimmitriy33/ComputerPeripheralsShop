@@ -34,7 +34,8 @@
         <Setter Property="Focusable" Value="False"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        
+        <Setter Property="Cursor" Value="Hand"/>
+
 
         <Setter Property="Content" Value="{Binding SubName, FallbackValue=ItemName,TargetNullValue=ItemName}"/>
 
@@ -82,6 +83,7 @@
         <Setter Property="Focusable" Value="False"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
 
         <Setter Property="Content" Value="{Binding SubName, FallbackValue=ItemName,TargetNullValue=ItemName}"/>
 
