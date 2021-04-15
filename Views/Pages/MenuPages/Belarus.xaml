@@ -3,12 +3,129 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
       xmlns:local="clr-namespace:ComputerPeripheralsShop.Views.Pages.MenuPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Belarus">
+      d:DesignHeight="800" d:DesignWidth="1000" KeepAlive="True"
+      Title="Belarus"  Background="#161616" MinHeight="1000" FontFamily="fonts/#BrownMedium Regular">
 
+    <Page.Resources>
+        <ResourceDictionary Source="/ResourceDictionaries/MenuPagesDictionary.xaml"/>
+    </Page.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" MaxHeight="100"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*" MaxHeight="100"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#a20520">
+            <TextBlock Style="{StaticResource MainText}" FontSize="46" Margin="80 20 60 20" HorizontalAlignment="Left" TextWrapping="Wrap">
+                Our Shops in Belarus
+            </TextBlock>
+        </Grid>
+
+
+        <Grid Grid.Row="1">
+
+            <m:Map x:Name="MapOfShopsBelarus" CredentialsProvider="aXuR9Tzp8yGKu7btzsnq~sdpHxNUeqKpRjVUpcX5n9A~Ai7dOiEZkHAKW1qLIZ9fjA24DtwOivSBw69A-YU8kNz5KOJDtodkv8qKNeffVEGJ" Culture="en-us" Mode="Road" ZoomLevel="6.8" Center="53.891389,27.556807">
+                
+                <Canvas
+                    m:MapLayer.Position="53.891389,27.556807" 
+                    m:MapLayer.PositionOrigin="BottomCenter" 
+                    Height="30" Width="30" Opacity="0.7">
+                    <materialDesign:PackIcon Kind="MapMarker" Width="50" Height="50" Foreground="red"/>
+                    <TextBlock Style="{StaticResource MapText}" Margin="0 60 0 0" Text="TechMarket shop №5" />
+                </Canvas>
+                
+                <Canvas 
+                    m:MapLayer.Position="53.909117,27.549055" 
+                    m:MapLayer.PositionOrigin="BottomCenter" 
+                    Height="30" Width="30" Opacity="0.7">
+                    <materialDesign:PackIcon Kind="MapMarker" Width="50" Height="50" Foreground="red"/>
+                    <TextBlock Style="{StaticResource MapText}" Margin="0 45 0 0" Text="TechMarket shop №6" />
+                </Canvas>
+               
+                <Canvas 
+                    m:MapLayer.Position="55.178349,30.246925" 
+                    m:MapLayer.PositionOrigin="BottomCenter" 
+                    Height="30" Width="30" Opacity="0.7">
+                    <materialDesign:PackIcon Kind="MapMarker" Width="50" Height="50" Foreground="red"/>
+                    <TextBlock Style="{StaticResource MapText}" Text="TechMarket shop №7" />
+                </Canvas>
+              
+                <Canvas 
+                    m:MapLayer.Position="53.870795,30.347859" 
+                    m:MapLayer.PositionOrigin="BottomCenter" 
+                    Height="30" Width="30" Opacity="0.7">
+                    <materialDesign:PackIcon Kind="MapMarker" Width="50" Height="50" Foreground="red"/>
+                    <TextBlock Style="{StaticResource MapText}" Text="TechMarket shop №8" />
+                </Canvas>
+               
+                <Canvas 
+                    m:MapLayer.Position="55.494887,28.805758" 
+                    m:MapLayer.PositionOrigin="BottomCenter" 
+                    Height="30" Width="30" Opacity="0.7">
+                    <materialDesign:PackIcon Kind="MapMarker" Width="50" Height="50" Foreground="red"/>
+                    <TextBlock Style="{StaticResource MapText}" Text="TechMarket shop №9" />
+                </Canvas>
+            
+            </m:Map>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <TextBlock Style="{StaticResource MainText}" FontSize="40" Margin="80 20 60 20" HorizontalAlignment="Left" TextWrapping="Wrap">
+                Information about our shops
+            </TextBlock>
+        </Grid>
         
+        <Grid Grid.Row="3" Background="#ffffff">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TableHeadText}" Text="Name of store"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="TechMrket shop #5"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="TechMrket shop #6"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="TechMrket shop #7"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="TechMrket shop #8"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="TechMrket shop #9"/>
+                </StackPanel>
+
+            </Grid>
+
+            <Grid Grid.Column="1">
+
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TableHeadText}" Text="Address"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Sverdlova, 19"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Pobediteley prospect, 12"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Tereshkovoy, 1"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Pushkinskiy prospect, 2a"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Fabrucyusa, 11"/>
+                </StackPanel>
+
+            </Grid>
+
+            <Grid Grid.Column="2">
+
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TableHeadText}" Text="Phone"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="+375 (29) 187-54-32"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="+375 (29) 132-22-11"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="+375 (29) 983-71-65"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="+375 (29) 158-49-58"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="+375 (29) 845-92-44"/>
+                </StackPanel>
+
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

@@ -6,9 +6,9 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
       xmlns:local="clr-namespace:ComputerPeripheralsShop.Views.Pages.MenuPages"
-      mc:Ignorable="d" 
+      mc:Ignorable="d" KeepAlive="True"
       d:DesignHeight="800" d:DesignWidth="1000"
-      Title="Russia" Background="#161616" MinHeight="800" FontFamily="fonts/#BrownMedium Regular">
+      Title="Russia" Background="#161616" MinHeight="1000" FontFamily="fonts/#BrownMedium Regular">
 
     <Page.Resources>
         <ResourceDictionary Source="/ResourceDictionaries/MenuPagesDictionary.xaml"/>
@@ -17,6 +17,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" MaxHeight="100"/>
             <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*" MaxHeight="100"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         
         <Grid Grid.Row="0" Background="#a20520">
@@ -58,5 +60,55 @@
                     </Canvas>
             </m:Map>
         </Grid>
+
+        <Grid Grid.Row="2">
+            <TextBlock Style="{StaticResource MainText}" FontSize="40" Margin="80 20 60 20" HorizontalAlignment="Left" TextWrapping="Wrap">
+                Information about our shops
+            </TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="3" Background="#ffffff">
+                <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            
+
+            <Grid Grid.Column="0">
+                
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TableHeadText}" Text="Name of shop"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="TechMrket shop #1"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="TechMrket shop #2"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="TechMrket shop #3"/>
+                </StackPanel>
+
+            </Grid>
+
+            <Grid Grid.Column="1">
+
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TableHeadText}" Text="Address"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Zvenigorodskaya, 2a"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Lubyanskiy proyezd, 6"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="Bol'shoy Kislovskiy pereylok, 14b"/>
+                </StackPanel>
+
+            </Grid>
+
+            <Grid Grid.Column="2">
+
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TableHeadText}" Text="Phone"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="8-800-550-36-42"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="8-800-777-81-25"/>
+                    <TextBlock Style="{StaticResource TableText}" Text="8-800-678-39-11"/>
+                </StackPanel>
+
+            </Grid>
+        </Grid>
+        
     </Grid>
 </Page>
