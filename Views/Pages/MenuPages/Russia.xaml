@@ -3,12 +3,60 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
       xmlns:local="clr-namespace:ComputerPeripheralsShop.Views.Pages.MenuPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Russia">
+      d:DesignHeight="800" d:DesignWidth="1000"
+      Title="Russia" Background="#161616" MinHeight="800" FontFamily="fonts/#BrownMedium Regular">
 
+    <Page.Resources>
+        <ResourceDictionary Source="/ResourceDictionaries/MenuPagesDictionary.xaml"/>
+    </Page.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" MaxHeight="100"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
         
+        <Grid Grid.Row="0" Background="#a20520">
+            <TextBlock Style="{StaticResource MainText}" FontSize="46" Margin="80 20 60 20" HorizontalAlignment="Left" TextWrapping="Wrap">
+                Our Shops in Russia
+            </TextBlock>
+        </Grid>
+
+            
+        <Grid Grid.Row="1">
+            <m:Map x:Name="MapOfShopsRussia" CredentialsProvider="aXuR9Tzp8yGKu7btzsnq~sdpHxNUeqKpRjVUpcX5n9A~Ai7dOiEZkHAKW1qLIZ9fjA24DtwOivSBw69A-YU8kNz5KOJDtodkv8qKNeffVEGJ" Culture="en-us" Mode="Road" ZoomLevel="5.1" Center="58.783146,41.335157">
+                <Canvas
+                    m:MapLayer.Position="55.754045,37.635248" 
+                    m:MapLayer.PositionOrigin="BottomCenter" 
+                    Height="30" Width="30" Opacity="0.7">
+                    <materialDesign:PackIcon Kind="MapMarker" Width="50" Height="50" Foreground="red"/>
+                    <TextBlock Style="{StaticResource MapText}" Margin="0 60 0 0" Text="TechMarket shop №1" />
+                    </Canvas>
+                <Canvas 
+                    m:MapLayer.Position="55.7535200,37.6062501" 
+                    m:MapLayer.PositionOrigin="BottomCenter" 
+                    Height="30" Width="30" Opacity="0.7">
+                        <materialDesign:PackIcon Kind="MapMarker" Width="50" Height="50" Foreground="red"/>
+                    <TextBlock Style="{StaticResource MapText}" Margin="0 45 0 0" Text="TechMarket shop №3" />
+                    </Canvas>
+                <Canvas 
+                    m:MapLayer.Position="59.922804,30.335265" 
+                    m:MapLayer.PositionOrigin="BottomCenter" 
+                    Height="30" Width="30" Opacity="0.7">
+                        <materialDesign:PackIcon Kind="MapMarker" Width="50" Height="50" Foreground="red"/>
+                        <TextBlock Style="{StaticResource MapText}" Text="TechMarket shop №2" />
+                    </Canvas>
+                <Canvas 
+                    m:MapLayer.Position="55.768970,49.146649" 
+                    m:MapLayer.PositionOrigin="BottomCenter" 
+                    Height="30" Width="30" Opacity="0.7">
+                        <materialDesign:PackIcon Kind="MapMarker" Width="50" Height="50" Foreground="red"/>
+                        <TextBlock Style="{StaticResource MapText}" Text="TechMarket shop №4" />
+                    </Canvas>
+            </m:Map>
+        </Grid>
     </Grid>
 </Page>
