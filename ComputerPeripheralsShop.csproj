@@ -234,6 +234,7 @@
     <Compile Include="DB\Product.cs" />
     <Compile Include="DB\User.cs" />
     <Compile Include="ViewModels\CommandViewModel.cs" />
+    <Compile Include="ViewModels\LoadingWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
     <Compile Include="ViewModels\MenuPagesViewModels\ContactsViewModel.cs" />
