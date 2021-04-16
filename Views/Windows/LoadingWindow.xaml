@@ -10,7 +10,7 @@
     <Grid>
 
         <Image
-               wpfanimated:ImageBehavior.AnimatedSource="D:\учеба\ООП\Курсач\ComputerPeripheralsShop\Resources\loading.gif"
+               wpfanimated:ImageBehavior.AnimatedSource="\Resources\loading.gif"
                wpfanimated:ImageBehavior.RepeatBehavior="1"
                wpfanimated:ImageBehavior.AnimateInDesignMode="False"
                wpfanimated:ImageBehavior.AutoStart="True"/>

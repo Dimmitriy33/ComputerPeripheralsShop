@@ -29,7 +29,7 @@ namespace ComputerPeripheralsShop.Views.Windows
         void Loading()
         {
             timer.Tick += Timer_Tick;
-            timer.Interval = new TimeSpan(0, 0, 4);
+            timer.Interval = new TimeSpan(0, 0, 3);
             timer.Start();
         }
 
