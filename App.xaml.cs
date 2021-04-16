@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using ComputerPeripheralsShop.Views.Windows;
+using System.Windows;
 
 namespace ComputerPeripheralsShop
 {
@@ -9,8 +10,8 @@ namespace ComputerPeripheralsShop
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            Window window = new MainWindow();
-            window.Show();
+            Window loadingWindow = new LoadingWindow();
+            loadingWindow.Show();
 
             base.OnStartup(e);
         }
