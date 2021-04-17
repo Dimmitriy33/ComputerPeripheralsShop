@@ -1,9 +1,10 @@
-﻿using System;
+﻿using ComputerPeripheralsShop.ViewModels.Base;
+using System;
 using System.Windows.Input;
 
 namespace ComputerPeripheralsShop.ViewModels.MenuPagesViewModels
 {
-    internal class MousePadsViewModel
+    internal class MousePadsViewModel : ViewModel
     {
         public ICommand FurySPro_InfoButton { get; }
         public ICommand FuryUltra_InfoButton { get; }

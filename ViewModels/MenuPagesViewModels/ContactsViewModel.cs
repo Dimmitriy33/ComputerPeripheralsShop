@@ -1,10 +1,11 @@
-﻿using System.Diagnostics;
+﻿using ComputerPeripheralsShop.ViewModels.Base;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows.Input;
 
 namespace ComputerPeripheralsShop.ViewModels.MenuPagesViewModels
 {
-    internal class ContactsViewModel
+    internal class ContactsViewModel : ViewModel
     {
         public ICommand ToForum { get; }
 

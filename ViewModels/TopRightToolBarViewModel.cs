@@ -1,9 +1,10 @@
-﻿using System.Windows;
+﻿using ComputerPeripheralsShop.ViewModels.Base;
+using System.Windows;
 using System.Windows.Input;
 
 namespace ComputerPeripheralsShop.ViewModels
 {
-    class TopRightToolBarViewModel
+    internal class TopRightToolBarViewModel : ViewModel
     {
         public ICommand CloseCommand { get; }
         public ICommand ResizeCommand { get; }

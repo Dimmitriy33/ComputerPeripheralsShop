@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ComputerPeripheralsShop.ViewModels.Base;
+using System;
 using System.Windows;
 using System.Windows.Input;
 
 namespace ComputerPeripheralsShop.ViewModels.MenuPagesViewModels
 {
-    internal class ReturnPolicyViewModel
+    internal class ReturnPolicyViewModel : ViewModel
     {
         public ICommand ToContacts { get; }
 

@@ -1,9 +1,10 @@
-﻿using System;
+﻿using ComputerPeripheralsShop.ViewModels.Base;
+using System;
 using System.Windows.Input;
 
 namespace ComputerPeripheralsShop.ViewModels.MenuPagesViewModels
 {
-    internal class KeyboardsViewModel
+    internal class KeyboardsViewModel : ViewModel
     {
         public ICommand AlloyCore_InfoButton { get; }
         public ICommand AlloyElite_InfoButton { get; }
