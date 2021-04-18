@@ -1,7 +1,7 @@
-﻿using ComputerPeripheralsShop.Views.Windows;
+﻿using ComputerPeripheralsShopModel.Views.Windows;
 using System.Windows;
 
-namespace ComputerPeripheralsShop
+namespace ComputerPeripheralsShopModel
 {
     /// <summary>
     /// Логика взаимодействия для App.xaml

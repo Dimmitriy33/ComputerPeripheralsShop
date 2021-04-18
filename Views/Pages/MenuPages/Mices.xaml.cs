@@ -1,7 +1,7 @@
-﻿using ComputerPeripheralsShop.ViewModels.MenuPagesViewModels;
+﻿using ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels;
 using System.Windows.Controls;
 
-namespace ComputerPeripheralsShop.Views.Pages.MenuPages
+namespace ComputerPeripheralsShopModel.Views.Pages.MenuPages
 {
     /// <summary>
     /// Логика взаимодействия для Mices.xaml

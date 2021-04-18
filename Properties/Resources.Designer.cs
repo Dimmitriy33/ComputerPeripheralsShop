@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ComputerPeripheralsShop.Properties {
+namespace ComputerPeripheralsShopModel.Properties {
     using System;
     
     

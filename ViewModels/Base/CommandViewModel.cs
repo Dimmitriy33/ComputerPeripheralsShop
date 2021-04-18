@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace ComputerPeripheralsShop.ViewModels
+namespace ComputerPeripheralsShopModel.ViewModels
 {
     internal class CommandViewModel : ICommand
     {

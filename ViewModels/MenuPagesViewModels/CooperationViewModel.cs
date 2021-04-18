@@ -1,6 +1,6 @@
-﻿using ComputerPeripheralsShop.ViewModels.Base;
+﻿using ComputerPeripheralsShopModel.ViewModels.Base;
 
-namespace ComputerPeripheralsShop.ViewModels.MenuPagesViewModels
+namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
 {
     internal class CooperationViewModel : ViewModel
     {

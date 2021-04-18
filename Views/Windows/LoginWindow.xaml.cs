@@ -1,7 +1,7 @@
-﻿using ComputerPeripheralsShop.ViewModels;
+﻿using ComputerPeripheralsShopModel.ViewModels;
 using System.Windows;
 
-namespace ComputerPeripheralsShop.Views.Windows
+namespace ComputerPeripheralsShopModel.Views.Windows
 {
     /// <summary>
     /// Логика взаимодействия для LoginWindow.xaml

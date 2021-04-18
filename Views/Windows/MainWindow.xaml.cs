@@ -1,6 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
-namespace ComputerPeripheralsShop
+namespace ComputerPeripheralsShopModel
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -10,7 +11,14 @@ namespace ComputerPeripheralsShop
         public MainWindow()
         {
             InitializeComponent();
-
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(MainWindow))
+                {
+                    /*(window as MainWindow).MainWindowFrame.Navigate(new Uri(SubName, UriKind.RelativeOrAbsolute));*/
+                    (window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}", "Views/Pages/MenuPages/", "AboutUs", ".xaml"), UriKind.RelativeOrAbsolute));
+                }
+            }
         }
     }
 }

@@ -1,10 +1,10 @@
-﻿using ComputerPeripheralsShop.ViewModels.Base;
-using ComputerPeripheralsShop.Views.Windows;
+﻿using ComputerPeripheralsShopModel.ViewModels.Base;
+using ComputerPeripheralsShopModel.Views.Windows;
 using System;
 using System.Windows;
 using System.Windows.Threading;
 
-namespace ComputerPeripheralsShop.ViewModels
+namespace ComputerPeripheralsShopModel.ViewModels
 {
     internal class LoadingWindowViewModel : ViewModel
     {

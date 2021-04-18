@@ -1,14 +1,18 @@
-﻿using ComputerPeripheralsShop.ViewModels.Base;
+﻿using ComputerPeripheralsShopModel.ViewModels.Base;
+using ComputerPeripheralsShopModel.Views.Windows;
 using System.Windows;
 using System.Windows.Input;
 
-namespace ComputerPeripheralsShop.ViewModels
+namespace ComputerPeripheralsShopModel.ViewModels
 {
     internal class TopRightToolBarViewModel : ViewModel
     {
         public ICommand CloseCommand { get; }
         public ICommand ResizeCommand { get; }
         public ICommand CollapseCommand { get; }
+        public ICommand LanguageCommand { get; }
+        public ICommand ThemeCommand { get; }
+        public ICommand LoginCommand { get; }
 
         public int ResizeCommand_ClickCount { get; set; }
 
@@ -17,6 +21,23 @@ namespace ComputerPeripheralsShop.ViewModels
             CloseCommand = new CommandViewModel(ExecuteClose);
             ResizeCommand = new CommandViewModel(ExecuteResize);
             CollapseCommand = new CommandViewModel(ExecuteCollapse);
+            LanguageCommand = new CommandViewModel(ExecuteLanguage);
+            ThemeCommand = new CommandViewModel(ExecuteTheme);
+            LoginCommand = new CommandViewModel(ExecuteLogin);
+        }
+
+        private void ExecuteLogin()
+        {
+            Window loginWindow = new LoginWindow();
+            loginWindow.Show();
+        }
+
+        private void ExecuteTheme()
+        {
+        }
+
+        private void ExecuteLanguage()
+        {
         }
 
         private void ExecuteCollapse()

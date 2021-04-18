@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ComputerPeripheralsShop.Views.Pages.MenuPages
+namespace ComputerPeripheralsShopModel.Views.Pages.MenuPages
 {
     /// <summary>
     /// Логика взаимодействия для Ukraine.xaml

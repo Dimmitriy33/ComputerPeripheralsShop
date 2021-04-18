@@ -1,9 +1,9 @@
-﻿using ComputerPeripheralsShop.ViewModels.Base;
+﻿using ComputerPeripheralsShopModel.ViewModels.Base;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows.Input;
 
-namespace ComputerPeripheralsShop.ViewModels.MenuPagesViewModels
+namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
 {
     internal class ContactsViewModel : ViewModel
     {

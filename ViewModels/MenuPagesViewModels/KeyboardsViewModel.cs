@@ -1,8 +1,8 @@
-﻿using ComputerPeripheralsShop.ViewModels.Base;
+﻿using ComputerPeripheralsShopModel.ViewModels.Base;
 using System;
 using System.Windows.Input;
 
-namespace ComputerPeripheralsShop.ViewModels.MenuPagesViewModels
+namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
 {
     internal class KeyboardsViewModel : ViewModel
     {

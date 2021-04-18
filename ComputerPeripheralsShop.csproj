@@ -118,6 +118,8 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
     </Reference>
@@ -146,6 +148,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Components\BindablePasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ResourceDictionaries\MenuPagesDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -234,10 +240,42 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DB\DatabaseContext.cs" />
-    <Compile Include="DB\Product.cs" />
-    <Compile Include="DB\User.cs" />
-    <Compile Include="ViewModels\CommandViewModel.cs" />
+    <Compile Include="Components\BindablePasswordBox.xaml.cs">
+      <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ComputerPeripheralsShopModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComputerPeripheralsShopModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ComputerPeripheralsShopModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ComputerPeripheralsShopModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComputerPeripheralsShopModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Authentication\Account.cs" />
+    <Compile Include="Models\Authentication\IAuthentication.cs" />
+    <Compile Include="Order.cs">
+      <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order_List.cs">
+      <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Base\CommandViewModel.cs" />
     <Compile Include="ViewModels\LoadingWindowViewModel.cs" />
     <Compile Include="ViewModels\LoginWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
@@ -251,8 +289,8 @@
     <Compile Include="ViewModels\MenuPagesViewModels\MousePadsViewModel.cs" />
     <Compile Include="ViewModels\MenuPagesViewModels\ProductVerificationViewModel.cs" />
     <Compile Include="ViewModels\MenuPagesViewModels\ReturnPolicyViewModel.cs" />
-    <Compile Include="ViewModels\SideMenuViewModel.cs" />
-    <Compile Include="ViewModels\TopRightToolBarViewModel.cs" />
+    <Compile Include="ViewModels\Menu parts\SideMenuViewModel.cs" />
+    <Compile Include="ViewModels\Menu parts\TopRightToolBarViewModel.cs" />
     <Compile Include="Views\Pages\MenuPages\AboutUs.xaml.cs">
       <DependentUpon>AboutUs.xaml</DependentUpon>
     </Compile>
@@ -328,6 +366,13 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EntityDeploy Include="ComputerPeripheralsShopModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ComputerPeripheralsShopModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ComputerPeripheralsShopModel.edmx.diagram">
+      <DependentUpon>ComputerPeripheralsShopModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -341,9 +386,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="ResourceDictionaries\fonts\Brown Bold.ttf" />
     <Resource Include="ResourceDictionaries\fonts\BrownMedium Regular.ttf" />
@@ -428,6 +471,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ComputerPeripheralsShopModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ComputerPeripheralsShopModel.Context.cs</LastGenOutput>
+      <DependentUpon>ComputerPeripheralsShopModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="ComputerPeripheralsShopModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ComputerPeripheralsShopModel.edmx</DependentUpon>
+      <LastGenOutput>ComputerPeripheralsShopModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />

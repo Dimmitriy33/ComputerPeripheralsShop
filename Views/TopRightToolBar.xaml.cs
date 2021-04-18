@@ -1,7 +1,7 @@
-﻿using ComputerPeripheralsShop.ViewModels;
+﻿using ComputerPeripheralsShopModel.ViewModels;
 using System.Windows.Controls;
 
-namespace ComputerPeripheralsShop.Views
+namespace ComputerPeripheralsShopModel.Views
 {
     /// <summary>
     /// Логика взаимодействия для TopRightToolBar.xaml

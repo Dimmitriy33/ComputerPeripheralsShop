@@ -1,4 +1,4 @@
-﻿using ComputerPeripheralsShop.ViewModels.Base;
+﻿using ComputerPeripheralsShopModel.ViewModels.Base;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace ComputerPeripheralsShop.ViewModels
+namespace ComputerPeripheralsShopModel.ViewModels
 {
     internal class SideMenuViewModel : ViewModel
     {

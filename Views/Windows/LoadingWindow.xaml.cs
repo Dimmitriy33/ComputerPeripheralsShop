@@ -1,8 +1,8 @@
-﻿using ComputerPeripheralsShop.ViewModels;
+﻿using ComputerPeripheralsShopModel.ViewModels;
 using System.Windows;
 using System.Windows.Threading;
 
-namespace ComputerPeripheralsShop.Views.Windows
+namespace ComputerPeripheralsShopModel.Views.Windows
 {
     /// <summary>
     /// Логика взаимодействия для LoadingWindow.xaml
