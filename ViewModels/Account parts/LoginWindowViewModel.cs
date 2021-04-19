@@ -80,32 +80,6 @@ namespace ComputerPeripheralsShopModel.ViewModels
 
         private void executeLogin()
         {
-            /*if (!_agree)
-            {
-                MessageBox.Show("You can't register");
-                return;
-            }
-            using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
-            {
-                foreach (User curUser in context.User)
-                    if (_username.Equals(curUser.Login))
-                    {
-                        MessageBox.Show("This login already exists");
-                        return;
-                    }
-                User user = new User(Username, GetHashString(Password));
-                context.User.Add(user);
-                context.SaveChanges();
-                foreach (Window window in Application.Current.Windows)
-                {
-                    if (window.GetType() == typeof(LoginWindow))
-                    {
-                        (window as LoginWindow).Hide();
-                        (window as LoginWindow).Close();
-                    }
-                }
-
-            }*/
 
             using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
             {
@@ -132,9 +106,6 @@ namespace ComputerPeripheralsShopModel.ViewModels
                 {
                     MessageBox.Show("The username or password is incorrect");
                 }
-                /*User user = new User(Username, GetHashEncryption(Password));
-                context.User.Add(user);
-                context.SaveChanges();*/
 
             }
 

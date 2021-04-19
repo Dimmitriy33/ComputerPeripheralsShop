@@ -135,6 +135,8 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
                 User user = new User(Username, GetHashEncryption(Password), Name, Surname, Address);
                 context.User.Add(user);
                 context.SaveChanges();
+                ComputerPeripheralsShopModel.Models.Authentication.Account.curUser = user;
+                ComputerPeripheralsShopModel.Models.Authentication.Account.IsLoggedIn = true;
                 foreach (Window window in Application.Current.Windows)
                 {
                     if (window.GetType() == typeof(CreateAccountWindow))
