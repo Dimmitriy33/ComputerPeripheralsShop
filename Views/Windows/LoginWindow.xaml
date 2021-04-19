@@ -27,6 +27,10 @@
                         </LinearGradientBrush>
                     </Rectangle.Fill>
                 </Rectangle>
+                <Button x:Name="CloseButton" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 5 0 0"
+                        Background="Transparent" BorderThickness="0" Command="{Binding CloseCommand}">
+                    <materialDesign:PackIcon Kind="CloseCircle" Width="27" Height="27"/>
+                </Button>
                 <StackPanel Margin="20 30 200 0">
                     <Label Content="Login" FontSize="25" FontFamily="Segoe UI Black"
                        Margin="10 0 0 10" VerticalContentAlignment="Top" HorizontalAlignment="Left"/>
@@ -40,16 +44,12 @@
                         <components:BindablePasswordBox x:Name="Password" materialDesign:HintAssist.Hint="Password"
                          FontSize="14" MinWidth="200" Margin="5" Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
                     </StackPanel>
-                    <CheckBox x:Name="Agree" Margin="5 10" IsChecked="{Binding Agree}">
-                        <StackPanel>
-                            <TextBlock>I confirm that I have read, consest</TextBlock>
-                            <TextBlock>and agree to <Hyperlink FontWeight="SemiBold">Privacy Policy</Hyperlink>, and I</TextBlock>
-                            <TextBlock>am of a legal age</TextBlock>
-                        </StackPanel>
-                    </CheckBox>
                     <Button HorizontalAlignment="Left" Content="LOGIN" 
                     Background="#a20520" FontSize="18" FontFamily="Impact"
                     Margin="60 20 60 0" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=Password}"/>
+                    <Button Background="Transparent" Margin="25 20 0 0" HorizontalAlignment="Left" VerticalAlignment="Bottom" BorderThickness="0" Command="{Binding MoveToCreateAccountCommand}">
+                        <TextBlock Text="Create account?" FontSize="14" Foreground="#20b3ff"  Margin="5 0 0 0"/>
+                    </Button>
                 </StackPanel>
 
             </Grid>

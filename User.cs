@@ -31,12 +31,15 @@ namespace ComputerPeripheralsShopModel
             this.Address = address;
         }
 
-        public User(string login, byte[] password_hash)
+        public User(string login, byte[] password_hash, string name, string surname, string address)
         {
             this.Login = login;
             this.Password_hash = password_hash;
             this.Balance = 0;
             this.IsAdmin = false;
+            this.Name = name;
+            this.Surname = surname;
+            this.Address = address;
         }
 
         public int User_Id { get; set; }

@@ -7,10 +7,11 @@
              xmlns:vm="clr-namespace:ComputerPeripheralsShopModel.ViewModels"
              xmlns:local="clr-namespace:ComputerPeripheralsShopModel.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="120" d:DesignWidth="160" MinWidth="200" FontFamily="fonts/#Brown Bold">
+             d:DesignHeight="160" d:DesignWidth="160" MinWidth="200" FontFamily="fonts/#Brown Bold">
     <Grid Background="#242424">
 
         <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -43,11 +44,13 @@
                     <materialDesign:PackIcon Kind="CloseCircle" Width="20" Height="20"/>
                 </Button>
             </Grid>
+            
 
         </Grid>
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
@@ -66,6 +69,13 @@
                 </Button>
             </Grid>
 
+            <Grid Grid.Column="2">
+                <Button x:Name="Basket" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                        Background="Transparent" BorderThickness="0" Command="{Binding BasketCommand}">
+                    <materialDesign:PackIcon Kind="Basket" Width="20" Height="20"/>
+                </Button>
+            </Grid>
+
         </Grid>
 
         <Grid Grid.Row="2">
@@ -74,14 +84,29 @@
                         Background="Transparent" BorderThickness="0" Command="{Binding LoginCommand}">
                 <Grid>
                     
-                    <materialDesign:PackIcon Kind="Account" Width="32" Height="32" Foreground="red"/>
-                    <TextBlock Text="Login/Register" Foreground="#ffffff" FontSize="24" HorizontalAlignment="Left"
-                               VerticalAlignment="Center" Margin="35 5 0 0" FontFamily="/ComputerPeripheralsShop;component/ResourceDictionaries/fonts/#BrownMedium"/>
+                    <materialDesign:PackIcon Kind="Login" Width="25" Height="25" Foreground="red"/>
+                    <TextBlock Text="Login" Foreground="#ffffff" FontSize="20" HorizontalAlignment="Left"
+                               VerticalAlignment="Center" Margin="35 0 0 0" FontFamily="/ComputerPeripheralsShop;component/ResourceDictionaries/fonts/#BrownMedium"/>
                     
                 </Grid>
             </Button>
             
         </Grid>
-            
+
+        <Grid Grid.Row="3">
+
+            <Button x:Name="CreateAccountButton" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="0" 
+                        Background="Transparent" BorderThickness="0" Command="{Binding CreateAccountCommand}">
+                <Grid>
+
+                    <materialDesign:PackIcon Kind="AccountAdd" Width="25" Height="25" Foreground="red"/>
+                    <TextBlock Text="Create account" Foreground="#ffffff" FontSize="20" HorizontalAlignment="Left"
+                               VerticalAlignment="Center" Margin="35 0 0 0" FontFamily="/ComputerPeripheralsShop;component/ResourceDictionaries/fonts/#BrownMedium"/>
+
+                </Grid>
+            </Button>
+
+        </Grid>
+
     </Grid>
 </UserControl>

@@ -1,4 +1,5 @@
-﻿using ComputerPeripheralsShopModel.ViewModels.Base;
+﻿using ComputerPeripheralsShop.Views.Windows;
+using ComputerPeripheralsShopModel.ViewModels.Base;
 using ComputerPeripheralsShopModel.Views.Windows;
 using System.Security.Cryptography;
 using System.Text;
@@ -10,9 +11,8 @@ namespace ComputerPeripheralsShopModel.ViewModels
     internal class LoginWindowViewModel : ViewModel
     {
         ComputerPeripheralsShopEntities computerPeripheralsShopEntities = new ComputerPeripheralsShopEntities();
-        private string _username;
-        private string _password;
-        private bool _agree;
+        private string _username = "";
+        private string _password = "";
         public string Username
         {
             get
@@ -39,24 +39,43 @@ namespace ComputerPeripheralsShopModel.ViewModels
             }
         }
 
-        public bool Agree
-        {
-            get
-            {
-                return _agree;
-            }
-            set
-            {
-                _agree = value;
-                OnPropertyChanged(nameof(Agree));
-            }
-        }
 
         public ICommand LoginCommand { get; }
+        public ICommand CloseCommand { get; }
+        public ICommand MoveToCreateAccountCommand { get; }
 
         public LoginWindowViewModel()
         {
             LoginCommand = new CommandViewModel(executeLogin);
+            CloseCommand = new CommandViewModel(ExecuteClose);
+            MoveToCreateAccountCommand = new CommandViewModel(ExecuteMoveToCreateAccountCommand);
+        }
+
+        private void ExecuteMoveToCreateAccountCommand()
+        {
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(LoginWindow))
+                {
+                    (window as LoginWindow).Hide();
+                    (window as LoginWindow).Close();
+                }
+            }
+
+            Window createAccWindow = new CreateAccountWindow();
+            createAccWindow.Show();
+        }
+
+        public void ExecuteClose()
+        {
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(LoginWindow))
+                {
+                    (window as LoginWindow).Hide();
+                    (window as LoginWindow).Close();
+                }
+            }
         }
 
         private void executeLogin()
@@ -90,22 +109,29 @@ namespace ComputerPeripheralsShopModel.ViewModels
 
             using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
             {
-                foreach (User curentUser in context.User)
-                    if (_username.Equals(curentUser.Login) && (GetHashString(GetHashEncryption(Password)).Equals(GetHashString(curentUser.Password_hash))))
-                    {
-                        ComputerPeripheralsShopModel.Models.Authentication.Account.curUser = curentUser;
-                        ComputerPeripheralsShopModel.Models.Authentication.Account.IsLoggedIn = true;
-                        foreach (Window window in Application.Current.Windows)
+                try
+                {
+                    foreach (User curentUser in context.User)
+                        if (_username.Equals(curentUser.Login) && (GetHashString(GetHashEncryption(Password)).Equals(GetHashString(curentUser.Password_hash))))
                         {
-                            if (window.GetType() == typeof(LoginWindow))
+                            ComputerPeripheralsShopModel.Models.Authentication.Account.curUser = curentUser;
+                            ComputerPeripheralsShopModel.Models.Authentication.Account.IsLoggedIn = true;
+                            foreach (Window window in Application.Current.Windows)
                             {
-                                (window as LoginWindow).Hide();
-                                (window as LoginWindow).Close();
+                                if (window.GetType() == typeof(LoginWindow))
+                                {
+                                    (window as LoginWindow).Hide();
+                                    (window as LoginWindow).Close();
+                                }
                             }
+                            return;
                         }
-                        return;
-                    }
-                MessageBox.Show("The username or password is incorrect");
+                    MessageBox.Show("The username or password is incorrect");
+                }
+                catch
+                {
+                    MessageBox.Show("The username or password is incorrect");
+                }
                 /*User user = new User(Username, GetHashEncryption(Password));
                 context.User.Add(user);
                 context.SaveChanges();*/

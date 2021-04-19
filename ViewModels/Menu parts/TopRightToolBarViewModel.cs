@@ -1,4 +1,5 @@
-﻿using ComputerPeripheralsShopModel.ViewModels.Base;
+﻿using ComputerPeripheralsShop.Views.Windows;
+using ComputerPeripheralsShopModel.ViewModels.Base;
 using ComputerPeripheralsShopModel.Views.Windows;
 using System.Windows;
 using System.Windows.Input;
@@ -13,6 +14,8 @@ namespace ComputerPeripheralsShopModel.ViewModels
         public ICommand LanguageCommand { get; }
         public ICommand ThemeCommand { get; }
         public ICommand LoginCommand { get; }
+        public ICommand CreateAccountCommand { get; }
+        public ICommand BasketCommand { get; }
 
         public int ResizeCommand_ClickCount { get; set; }
 
@@ -24,6 +27,19 @@ namespace ComputerPeripheralsShopModel.ViewModels
             LanguageCommand = new CommandViewModel(ExecuteLanguage);
             ThemeCommand = new CommandViewModel(ExecuteTheme);
             LoginCommand = new CommandViewModel(ExecuteLogin);
+            CreateAccountCommand = new CommandViewModel(ExecuteCreateAccount);
+            BasketCommand = new CommandViewModel(ExecuteBasketCommand);
+        }
+
+        private void ExecuteBasketCommand()
+        {
+
+        }
+
+        private void ExecuteCreateAccount()
+        {
+            Window createAcc = new CreateAccountWindow();
+            createAcc.Show();
         }
 
         private void ExecuteLogin()

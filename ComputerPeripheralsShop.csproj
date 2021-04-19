@@ -224,6 +224,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Windows\CreateAccountWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Windows\LoadingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -275,9 +279,10 @@
     <Compile Include="User.cs">
       <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\Account parts\CreateAccountViewModel.cs" />
     <Compile Include="ViewModels\Base\CommandViewModel.cs" />
     <Compile Include="ViewModels\LoadingWindowViewModel.cs" />
-    <Compile Include="ViewModels\LoginWindowViewModel.cs" />
+    <Compile Include="ViewModels\Account parts\LoginWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
     <Compile Include="ViewModels\MenuPagesViewModels\ContactsViewModel.cs" />
@@ -335,6 +340,9 @@
     </Compile>
     <Compile Include="Views\TopRightToolBar.xaml.cs">
       <DependentUpon>TopRightToolBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\CreateAccountWindow.xaml.cs">
+      <DependentUpon>CreateAccountWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\LoadingWindow.xaml.cs">
       <DependentUpon>LoadingWindow.xaml</DependentUpon>
