@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ComputerPeripheralsShopModel
+namespace ComputerPeripheralsShop
 {
     using System;
     using System.Data.Entity;

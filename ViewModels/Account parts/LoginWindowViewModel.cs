@@ -1,4 +1,5 @@
-﻿using ComputerPeripheralsShop.Views.Windows;
+﻿using ComputerPeripheralsShop;
+using ComputerPeripheralsShop.Views.Windows;
 using ComputerPeripheralsShopModel.ViewModels.Base;
 using ComputerPeripheralsShopModel.Views.Windows;
 using System.Security.Cryptography;

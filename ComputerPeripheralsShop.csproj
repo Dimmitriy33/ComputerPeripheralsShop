@@ -164,6 +164,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ResourceDictionaries\ProductDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Pages\MenuPages\AboutUs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -216,6 +220,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Pages\Product.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\SideMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -264,6 +272,7 @@
     </Compile>
     <Compile Include="Models\Authentication\Account.cs" />
     <Compile Include="Models\Authentication\IAuthentication.cs" />
+    <Compile Include="Models\CurrentProduct.cs" />
     <Compile Include="Order.cs">
       <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
     </Compile>
@@ -296,6 +305,7 @@
     <Compile Include="ViewModels\MenuPagesViewModels\ReturnPolicyViewModel.cs" />
     <Compile Include="ViewModels\Menu parts\SideMenuViewModel.cs" />
     <Compile Include="ViewModels\Menu parts\TopRightToolBarViewModel.cs" />
+    <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="Views\Pages\MenuPages\AboutUs.xaml.cs">
       <DependentUpon>AboutUs.xaml</DependentUpon>
     </Compile>
@@ -334,6 +344,9 @@
     </Compile>
     <Compile Include="Views\Pages\MenuPages\Ukraine.xaml.cs">
       <DependentUpon>Ukraine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Product.xaml.cs">
+      <DependentUpon>Product.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SideMenu.xaml.cs">
       <DependentUpon>SideMenu.xaml</DependentUpon>

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ComputerPeripheralsShopModel
+namespace ComputerPeripheralsShop
 {
     using System;
     using System.Collections.Generic;
@@ -18,17 +18,6 @@ namespace ComputerPeripheralsShopModel
         public User()
         {
             this.Order = new HashSet<Order>();
-        }
-
-        public User(string login, byte[] password_hash, decimal balance, bool isAdmin, string name, string surname, string address)
-        {
-            this.Login = login;
-            this.Password_hash = password_hash;
-            this.Balance = balance;
-            this.IsAdmin = isAdmin;
-            this.Name = name;
-            this.Surname = surname;
-            this.Address = address;
         }
 
         public User(string login, byte[] password_hash, string name, string surname, string address)

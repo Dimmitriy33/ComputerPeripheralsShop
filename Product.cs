@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ComputerPeripheralsShopModel
+namespace ComputerPeripheralsShop
 {
     using System;
     using System.Collections.Generic;
@@ -38,6 +38,7 @@ namespace ComputerPeripheralsShopModel
         public byte[] Picture_Main { get; set; }
         public byte[] Picture1 { get; set; }
         public byte[] Picture2 { get; set; }
+        public string Description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order_List> Order_List { get; set; }

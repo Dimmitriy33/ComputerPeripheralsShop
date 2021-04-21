@@ -1,4 +1,6 @@
-﻿namespace ComputerPeripheralsShopModel.Models.Authentication
+﻿using ComputerPeripheralsShop;
+
+namespace ComputerPeripheralsShopModel.Models.Authentication
 {
     public interface IAuthentication
     {

@@ -1,0 +1,72 @@
+﻿<Page x:Class="ComputerPeripheralsShop.Views.Pages.Product"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ComputerPeripheralsShop.Views.Pages"
+      mc:Ignorable="d" Title="Product" Background="#ffffff"
+      d:DesignHeight="2000" d:DesignWidth="1000" FontFamily="fonts/#Brown Bold"
+      MinHeight="2000">
+    <Page.Resources>
+        <ResourceDictionary Source="/ResourceDictionaries/ProductDictionary.xaml"/>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Style="{StaticResource HeaderGrid}" >
+            <TextBlock Style="{StaticResource HeaderText}" Text="{Binding ProductFullName}"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <TextBlock Style="{StaticResource TableText}" Text="{Binding Path=Description}"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Style="{StaticResource Header2Grid}">
+            <TextBlock Style="{StaticResource Header2Text}" Text="Overwiew"/>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <StackPanel>
+                <Image Source="{Binding Picture1}"/>
+                <Image Source="{Binding Picture2}"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="4" Style="{StaticResource Header2Grid}">
+            <TextBlock Style="{StaticResource Header2Text}" Text="Specifications"/>
+        </Grid>
+
+        <Grid Grid.Row="5">
+            <Grid Style="{StaticResource TableInternalGrid}">
+                <ItemsControl ItemsSource="{Binding SpecificationsList}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid Grid.Column="0">
+                                    <TextBlock Style="{StaticResource ListTextColumnName}" Text="{Binding Name}"/>
+                                </Grid>
+
+                                <Grid Grid.Column="1">
+                                    <TextBlock Style="{StaticResource ListTextColumnValue}" Text="{Binding Value}"/>
+                                </Grid>
+                                
+                            </Grid>        
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
