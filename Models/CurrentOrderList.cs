@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
 
 namespace ComputerPeripheralsShop.Models
 {
-    public static class CurrentOrderList
+    public class CurrentOrderList
     {
-        public static List<Order_List> CurOrderList = new List<Order_List>();
+        public static ObservableCollection<Order_List> CurOrderList = new ObservableCollection<Order_List>();
     }
 }

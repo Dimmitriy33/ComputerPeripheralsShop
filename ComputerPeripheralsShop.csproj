@@ -169,6 +169,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\BasketToolBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Pages\MenuPages\AboutUs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -302,6 +306,7 @@
     <Compile Include="ViewModels\Account parts\LoginWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
+    <Compile Include="ViewModels\Menu parts\BaksetToolBarViewModel.cs" />
     <Compile Include="ViewModels\MenuPagesViewModels\ContactsViewModel.cs" />
     <Compile Include="ViewModels\MenuPagesViewModels\CooperationViewModel.cs" />
     <Compile Include="ViewModels\MenuPagesViewModels\HeadsetsViewModel.cs" />
@@ -314,6 +319,9 @@
     <Compile Include="ViewModels\Menu parts\SideMenuViewModel.cs" />
     <Compile Include="ViewModels\Menu parts\TopRightToolBarViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
+    <Compile Include="Views\BasketToolBar.xaml.cs">
+      <DependentUpon>BasketToolBar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Pages\MenuPages\AboutUs.xaml.cs">
       <DependentUpon>AboutUs.xaml</DependentUpon>
     </Compile>

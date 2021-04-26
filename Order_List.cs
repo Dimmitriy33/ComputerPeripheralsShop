@@ -11,6 +11,7 @@ namespace ComputerPeripheralsShop
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     
     public partial class Order_List
     {
@@ -27,5 +28,21 @@ namespace ComputerPeripheralsShop
     
         public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }
+
+        public string ProductModel
+        {
+            get
+            {
+                using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
+                {
+                    return (from product in context.Product
+                            where product.Product_Id.Equals(Product_Id)
+                            select product.Manufacturer).Single<string>() + " " +
+                            (from product in context.Product
+                            where product.Product_Id.Equals(Product_Id)
+                            select product.Model).Single<string>();
+                }
+            }
+        }
     }
 }

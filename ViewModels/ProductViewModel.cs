@@ -2,6 +2,7 @@
 using ComputerPeripheralsShopModel.ViewModels.Base;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Windows.Input;
@@ -71,6 +72,12 @@ namespace ComputerPeripheralsShop.ViewModels
 
         public List<Specifications> SpecificationsList => AddSpec();
 
+        public ObservableCollection<Order_List> order_Lists
+        {
+            get => ComputerPeripheralsShop.Models.CurrentOrderList.CurOrderList;
+            set => ComputerPeripheralsShop.Models.CurrentOrderList.CurOrderList = value;
+        }
+
         public static List<Specifications> AddSpec()
         {
             List<Specifications> list = new List<Specifications>()
@@ -80,14 +87,14 @@ namespace ComputerPeripheralsShop.ViewModels
             new Specifications("Type", ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Type),
             new Specifications("Connection type", ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Connection_Type),
             new Specifications("Weight", ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Weight),
-            new Specifications("Backlight", BacklightToString()),
+            new Specifications("Backlight", BoolToStringView(ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Backlight)),
             new Specifications("Height", ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Height),
             new Specifications("Width", ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Width),
-            new Specifications("Gaming mode", GamingModeToString())
+            new Specifications("Gaming mode", BoolToStringView(ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Gaming_mode))
             };
 
             if (ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Category.Equals("Gaming Headsets"))
-                list.Add(new Specifications("Microphone", MicrphoneToString()));
+                list.Add(new Specifications("Microphone", BoolToStringView(ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Microphone.HasValue && ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Microphone == true)));
 
             if (ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Category.Equals("Mices"))
                 list.Add(new Specifications("DPI", ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.dpi.ToString()));
@@ -102,10 +109,12 @@ namespace ComputerPeripheralsShop.ViewModels
             using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
             {
                 int count_of_orders = context.Order.Count<Order>();
-                ComputerPeripheralsShop.Models.CurrentOrderList.CurOrderList.Add(new Order_List(Product_Id, count_of_orders, ComputerPeripheralsShop.Models.CurrentOrderList.CurOrderList.Count));
-                /*context.Order_List.Add(new Order_List(Product_Id, count_of_orders));*/
+                ObservableCollection<Order_List> curOrderList = ComputerPeripheralsShop.Models.CurrentOrderList.CurOrderList;
+                curOrderList.Add(new Order_List(Product_Id, count_of_orders, ComputerPeripheralsShop.Models.CurrentOrderList.CurOrderList.Count));
+                ComputerPeripheralsShop.Models.CurrentOrderList.CurOrderList = curOrderList;
                 /* context.Product.Find(Product_Id).Number_on_warehouse -= 1;
                  context.SaveChanges();*/
+
             }
         }
 
@@ -140,25 +149,9 @@ namespace ComputerPeripheralsShop.ViewModels
 
         }
 
-        public static string BacklightToString()
+        public static string BoolToStringView(bool value)
         {
-            if (ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Backlight)
-                return "Yes";
-            else
-                return "No";
-        }
-
-        public static string GamingModeToString()
-        {
-            if (ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Gaming_mode)
-                return "Yes";
-            else
-                return "No";
-        }
-
-        public static string MicrphoneToString()
-        {
-            if (ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Microphone.HasValue && ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Microphone == true)
+            if (value)
                 return "Yes";
             else
                 return "No";

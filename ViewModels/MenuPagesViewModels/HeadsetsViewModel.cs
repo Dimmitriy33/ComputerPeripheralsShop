@@ -33,7 +33,7 @@ namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
                     using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
                     {
                         ComputerPeripheralsShop.Models.CurrentProduct.currentProduct = (from product in context.Product
-                                                                                        where product.Model.Equals("Pro X")
+                                                                                        where product.Model.Equals("Pro X") && product.Category.Equals("Gaming Headsets")
                                                                                         select product).Single<Product>();
                     }
                 }
