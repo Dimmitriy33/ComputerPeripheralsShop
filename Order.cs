@@ -14,14 +14,20 @@ namespace ComputerPeripheralsShop
     
     public partial class Order
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Order()
+        {
+            this.Order_List = new HashSet<Order_List>();
+        }
+    
         public int Order_Id { get; set; }
         public int User_Id { get; set; }
-        public int Order_List_Id { get; set; }
         public System.DateTime Order_Date { get; set; }
         public decimal Total_Price { get; set; }
         public int Items_Number { get; set; }
     
-        public virtual Order_List Order_List { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order_List> Order_List { get; set; }
         public virtual User User { get; set; }
     }
 }

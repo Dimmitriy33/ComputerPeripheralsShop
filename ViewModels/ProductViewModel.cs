@@ -1,6 +1,10 @@
-﻿using ComputerPeripheralsShopModel.ViewModels.Base;
+﻿using ComputerPeripheralsShopModel.ViewModels;
+using ComputerPeripheralsShopModel.ViewModels.Base;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -8,8 +12,19 @@ namespace ComputerPeripheralsShop.ViewModels
 {
     internal class ProductViewModel : ViewModel
     {
-        /* public int Product_Id
-         => ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Product_Id;
+        public ICommand BuyCommand { get; }
+
+        public ProductViewModel()
+        {
+            BuyCommand = new CommandViewModel(executeBuyCommand);
+        }
+
+
+        public int Product_Id
+        {
+            get => ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Product_Id;
+        }
+        /*
          public string Category
          => ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Category;
          public string Manufacturer
@@ -34,7 +49,8 @@ namespace ComputerPeripheralsShop.ViewModels
          public bool Gaming_mode
          => ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Gaming_mode;
          public decimal Price
-         => ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Price;*/
+         => ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Price;
+        */
         public int Number_on_warehouse
         => ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Number_on_warehouse;
         public string Model
@@ -76,10 +92,21 @@ namespace ComputerPeripheralsShop.ViewModels
             if (ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Category.Equals("Mices"))
                 list.Add(new Specifications("DPI", ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.dpi.ToString()));
 
-            list.Add(new Specifications("Price", ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Price.ToString()));
+            list.Add(new Specifications("Price", Decimal.Round(ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Price).ToString() + "$"));
 
             return list;
 
+        }
+        private void executeBuyCommand()
+        {
+            using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
+            {
+                int count_of_orders = context.Order.Count<Order>();
+                ComputerPeripheralsShop.Models.CurrentOrderList.CurOrderList.Add(new Order_List(Product_Id, count_of_orders, ComputerPeripheralsShop.Models.CurrentOrderList.CurOrderList.Count));
+                /*context.Order_List.Add(new Order_List(Product_Id, count_of_orders));*/
+                /* context.Product.Find(Product_Id).Number_on_warehouse -= 1;
+                 context.SaveChanges();*/
+            }
         }
 
         private BitmapImage ImageFromBytearray(byte[] imageData)

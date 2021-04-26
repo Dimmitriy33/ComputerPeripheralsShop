@@ -10,8 +10,8 @@
     </Style>
 
     <Style x:Key="TableInternalGrid" TargetType="Grid">
-        <Setter Property="Background" Value="#f0f0f0"/>
-        <Setter Property="Margin" Value="150 0"/>
+        <!--<Setter Property="Background" Value="#f0f0f0"/>-->
+        <Setter Property="Margin" Value="50 0"/>
     </Style>
 
     <Style x:Key="HeaderText" TargetType="TextBlock">
@@ -44,7 +44,7 @@
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="FontWeight" Value="Normal"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
-        <Setter Property="Padding" Value="30 10"/>
+        <Setter Property="Padding" Value="20 10"/>
     </Style>
 
     <Style x:Key="ListTextColumnName" TargetType="TextBlock">
@@ -55,7 +55,7 @@
         <Setter Property="FontSize" Value="24"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
-        <Setter Property="Padding" Value="150 15 30 10"/>
+        <Setter Property="Padding" Value="80 15 30 10"/>
     </Style>
 
     <Style x:Key="ListTextColumnValue" TargetType="TextBlock">
@@ -66,7 +66,89 @@
         <Setter Property="FontSize" Value="22"/>
         <Setter Property="FontWeight" Value="Normal"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
-        <Setter Property="Padding" Value="150 15 50 10"/>
+        <Setter Property="Padding" Value="70 15 10 10"/>
+    </Style>
+
+    <Style x:Key="ButtonCommentStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#242424"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="fonts/#Brown Bold"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Padding" Value="10 10"/>
+    </Style>
+    
+    <Style x:Key="PictureStyle1" TargetType="Image">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="RoundCorner" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="#FFEEEEEE"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Width" Value="130"/>
+        <Setter Property="Height" Value="60"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="15 7"/>
+        <Setter Property="Cursor" Value="Hand"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="grid">
+                        <Border x:Name="border" CornerRadius="8" BorderBrush="#a20520" BorderThickness="2">
+                            <Border.Background>
+                                <RadialGradientBrush GradientOrigin="0.496,1.052">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform CenterX="0.5" CenterY="0.5" 
+                                                        ScaleX="1.5" ScaleY="1.5"/>
+                                            <TranslateTransform X="0.02" Y="0.3"/>
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="1" Color="#a20520"/>
+                                    <GradientStop Offset="0.3" Color="#a80524"/>
+                                </RadialGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          TextElement.FontWeight="Bold">
+                            </ContentPresenter>
+                        </Border>
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border">
+                                <Setter.Value>
+                                    <RadialGradientBrush GradientOrigin="0.496,1.052">
+                                        <RadialGradientBrush.RelativeTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.5" ScaleY="1.5"/>
+                                                <TranslateTransform X="0.02" Y="0.3"/>
+                                            </TransformGroup>
+                                        </RadialGradientBrush.RelativeTransform>
+                                        <GradientStop Color="#f7284b" Offset="1"/>
+                                        <GradientStop Color="#e7284b" Offset="0.3"/>
+                                    </RadialGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="#f7284b"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" TargetName="grid" Value="0.25"/>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
 </ResourceDictionary>

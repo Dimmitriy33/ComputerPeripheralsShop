@@ -10,22 +10,10 @@
 namespace ComputerPeripheralsShop
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Order_List
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public Order_List(int product_id, int order_id, int order_list_id)
-        {
-            this.Product_Id = product_id;
-            this.Order_Id = order_id;
-            this.Order_List_Id = order_list_id;
-        }
-
-        public int Product_Id { get; set; }
-        public int Order_Id { get; set; }
-        public int Order_List_Id { get; set; }
-    
-        public virtual Order Order { get; set; }
-        public virtual Product Product { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

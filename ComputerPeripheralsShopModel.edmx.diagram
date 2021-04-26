@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="cce8a300b8394640b14f5472ef3546d6" Name="Diagram1">
-        <EntityTypeShape EntityType="ComputerPeripheralsShopModel.Order" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ComputerPeripheralsShopModel.Order_List" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ComputerPeripheralsShopModel.Product" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ComputerPeripheralsShopModel.sysdiagrams" Width="1.5" PointX="9.5" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ComputerPeripheralsShopModel.User" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
-        <AssociationConnector Association="ComputerPeripheralsShopModel.FK_Order_Order_List" ManuallyRouted="false" />
+      <Diagram DiagramId="00b82d0f33294ff9a32fe3362c97e4fb" Name="Diagram1">
+        <EntityTypeShape EntityType="ComputerPeripheralsShopModel.Order" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerPeripheralsShopModel.Order_List" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerPeripheralsShopModel.Product" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerPeripheralsShopModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerPeripheralsShopModel.User" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="ComputerPeripheralsShopModel.FK_Order_List_Order" ManuallyRouted="false" />
         <AssociationConnector Association="ComputerPeripheralsShopModel.FK_Order_User" ManuallyRouted="false" />
         <AssociationConnector Association="ComputerPeripheralsShopModel.FK_Order_List_Product" ManuallyRouted="false" />
       </Diagram>

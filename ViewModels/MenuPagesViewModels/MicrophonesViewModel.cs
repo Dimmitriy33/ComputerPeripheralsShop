@@ -1,6 +1,7 @@
 ﻿using ComputerPeripheralsShop;
 using ComputerPeripheralsShopModel.ViewModels.Base;
 using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
@@ -27,12 +28,9 @@ namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
                     (window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}", "Views/Pages/", "Product", ".xaml"), UriKind.RelativeOrAbsolute));
                     using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
                     {
-                        foreach (var el in context.Product)
-                        {
-                            if (el.Model.Equals("SoloCast"))
-                                ComputerPeripheralsShop.Models.CurrentProduct.currentProduct = el;
-                        }
-
+                        ComputerPeripheralsShop.Models.CurrentProduct.currentProduct = (from product in context.Product
+                                                                                        where product.Model.Equals("SoloCast")
+                                                                                        select product).Single<Product>();
                     }
                 }
             }
@@ -48,12 +46,9 @@ namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
                     (window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}", "Views/Pages/", "Product", ".xaml"), UriKind.RelativeOrAbsolute));
                     using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
                     {
-                        foreach (var el in context.Product)
-                        {
-                            if (el.Model.Equals("QuadCast"))
-                                ComputerPeripheralsShop.Models.CurrentProduct.currentProduct = el;
-                        }
-
+                        ComputerPeripheralsShop.Models.CurrentProduct.currentProduct = (from product in context.Product
+                                                                                        where product.Model.Equals("QuadCast")
+                                                                                        select product).Single<Product>();
                     }
                 }
             }

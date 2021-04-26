@@ -13,11 +13,11 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="4*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Style="{StaticResource HeaderGrid}" >
@@ -45,28 +45,74 @@
 
         <Grid Grid.Row="5">
             <Grid Style="{StaticResource TableInternalGrid}">
-                <ItemsControl ItemsSource="{Binding SpecificationsList}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="1*"/>
-                                    <ColumnDefinition Width="1*"/>
-                                </Grid.ColumnDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
 
-                                <Grid Grid.Column="0">
-                                    <TextBlock Style="{StaticResource ListTextColumnName}" Text="{Binding Name}"/>
-                                </Grid>
+                <Grid Grid.Column="0" Margin="0 50">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
 
-                                <Grid Grid.Column="1">
-                                    <TextBlock Style="{StaticResource ListTextColumnValue}" Text="{Binding Value}"/>
+                    <Grid Grid.Row="0">
+                        <Image Source="{Binding Picture_Main}" Margin="10 0 0 0"/>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <Button Style="{StaticResource RoundCorner}" Command="{Binding BuyCommand}" CommandParameter="{Binding Product_Id}" Content="Add to basket"/>
+                        </Grid>
+
+                        <Grid Grid.Row="1" Margin="70 0 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Style="{StaticResource ButtonCommentStyle}" Grid.Column="0" Text="In warehouse: " HorizontalAlignment="Right"/>
+                            <TextBlock Style="{StaticResource ButtonCommentStyle}" Grid.Column="1" Text="{Binding Number_on_warehouse}" HorizontalAlignment="Left"/> 
+                        
+                        </Grid>
+
+
+
+                    </Grid>
+
+                </Grid>
+
+                <Grid Grid.Column="1" Margin="0 50">
+                    <ItemsControl ItemsSource="{Binding SpecificationsList}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Column="0">
+                                        <TextBlock Style="{StaticResource ListTextColumnName}" Text="{Binding Name}"/>
+                                    </Grid>
+
+                                    <Grid Grid.Column="1">
+                                        <TextBlock Style="{StaticResource ListTextColumnValue}" Text="{Binding Value}"/>
+                                    </Grid>
+
                                 </Grid>
-                                
-                            </Grid>        
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
             </Grid>
         </Grid>
+        
+        
     </Grid>
 </Page>
