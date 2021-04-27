@@ -24,16 +24,17 @@
                                     <Grid Height="50">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="1*"/>
-                                            <ColumnDefinition Width="7*"/>
+                                            <ColumnDefinition Width="6*"/>
                                         </Grid.ColumnDefinitions>
 
                                         <Grid Grid.Column="0" VerticalAlignment="Center">
-                                            <materialDesign:PackIcon Width="25" Height="25" Kind="Key" Padding="10 0"/>
+                                            <materialDesign:PackIcon Width="25" Height="25" Kind="Key"/>
                                         </Grid>
                                         <Grid Grid.Column="1" VerticalAlignment="Center">
                                             <TextBlock Padding="10 0 0 0" FontSize="16" Text="{Binding ProductModel}" TextWrapping="Wrap"/>
                                         </Grid>
-                                    </Grid>
+
+                                        </Grid>
                                 </StackPanel>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>

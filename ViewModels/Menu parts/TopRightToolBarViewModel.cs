@@ -1,6 +1,7 @@
 ﻿using ComputerPeripheralsShop.Views.Windows;
 using ComputerPeripheralsShopModel.ViewModels.Base;
 using ComputerPeripheralsShopModel.Views.Windows;
+using System;
 using System.Windows;
 using System.Windows.Input;
 
@@ -33,7 +34,13 @@ namespace ComputerPeripheralsShopModel.ViewModels
 
         private void ExecuteBasketCommand()
         {
-
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(MainWindow))
+                {
+                    (window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}", "Views/Pages/", "Basket", ".xaml"), UriKind.RelativeOrAbsolute));
+                }
+            }
         }
 
         private void ExecuteCreateAccount()

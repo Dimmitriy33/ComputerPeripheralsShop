@@ -19,7 +19,15 @@ namespace ComputerPeripheralsShop
         {
             this.Order_List = new HashSet<Order_List>();
         }
-    
+
+        public Order(int user_Id, DateTime order_Date, decimal total_Price, int items_Number)
+        {
+            this.User_Id = user_Id;
+            this.Order_Date = order_Date;
+            this.Total_Price = total_Price;
+            this.Items_Number = items_Number;
+        }
+
         public int Order_Id { get; set; }
         public int User_Id { get; set; }
         public System.DateTime Order_Date { get; set; }

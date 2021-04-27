@@ -153,6 +153,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ResourceDictionaries\BasketDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ResourceDictionaries\MenuPagesDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -170,6 +174,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\BasketToolBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Basket.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -277,6 +285,7 @@
     </Compile>
     <Compile Include="Models\Authentication\Account.cs" />
     <Compile Include="Models\Authentication\IAuthentication.cs" />
+    <Compile Include="Models\BasketModel.cs" />
     <Compile Include="Models\CurrentOrderList.cs" />
     <Compile Include="Models\CurrentProduct.cs" />
     <Compile Include="Order.cs">
@@ -302,6 +311,8 @@
     </Compile>
     <Compile Include="ViewModels\Account parts\CreateAccountViewModel.cs" />
     <Compile Include="ViewModels\Base\CommandViewModel.cs" />
+    <Compile Include="ViewModels\Base\RelayCommand.cs" />
+    <Compile Include="ViewModels\BasketViewModel.cs" />
     <Compile Include="ViewModels\LoadingWindowViewModel.cs" />
     <Compile Include="ViewModels\Account parts\LoginWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
@@ -321,6 +332,9 @@
     <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="Views\BasketToolBar.xaml.cs">
       <DependentUpon>BasketToolBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Basket.xaml.cs">
+      <DependentUpon>Basket.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\MenuPages\AboutUs.xaml.cs">
       <DependentUpon>AboutUs.xaml</DependentUpon>
