@@ -9,6 +9,8 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
     internal class AccountViewModel : ViewModel
     {
         public AccountModel account;
+        private bool _visibilityIsAdmin;
+
 
         public ICommand SaveChanges { get; }
         public ICommand RechargeTheBalance { get; }
@@ -18,6 +20,16 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
             this.account = new AccountModel();
             this.SaveChanges = new CommandViewModel(executeSaveChanges);
             this.RechargeTheBalance = new CommandViewModel(executeRechargeTheBalance);
+            this.VisibilityIsAdmin = ComputerPeripheralsShopModel.Models.Authentication.Account.curUser.IsAdmin;
+        }
+        public bool VisibilityIsAdmin
+        {
+            get => _visibilityIsAdmin;
+            set
+            {
+                _visibilityIsAdmin = value;
+                OnPropertyChanged("VisibilityIsAdmin");
+            }
         }
 
 
@@ -109,12 +121,38 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
             }
         }
 
+        public string IsAdminString
+        {
+            get
+            {
+                if (IsAdmin)
+                    return "Yes";
+                else
+                    return "No";
+            }
+            set
+            {
+                if (value.Equals("Yes"))
+                    IsAdmin = true;
+                else
+                    IsAdmin = false;
+
+            }
+        }
+
         private void executeSaveChanges()
         {
             using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
             {
                 context.User.FirstOrDefault(i => i.User_Id == User_Id).Login = Username;
-                context.User.FirstOrDefault(i => i.User_Id == User_Id).Password_hash = account.GetHashEncryption(account.PasswordString);
+                try
+                {
+                    context.User.FirstOrDefault(i => i.User_Id == User_Id).Password_hash = account.GetHashEncryption(account.PasswordString);
+                }
+                catch
+                {
+                    // else password will be without any changes
+                }
                 context.User.FirstOrDefault(i => i.User_Id == User_Id).Name = Name;
                 context.User.FirstOrDefault(i => i.User_Id == User_Id).Surname = Surname;
                 context.User.FirstOrDefault(i => i.User_Id == User_Id).Address = Address;

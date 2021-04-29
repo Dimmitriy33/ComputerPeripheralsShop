@@ -53,12 +53,12 @@
                     <TextBlock Style="{StaticResource MainText2}" Text="Balance: "/>
                     <TextBox x:Name="Balance" Style="{StaticResource TextBoxStyle1}" IsEnabled="False" Text="{Binding Balance, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
-                <StackPanel Margin="0 15" Orientation="Horizontal" Visibility="{Binding Path=BorderVisible, Converter={StaticResource BooleanToVisibilityConverter} }">
+                <StackPanel Margin="0 15" Orientation="Horizontal" Visibility="{Binding Path=VisibilityIsAdmin, Converter={StaticResource BooleanToVisibilityConverter} }">
                     <materialDesign:PackIcon Kind="Head" VerticalAlignment="Center" Foreground="#707070" Width="25" Height="25"/>
                     <TextBlock Style="{StaticResource MainText2}" Text="Admin: "/>
-                    <TextBox x:Name="IsAdmin" Style="{StaticResource TextBoxStyle1}" IsEnabled="False" Text="{Binding IsAdmin, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox x:Name="IsAdmin" Style="{StaticResource TextBoxStyle1}" IsEnabled="False" Text="{Binding IsAdminString, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" Margin="20 30">
                     <Button Style="{StaticResource ButtonStyle2}" Command="{Binding RechargeTheBalance}" Margin="50 0" MinWidth="160" Width="200" Content="Recharge the balance"/>
                     <Button Style="{StaticResource ButtonStyle2}" Command="{Binding SaveChanges}" Content="Save changes"/>
                 </StackPanel>
