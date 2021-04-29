@@ -17,7 +17,7 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="FontFamily" Value="fonts/#Brown Bold"/>
-        <Setter Property="FontSize" Value="40"/>
+        <Setter Property="FontSize" Value="48"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
         <Setter Property="Padding" Value="50 10"/>

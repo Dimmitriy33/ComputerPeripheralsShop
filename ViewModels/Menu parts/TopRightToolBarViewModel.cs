@@ -12,7 +12,7 @@ namespace ComputerPeripheralsShopModel.ViewModels
         public ICommand CloseCommand { get; }
         public ICommand ResizeCommand { get; }
         public ICommand CollapseCommand { get; }
-        public ICommand LanguageCommand { get; }
+        public ICommand AccountCommand { get; }
         public ICommand ThemeCommand { get; }
         public ICommand LoginCommand { get; }
         public ICommand CreateAccountCommand { get; }
@@ -25,7 +25,7 @@ namespace ComputerPeripheralsShopModel.ViewModels
             CloseCommand = new CommandViewModel(ExecuteClose);
             ResizeCommand = new CommandViewModel(ExecuteResize);
             CollapseCommand = new CommandViewModel(ExecuteCollapse);
-            LanguageCommand = new CommandViewModel(ExecuteLanguage);
+            AccountCommand = new CommandViewModel(ExecuteAccount);
             ThemeCommand = new CommandViewModel(ExecuteTheme);
             LoginCommand = new CommandViewModel(ExecuteLogin);
             CreateAccountCommand = new CommandViewModel(ExecuteCreateAccount);
@@ -59,8 +59,24 @@ namespace ComputerPeripheralsShopModel.ViewModels
         {
         }
 
-        private void ExecuteLanguage()
+        private void ExecuteAccount()
         {
+            if (ComputerPeripheralsShopModel.Models.Authentication.Account.curUser != null)
+            {
+                foreach (Window window in Application.Current.Windows)
+                {
+                    if (window.GetType() == typeof(MainWindow))
+                    {
+                        /*(window as MainWindow).MainWindowFrame.Navigate(new Uri(SubName, UriKind.RelativeOrAbsolute));*/
+                        (window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}", "Views/Pages/", "Account", ".xaml"), UriKind.RelativeOrAbsolute));
+                    }
+                }
+            }
+            else
+            {
+                Window loginWindow = new LoginWindow();
+                loginWindow.Show();
+            }
         }
 
         private void ExecuteCollapse()

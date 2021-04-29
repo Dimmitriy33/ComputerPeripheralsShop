@@ -64,8 +64,8 @@
 
             <Grid Grid.Column="1">
                 <Button x:Name="Language" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
-                        Background="Transparent" BorderThickness="0" Command="{Binding LanguageCommand}">
-                    <materialDesign:PackIcon Kind="Language" Width="20" Height="20"/>
+                        Background="Transparent" BorderThickness="0" Command="{Binding AccountCommand}">
+                    <materialDesign:PackIcon Kind="Account" Width="23" Height="23"/>
                 </Button>
             </Grid>
 

@@ -177,6 +177,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Pages\Account.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Pages\Basket.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -283,11 +287,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ComputerPeripheralsShopModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\Authentication\Account.cs" />
     <Compile Include="Models\Authentication\IAuthentication.cs" />
     <Compile Include="Models\BasketModel.cs" />
     <Compile Include="Models\CurrentOrderList.cs" />
     <Compile Include="Models\CurrentProduct.cs" />
+    <Compile Include="Models\Model.cs" />
     <Compile Include="Order.cs">
       <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
     </Compile>
@@ -309,6 +315,7 @@
     <Compile Include="User.cs">
       <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\Account parts\AccountViewModel.cs" />
     <Compile Include="ViewModels\Account parts\CreateAccountViewModel.cs" />
     <Compile Include="ViewModels\Base\CommandViewModel.cs" />
     <Compile Include="ViewModels\Base\RelayCommand.cs" />
@@ -332,6 +339,9 @@
     <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="Views\BasketToolBar.xaml.cs">
       <DependentUpon>BasketToolBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Account.xaml.cs">
+      <DependentUpon>Account.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\Basket.xaml.cs">
       <DependentUpon>Basket.xaml</DependentUpon>
