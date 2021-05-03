@@ -16,10 +16,7 @@ namespace ComputerPeripheralsShopModel.ViewModels
         private string _password = "";
         public string Username
         {
-            get
-            {
-                return _username;
-            }
+            get => _username;
             set
             {
                 _username = value;
@@ -29,10 +26,7 @@ namespace ComputerPeripheralsShopModel.ViewModels
 
         public string Password
         {
-            get
-            {
-                return _password;
-            }
+            get => _password;
             set
             {
                 _password = value;
