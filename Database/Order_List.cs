@@ -7,12 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ComputerPeripheralsShop
+namespace ComputerPeripheralsShop.Database
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    
+
     public partial class Order_List
     {
         public Order_List(int product_id, int order_id, int order_list_id)
@@ -21,11 +21,10 @@ namespace ComputerPeripheralsShop
             this.Order_Id = order_id;
             this.Order_List_Id = order_list_id;
         }
-
         public int Product_Id { get; set; }
         public int Order_Id { get; set; }
         public int Order_List_Id { get; set; }
-    
+
         public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }
 
@@ -39,8 +38,8 @@ namespace ComputerPeripheralsShop
                             where product.Product_Id.Equals(Product_Id)
                             select product.Manufacturer).Single<string>() + " " +
                             (from product in context.Product
-                            where product.Product_Id.Equals(Product_Id)
-                            select product.Model).Single<string>();
+                             where product.Product_Id.Equals(Product_Id)
+                             select product.Model).Single<string>();
                 }
             }
         }

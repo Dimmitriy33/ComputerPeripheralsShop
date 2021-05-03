@@ -1,4 +1,5 @@
-﻿using ComputerPeripheralsShopModel.ViewModels;
+﻿using ComputerPeripheralsShop.Database;
+using ComputerPeripheralsShopModel.ViewModels;
 using ComputerPeripheralsShopModel.ViewModels.Base;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -11,10 +12,7 @@ namespace ComputerPeripheralsShop.ViewModels.Menu_parts
         private int product_id;
         public int Product_Id
         {
-            get
-            {
-                return product_id;
-            }
+            get => product_id;
             set
             {
                 product_id = value;

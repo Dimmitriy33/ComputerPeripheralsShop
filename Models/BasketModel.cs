@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using ComputerPeripheralsShop.Database;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -28,10 +29,7 @@ namespace ComputerPeripheralsShop.Models
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public virtual void OnPropertyChanged([CallerMemberName] string PropertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
-        }
+        public virtual void OnPropertyChanged([CallerMemberName] string PropertyName = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
 
         //обновление нескольких свойств(например)
         public virtual bool set<T>(ref T field, T value, [CallerMemberName] string PropertyName = null)

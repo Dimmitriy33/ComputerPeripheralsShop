@@ -272,20 +272,35 @@
     <Compile Include="Components\BindablePasswordBox.xaml.cs">
       <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ComputerPeripheralsShopModel.Context.cs">
+    <Compile Include="Database\ComputerPeripheralsShopModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ComputerPeripheralsShopModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ComputerPeripheralsShopModel.cs">
+    <Compile Include="Database\ComputerPeripheralsShopModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ComputerPeripheralsShopModel.Designer.cs">
+    <Compile Include="Database\ComputerPeripheralsShopModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ComputerPeripheralsShopModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Order.cs">
+      <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Order_List.cs">
+      <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Product.cs">
+      <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\sysdiagrams.cs">
+      <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\User.cs">
+      <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\Authentication\Account.cs" />
@@ -306,27 +321,6 @@
     <Compile Include="Models\DataAccess\UnitOfWork.cs" />
     <Compile Include="Models\Model.cs" />
     <Compile Include="Models\Products\ProductsMenuModel.cs" />
-    <Compile Include="Order.cs">
-      <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Order_List.cs">
-      <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Product.cs">
-      <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="User.cs">
-      <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="ViewModels\Account parts\AccountViewModel.cs" />
     <Compile Include="ViewModels\Account parts\CreateAccountViewModel.cs" />
     <Compile Include="ViewModels\Base\CommandViewModel.cs" />
@@ -439,11 +433,11 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EntityDeploy Include="ComputerPeripheralsShopModel.edmx">
+    <EntityDeploy Include="Database\ComputerPeripheralsShopModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ComputerPeripheralsShopModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ComputerPeripheralsShopModel.edmx.diagram">
+    <None Include="Database\ComputerPeripheralsShopModel.edmx.diagram">
       <DependentUpon>ComputerPeripheralsShopModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -547,19 +541,19 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Content Include="ComputerPeripheralsShopModel.Context.tt">
+    <Content Include="Database\ComputerPeripheralsShopModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ComputerPeripheralsShopModel.edmx</DependentUpon>
       <LastGenOutput>ComputerPeripheralsShopModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ComputerPeripheralsShopModel.tt">
+    <Content Include="Database\ComputerPeripheralsShopModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ComputerPeripheralsShopModel.edmx</DependentUpon>
       <LastGenOutput>ComputerPeripheralsShopModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

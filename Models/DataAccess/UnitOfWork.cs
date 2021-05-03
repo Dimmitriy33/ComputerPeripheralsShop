@@ -1,4 +1,5 @@
-﻿using ComputerPeripheralsShop.Models.DataAccess.repositories;
+﻿using ComputerPeripheralsShop.Database;
+using ComputerPeripheralsShop.Models.DataAccess.repositories;
 using System;
 
 namespace ComputerPeripheralsShop.Models.DataAccess

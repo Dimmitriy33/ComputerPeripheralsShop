@@ -7,35 +7,42 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ComputerPeripheralsShop
+namespace ComputerPeripheralsShop.Database
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Order()
+        public Product()
         {
             this.Order_List = new HashSet<Order_List>();
         }
-
-        public Order(int user_Id, DateTime order_Date, decimal total_Price, int items_Number)
-        {
-            this.User_Id = user_Id;
-            this.Order_Date = order_Date;
-            this.Total_Price = total_Price;
-            this.Items_Number = items_Number;
-        }
-
-        public int Order_Id { get; set; }
-        public int User_Id { get; set; }
-        public System.DateTime Order_Date { get; set; }
-        public decimal Total_Price { get; set; }
-        public int Items_Number { get; set; }
+    
+        public int Product_Id { get; set; }
+        public string Category { get; set; }
+        public string Manufacturer { get; set; }
+        public string Model { get; set; }
+        public string Type { get; set; }
+        public string Connection_Type { get; set; }
+        public string Weight { get; set; }
+        public bool Backlight { get; set; }
+        public string Height { get; set; }
+        public string Width { get; set; }
+        public Nullable<int> dpi { get; set; }
+        public Nullable<bool> Microphone { get; set; }
+        public bool Gaming_mode { get; set; }
+        public decimal Price { get; set; }
+        public int Number_on_warehouse { get; set; }
+        public byte[] Picture_Main { get; set; }
+        public byte[] Picture1 { get; set; }
+        public byte[] Picture2 { get; set; }
+        public string Description { get; set; }
+        public string ShortDescription { get; set; }
+        public byte[] MenuPicture { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order_List> Order_List { get; set; }
-        public virtual User User { get; set; }
     }
 }

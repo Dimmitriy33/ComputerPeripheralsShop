@@ -1,4 +1,5 @@
-﻿using ComputerPeripheralsShop.Models.DataAccess.interfaces.@base;
+﻿using ComputerPeripheralsShop.Database;
+using ComputerPeripheralsShop.Models.DataAccess.interfaces.@base;
 
 namespace ComputerPeripheralsShop.Models.DataAccess.interfaces
 {

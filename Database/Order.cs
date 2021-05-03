@@ -7,40 +7,35 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ComputerPeripheralsShop
+namespace ComputerPeripheralsShop.Database
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public Order()
         {
-            this.Order = new HashSet<Order>();
+            this.Order_List = new HashSet<Order_List>();
         }
 
-        public User(string login, byte[] password_hash, string name, string surname, string address)
+        public Order(int user_Id, DateTime order_Date, decimal total_Price, int items_Number)
         {
-            this.Login = login;
-            this.Password_hash = password_hash;
-            this.Balance = 0;
-            this.IsAdmin = false;
-            this.Name = name;
-            this.Surname = surname;
-            this.Address = address;
+            this.User_Id = user_Id;
+            this.Order_Date = order_Date;
+            this.Total_Price = total_Price;
+            this.Items_Number = items_Number;
         }
 
+        public int Order_Id { get; set; }
         public int User_Id { get; set; }
-        public string Login { get; set; }
-        public byte[] Password_hash { get; set; }
-        public decimal Balance { get; set; }
-        public bool IsAdmin { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public string Address { get; set; }
+        public System.DateTime Order_Date { get; set; }
+        public decimal Total_Price { get; set; }
+        public int Items_Number { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Order { get; set; }
+        public virtual ICollection<Order_List> Order_List { get; set; }
+        public virtual User User { get; set; }
     }
 }

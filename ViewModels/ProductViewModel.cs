@@ -1,4 +1,5 @@
-﻿using ComputerPeripheralsShopModel.ViewModels;
+﻿using ComputerPeripheralsShop.Database;
+using ComputerPeripheralsShopModel.ViewModels;
 using ComputerPeripheralsShopModel.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,7 @@ namespace ComputerPeripheralsShop.ViewModels
         }
 
 
-        public int Product_Id
-        {
-            get => ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Product_Id;
-        }
+        public int Product_Id => ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Product_Id;
         /*
          public string Category
          => ComputerPeripheralsShop.Models.CurrentProduct.currentProduct.Category;

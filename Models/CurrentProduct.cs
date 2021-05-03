@@ -1,4 +1,4 @@
-﻿using ComputerPeripheralsShopModel;
+﻿using ComputerPeripheralsShop.Database;
 
 namespace ComputerPeripheralsShop.Models
 {

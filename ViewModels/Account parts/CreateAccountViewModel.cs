@@ -1,5 +1,5 @@
-﻿using ComputerPeripheralsShop.Views.Windows;
-using ComputerPeripheralsShopModel;
+﻿using ComputerPeripheralsShop.Database;
+using ComputerPeripheralsShop.Views.Windows;
 using ComputerPeripheralsShopModel.ViewModels;
 using ComputerPeripheralsShopModel.ViewModels.Base;
 using System.Security.Cryptography;
@@ -20,10 +20,7 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
         private bool _agree = false;
         public string Username
         {
-            get
-            {
-                return _username;
-            }
+            get => _username;
             set
             {
                 _username = value;
@@ -33,10 +30,7 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
 
         public string Password
         {
-            get
-            {
-                return _password;
-            }
+            get => _password;
             set
             {
                 _password = value;
@@ -46,10 +40,7 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
 
         public string Name
         {
-            get
-            {
-                return _name;
-            }
+            get => _name;
             set
             {
                 _name = value;
@@ -59,10 +50,7 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
 
         public string Surname
         {
-            get
-            {
-                return _surname;
-            }
+            get => _surname;
             set
             {
                 _surname = value;
@@ -72,10 +60,7 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
 
         public string Address
         {
-            get
-            {
-                return _address;
-            }
+            get => _address;
             set
             {
                 _address = value;
@@ -85,10 +70,7 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
 
         public bool Agree
         {
-            get
-            {
-                return _agree;
-            }
+            get => _agree;
             set
             {
                 _agree = value;

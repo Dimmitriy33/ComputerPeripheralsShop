@@ -1,4 +1,5 @@
-﻿using ComputerPeripheralsShop.Models.DataAccess.interfaces;
+﻿using ComputerPeripheralsShop.Database;
+using ComputerPeripheralsShop.Models.DataAccess.interfaces;
 
 namespace ComputerPeripheralsShop.Models.DataAccess.repositories
 {

@@ -1,4 +1,5 @@
-﻿using ComputerPeripheralsShop.Models;
+﻿using ComputerPeripheralsShop.Database;
+using ComputerPeripheralsShop.Models;
 using ComputerPeripheralsShop.ViewModels.Base;
 using ComputerPeripheralsShopModel.ViewModels;
 using ComputerPeripheralsShopModel.ViewModels.Base;

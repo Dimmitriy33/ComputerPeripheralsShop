@@ -1,9 +1,10 @@
-﻿using ComputerPeripheralsShop;
+﻿using ComputerPeripheralsShop.Database;
 using ComputerPeripheralsShopModel.ViewModels.Base;
 using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
+using Application = System.Windows.Application;
 
 namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
 {
@@ -24,7 +25,6 @@ namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
             {
                 if (window.GetType() == typeof(MainWindow))
                 {
-                    /*(window as MainWindow).MainWindowFrame.Navigate(new Uri(SubName, UriKind.RelativeOrAbsolute));*/
                     (window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}", "Views/Pages/", "Product", ".xaml"), UriKind.RelativeOrAbsolute));
                     using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
                     {
@@ -42,7 +42,6 @@ namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
             {
                 if (window.GetType() == typeof(MainWindow))
                 {
-                    /*(window as MainWindow).MainWindowFrame.Navigate(new Uri(SubName, UriKind.RelativeOrAbsolute));*/
                     (window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}", "Views/Pages/", "Product", ".xaml"), UriKind.RelativeOrAbsolute));
                     using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
                     {
@@ -53,6 +52,17 @@ namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
                 }
             }
         }
+
+        /*private ObservableCollection<Product> _microphones;
+        public ObservableCollection<Product> Microphones { get => this._microphones; set => this._microphones = value; }
+
+        public MicrophonesViewModel()
+        {
+            using (var unitOfWork = new UnitOfWork())
+            {
+                Microphones = unitOfWork.ProductRepository.getMicrophones();
+            }
+        }*/
 
     }
 }

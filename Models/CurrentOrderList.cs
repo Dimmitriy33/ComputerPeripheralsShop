@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using ComputerPeripheralsShop.Database;
+using System.Collections.ObjectModel;
 
 namespace ComputerPeripheralsShop.Models
 {

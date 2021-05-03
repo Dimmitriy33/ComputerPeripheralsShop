@@ -1,4 +1,4 @@
-﻿using ComputerPeripheralsShop;
+﻿using ComputerPeripheralsShop.Database;
 
 namespace ComputerPeripheralsShopModel.Models.Authentication
 {

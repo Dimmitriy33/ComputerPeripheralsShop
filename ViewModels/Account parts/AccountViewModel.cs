@@ -1,4 +1,5 @@
-﻿using ComputerPeripheralsShop.Models;
+﻿using ComputerPeripheralsShop.Database;
+using ComputerPeripheralsShop.Models;
 using ComputerPeripheralsShopModel.ViewModels;
 using ComputerPeripheralsShopModel.ViewModels.Base;
 using System.Linq;
@@ -53,10 +54,7 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
         }
         public string Password
         {
-            get
-            {
-                return account.Password;
-            }
+            get => account.Password;
             set
             {
                 account.Password = value;
@@ -66,10 +64,7 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
 
         public string Name
         {
-            get
-            {
-                return account.Name;
-            }
+            get => account.Name;
             set
             {
                 account.Name = value;
@@ -79,10 +74,7 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
 
         public string Surname
         {
-            get
-            {
-                return account.Surname;
-            }
+            get => account.Surname;
             set
             {
                 account.Surname = value;
@@ -92,10 +84,7 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
 
         public string Address
         {
-            get
-            {
-                return account.Address;
-            }
+            get => account.Address;
             set
             {
                 account.Address = value;

@@ -1,4 +1,4 @@
-﻿using ComputerPeripheralsShop;
+﻿using ComputerPeripheralsShop.Database;
 using ComputerPeripheralsShop.Views.Windows;
 using ComputerPeripheralsShopModel.ViewModels.Base;
 using ComputerPeripheralsShopModel.Views.Windows;

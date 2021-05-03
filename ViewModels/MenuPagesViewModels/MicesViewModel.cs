@@ -1,4 +1,4 @@
-﻿using ComputerPeripheralsShop;
+﻿using ComputerPeripheralsShop.Database;
 using ComputerPeripheralsShopModel.ViewModels.Base;
 using System;
 using System.Linq;
