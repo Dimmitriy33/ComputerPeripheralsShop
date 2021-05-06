@@ -16,9 +16,7 @@
             <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ToggleButton}}" Value="True">
                 <Setter Property="Foreground" Value="#474a4a"/>
             </DataTrigger>
-            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ListBoxItem}}" Value="True">
-                <Setter Property="Foreground" Value="#474a4a"/>
-            </DataTrigger>
+            
             <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ToggleButton}}" Value="True">
                 <Setter Property="Foreground" Value="#474a4a"/>
             </DataTrigger>
@@ -149,8 +147,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                    <Border Padding="{Binding SubMenuPadding,ElementName=this,FallbackValue={StaticResource DefaultSubMenuPadding}, 
-                            TargetNullValue={StaticResource DefaultSubMenuPadding}}">
+                    <Border Padding="8 2">
                         <RadioButton x:Name="SubMenuButton" GroupName="SubMenu" Style="{StaticResource SideBarSubButtonStyle}" 
                                     Command="{Binding MoveToMenuPageCommand}" Content="{Binding SubName, FallbackValue=ItemName,TargetNullValue=ItemName}"/>
                     </Border>

@@ -1,4 +1,5 @@
 ﻿using ComputerPeripheralsShop.Database;
+using ComputerPeripheralsShop.Models.DataAccess;
 using ComputerPeripheralsShop.Views.Windows;
 using ComputerPeripheralsShopModel.ViewModels.Base;
 using ComputerPeripheralsShopModel.Views.Windows;
@@ -11,7 +12,6 @@ namespace ComputerPeripheralsShopModel.ViewModels
 {
     internal class LoginWindowViewModel : ViewModel
     {
-        ComputerPeripheralsShopEntities computerPeripheralsShopEntities = new ComputerPeripheralsShopEntities();
         private string _username = "";
         private string _password = "";
         public string Username
@@ -75,12 +75,11 @@ namespace ComputerPeripheralsShopModel.ViewModels
 
         private void executeLogin()
         {
-
-            using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
+            using (UnitOfWork context = new UnitOfWork())
             {
                 try
                 {
-                    foreach (User curentUser in context.User)
+                    foreach (User curentUser in context.UserRepository.AppContext.User)
                         if (_username.Equals(curentUser.Login) && (GetHashString(GetHashEncryption(Password)).Equals(GetHashString(curentUser.Password_hash))))
                         {
                             ComputerPeripheralsShopModel.Models.Authentication.Account.curUser = curentUser;
@@ -101,7 +100,6 @@ namespace ComputerPeripheralsShopModel.ViewModels
                 {
                     MessageBox.Show("The username or password is incorrect");
                 }
-
             }
 
         }

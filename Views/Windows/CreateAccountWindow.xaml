@@ -37,27 +37,27 @@
                 <StackPanel Margin="0 15" Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" Foreground="#707070"/>
                     <TextBox x:Name="Username" materialDesign:HintAssist.Hint="Username"
-                         FontSize="14" MinWidth="200" Margin="5" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
+                         FontSize="14" MinWidth="170" MaxWidth="200" Margin="5" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
                 <StackPanel Margin="0 5" Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Key" VerticalAlignment="Center" Foreground="#707070"/>
                     <components:BindablePasswordBox x:Name="Password" materialDesign:HintAssist.Hint="Password"
-                         FontSize="14" MinWidth="200" Margin="5" Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                         FontSize="14" MinWidth="170" MaxWidth="200" Margin="5" Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
                 </StackPanel>
                 <StackPanel Margin="0 15" Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="AlphaNBox" VerticalAlignment="Center" Foreground="#707070"/>
                     <TextBox x:Name="Name" materialDesign:HintAssist.Hint="Name"
-                         FontSize="14" MinWidth="200" Margin="5" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+                         FontSize="14" MinWidth="170" MaxWidth="200" Margin="5" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
                 <StackPanel Margin="0 15" Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="AlphaSBox" VerticalAlignment="Center" Foreground="#707070"/>
                     <TextBox x:Name="Surname" materialDesign:HintAssist.Hint="Surname"
-                         FontSize="14" MinWidth="200" Margin="5" Text="{Binding Surname, UpdateSourceTrigger=PropertyChanged}"/>
+                         FontSize="14" MinWidth="170" MaxWidth="200" Margin="5" Text="{Binding Surname, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
                 <StackPanel Margin="0 15" Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="AddressMarker" VerticalAlignment="Center" Foreground="#707070"/>
                     <TextBox x:Name="Address" materialDesign:HintAssist.Hint="Address"
-                         FontSize="14" MinWidth="200" Margin="5" Text="{Binding Address, UpdateSourceTrigger=PropertyChanged}"/>
+                         FontSize="14" MinWidth="170" MaxWidth="200" Margin="5" Text="{Binding Address, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
                 <CheckBox x:Name="Agree" Margin="5 10" IsChecked="{Binding Agree}">
                     <StackPanel>

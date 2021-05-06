@@ -4,14 +4,51 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-      xmlns:local="clr-namespace:ComputerPeripheralsShopModel.Views.Pages.MenuPages" 
+      xmlns:components="clr-namespace:ComputerPeripheralsShop.Components"
+      xmlns:local="clr-namespace:ComputerPeripheralsShopModel.Views.Pages.MenuPages"
       mc:Ignorable="d" 
       d:DesignHeight="1000" d:DesignWidth="800"
       Title="Microphones" Background="#242424" MinHeight="900">
 
     <Page.Resources>
-        <ResourceDictionary Source="/ResourceDictionaries/MenuPageItemsDictionary.xaml"/>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourceDictionaries/MenuPageItemsDictionary.xaml"/>
+                <ResourceDictionary Source="/ResourceDictionaries/BasketDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <components:ImageConverter x:Key="ConverterImg"/>
+        </ResourceDictionary>
     </Page.Resources>
+        
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" MinHeight="120" MaxHeight="150"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#a20520" x:Name="Header_Grid">
+            <TextBlock Style="{StaticResource MainText}" Text="Microphones"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <ItemsControl ItemsSource="{Binding Microphones, UpdateSourceTrigger=PropertyChanged}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid MinHeight="400" MaxHeight="500">
+                            <Grid.Background>
+                                <ImageBrush Opacity="0.5" ImageSource="{Binding MenuPicture, Converter={StaticResource ConverterImg}}"/>
+                            </Grid.Background>
+                            <StackPanel Margin="0 70 0 0 ">
+                                <TextBlock Style="{StaticResource ProductNameMenuTextStyle}" Text="{Binding Model}"/>
+                                <TextBlock Style="{StaticResource ProductNameMenuSmallTextStyle}" Text="{Binding ShortDescription}"/>
+                                <Button Style="{StaticResource RoundCorner}" Command="{Binding ElementName=Header_Grid, Path=DataContext.Info_Button, UpdateSourceTrigger=PropertyChanged}" CommandParameter="{Binding Product_Id}" Content="Learn more"/>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+    </Grid>
+    <!--
     <Border BorderThickness="0" >
         <Grid>
             <Grid.RowDefinitions>
@@ -61,4 +98,5 @@
             </Grid>
         </Grid>
     </Border>
+    -->
 </Page>

@@ -1,16 +1,17 @@
 ﻿using ComputerPeripheralsShop.Database;
+using ComputerPeripheralsShop.Models.DataAccess;
+using ComputerPeripheralsShop.ViewModels.Base;
 using ComputerPeripheralsShopModel.ViewModels.Base;
 using System;
-using System.Linq;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Input;
-using Application = System.Windows.Application;
 
 namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
 {
     internal class MicrophonesViewModel : ViewModel
     {
-        public ICommand QuadCast_InfoButton { get; }
+        /*public ICommand QuadCast_InfoButton { get; }
         public ICommand SoloCast_InfoButton { get; }
 
         public MicrophonesViewModel()
@@ -26,9 +27,9 @@ namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
                 if (window.GetType() == typeof(MainWindow))
                 {
                     (window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}", "Views/Pages/", "Product", ".xaml"), UriKind.RelativeOrAbsolute));
-                    using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
+                    using (UnitOfWork context = new UnitOfWork())
                     {
-                        ComputerPeripheralsShop.Models.CurrentProduct.currentProduct = (from product in context.Product
+                        ComputerPeripheralsShop.Models.CurrentProduct.currentProduct = (from product in context.ProductRepository.AppContext.Product
                                                                                         where product.Model.Equals("SoloCast")
                                                                                         select product).Single<Product>();
                     }
@@ -43,18 +44,20 @@ namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
                 if (window.GetType() == typeof(MainWindow))
                 {
                     (window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}", "Views/Pages/", "Product", ".xaml"), UriKind.RelativeOrAbsolute));
-                    using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
+                    using (UnitOfWork context = new UnitOfWork())
                     {
-                        ComputerPeripheralsShop.Models.CurrentProduct.currentProduct = (from product in context.Product
+                        ComputerPeripheralsShop.Models.CurrentProduct.currentProduct = (from product in context.ProductRepository.AppContext.Product
                                                                                         where product.Model.Equals("QuadCast")
                                                                                         select product).Single<Product>();
                     }
                 }
             }
-        }
+        }*/
 
-        /*private ObservableCollection<Product> _microphones;
+        private ObservableCollection<Product> _microphones;
         public ObservableCollection<Product> Microphones { get => this._microphones; set => this._microphones = value; }
+
+        public ICommand Info_Button { get; }
 
         public MicrophonesViewModel()
         {
@@ -62,7 +65,22 @@ namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
             {
                 Microphones = unitOfWork.ProductRepository.getMicrophones();
             }
-        }*/
+            Info_Button = new RelayCommand(executeInfo);
+        }
 
+        private void executeInfo(object obj)
+        {
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(MainWindow))
+                {
+                    (window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}", "Views/Pages/", "Product", ".xaml"), UriKind.RelativeOrAbsolute));
+                    using (UnitOfWork context = new UnitOfWork())
+                    {
+                        ComputerPeripheralsShop.Models.CurrentProduct.currentProduct = context.ProductRepository.getProductById((int)obj);
+                    }
+                }
+            }
+        }
     }
 }

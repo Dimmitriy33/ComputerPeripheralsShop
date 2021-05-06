@@ -10,11 +10,7 @@ namespace ComputerPeripheralsShopModel.ViewModels
 {
     internal class SideMenuViewModel : ViewModel
     {
-        public List<ItemMenu> MenuList
-        {
-            get
-            {
-                return new List<ItemMenu>
+        public List<ItemMenu> MenuList => new List<ItemMenu>
                 {
                     //Prodeucts
                     new ItemMenu("Products", PackIconKind.Devices,
@@ -54,8 +50,6 @@ namespace ComputerPeripheralsShopModel.ViewModels
                         new SubItem("Cooperation")
                     })
                 };
-            }
-        }
     }
 
     public class ItemMenu
@@ -79,29 +73,6 @@ namespace ComputerPeripheralsShopModel.ViewModels
         public PackIconKind Icon { get; private set; }
         public List<SubItem> SubItems { get; private set; }
         public UserControl Screen { get; private set; }
-
-        //ICommand to switch pages 
-
-        /*public ICommand MoveToMenuPageCommand { get; }
-        private void Execute()
-        {
-            string PageName = ItemName.Replace(" ", string.Empty);
-            if (!string.IsNullOrEmpty(PageName))
-                navigateToPage(PageName);
-        }
-
-        private void navigateToPage(string name)
-        {
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window.GetType() == typeof(MainWindow))
-                {
-                    (window as MainWindow).MainWindowFrame.Navigate(new Uri(name, UriKind.RelativeOrAbsolute));
-                    *//*(window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}","Pages/", name, ".xaml"), UriKind.RelativeOrAbsolute));*//*
-
-                }
-            }
-        }*/
     }
 
     public class SubItem

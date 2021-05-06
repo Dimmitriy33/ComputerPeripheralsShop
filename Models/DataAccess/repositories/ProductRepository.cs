@@ -1,6 +1,7 @@
 ﻿using ComputerPeripheralsShop.Database;
 using ComputerPeripheralsShop.Models.DataAccess.interfaces;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace ComputerPeripheralsShop.Models.DataAccess.repositories
 {
@@ -23,5 +24,9 @@ namespace ComputerPeripheralsShop.Models.DataAccess.repositories
             }
             return items;
         }
+
+        public Product getProductById(int id) => (from product in AppContext.Product
+                                                  where product.Product_Id.Equals(id)
+                                                  select product).Single<Product>();
     }
 }

@@ -37,12 +37,12 @@
                     <StackPanel Margin="0 15" Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" Foreground="#707070"/>
                         <TextBox x:Name="Username" materialDesign:HintAssist.Hint="Username"
-                         FontSize="14" MinWidth="200" Margin="5" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
+                         FontSize="14" MinWidth="170" MaxWidth="200" Margin="5" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                     <StackPanel Margin="0 5" Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Key" VerticalAlignment="Center" Foreground="#707070"/>
                         <components:BindablePasswordBox x:Name="Password" materialDesign:HintAssist.Hint="Password"
-                         FontSize="14" MinWidth="200" Margin="5" Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                         FontSize="14" MinWidth="170" MaxWidth="200" Margin="5" Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
                     </StackPanel>
                     <Button HorizontalAlignment="Left" Content="LOGIN" 
                     Background="#a20520" FontSize="18" FontFamily="Impact"

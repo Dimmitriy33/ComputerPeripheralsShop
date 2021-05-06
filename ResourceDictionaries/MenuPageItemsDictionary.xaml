@@ -34,6 +34,31 @@
         <Setter Property="FontFamily" Value="fonts/#BrownMedium Regular"/>
     </Style>
 
+    <Style x:Key="ProductNameMenuTextStyle" BasedOn="{StaticResource MaterialDesignHeadline2TextBlock}" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Foreground" Value="#FFEEEEEE"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="FontSize" Value="40"/>
+        <Setter Property="FontFamily" Value="/ComputerPeripheralsShop;component/ResourceDictionaries/fonts/#Brown"/>
+        <Setter Property="Padding" Value="0 0 0 0"/>
+        <Setter Property="Margin" Value="120 0 0 0"/>
+        <Setter Property="Width" Value="250"/>
+    </Style>
+
+    <Style x:Key="ProductNameMenuSmallTextStyle" BasedOn="{StaticResource MaterialDesignHeadline2TextBlock}" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Foreground" Value="#FFEEEEEE"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontFamily" Value="fonts/#BrownLight Regular"/>
+        <Setter Property="Padding" Value="0 0 0 0"/>
+        <Setter Property="Margin" Value="120 7 0 5"/>
+        <Setter Property="Width" Value="250"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+    </Style>
+
     <Style x:Key="SmallTextItemsStyle" BasedOn="{StaticResource MaterialDesignHeadline2TextBlock}" TargetType="TextBlock">
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Foreground" Value="#FFEEEEEE"/>
@@ -52,13 +77,14 @@
     <Style x:Key="RoundCorner" TargetType="{x:Type Button}">
         <Setter Property="Foreground" Value="#FFEEEEEE"/>
         <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Width" Value="105"/>
-        <Setter Property="Height" Value="45"/>
+        <Setter Property="Width" Value="110"/>
+        <Setter Property="Height" Value="50"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Padding" Value="15 7"/>
         <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Margin" Value="120 10 0 0"/>
 
         <Setter Property="Template">
             <Setter.Value>
