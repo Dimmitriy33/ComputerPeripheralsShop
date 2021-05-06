@@ -1,7 +1,9 @@
 ﻿using ComputerPeripheralsShop.Database;
+using ComputerPeripheralsShop.Models.DataAccess;
+using ComputerPeripheralsShop.ViewModels.Base;
 using ComputerPeripheralsShopModel.ViewModels.Base;
 using System;
-using System.Linq;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Input;
 
@@ -9,46 +11,30 @@ namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
 {
     internal class MousePadsViewModel : ViewModel
     {
-        public ICommand FurySPro_InfoButton { get; }
-        public ICommand FuryUltra_InfoButton { get; }
+        private ObservableCollection<Product> _mousePads;
+        public ObservableCollection<Product> MousePads { get => this._mousePads; set => this._mousePads = value; }
+
+        public ICommand Info_Button { get; }
 
         public MousePadsViewModel()
         {
-            FurySPro_InfoButton = new CommandViewModel(executeFurySPro);
-            FuryUltra_InfoButton = new CommandViewModel(executeFuryUltra);
-        }
-
-        private void executeFuryUltra()
-        {
-            foreach (Window window in Application.Current.Windows)
+            using (var unitOfWork = new UnitOfWork())
             {
-                if (window.GetType() == typeof(MainWindow))
-                {
-                    /*(window as MainWindow).MainWindowFrame.Navigate(new Uri(SubName, UriKind.RelativeOrAbsolute));*/
-                    (window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}", "Views/Pages/", "Product", ".xaml"), UriKind.RelativeOrAbsolute));
-                    using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
-                    {
-                        ComputerPeripheralsShop.Models.CurrentProduct.currentProduct = (from product in context.Product
-                                                                                        where product.Model.Equals("FURY Ultra")
-                                                                                        select product).Single<Product>();
-                    }
-                }
+                MousePads = unitOfWork.ProductRepository.getMousePads();
             }
+            Info_Button = new RelayCommand(executeInfo);
         }
 
-        private void executeFurySPro()
+        private void executeInfo(object obj)
         {
             foreach (Window window in Application.Current.Windows)
             {
                 if (window.GetType() == typeof(MainWindow))
                 {
-                    /*(window as MainWindow).MainWindowFrame.Navigate(new Uri(SubName, UriKind.RelativeOrAbsolute));*/
                     (window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}", "Views/Pages/", "Product", ".xaml"), UriKind.RelativeOrAbsolute));
-                    using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
+                    using (UnitOfWork context = new UnitOfWork())
                     {
-                        ComputerPeripheralsShop.Models.CurrentProduct.currentProduct = (from product in context.Product
-                                                                                        where product.Model.Equals("FURY S Pro")
-                                                                                        select product).Single<Product>();
+                        ComputerPeripheralsShop.Models.CurrentProduct.currentProduct = context.ProductRepository.getProductById((int)obj);
                     }
                 }
             }

@@ -43,7 +43,7 @@
         <Setter Property="FontFamily" Value="/ComputerPeripheralsShop;component/ResourceDictionaries/fonts/#Brown"/>
         <Setter Property="Padding" Value="0 0 0 0"/>
         <Setter Property="Margin" Value="120 0 0 0"/>
-        <Setter Property="Width" Value="250"/>
+        <Setter Property="Width" Value="400"/>
     </Style>
 
     <Style x:Key="ProductNameMenuSmallTextStyle" BasedOn="{StaticResource MaterialDesignHeadline2TextBlock}" TargetType="TextBlock">

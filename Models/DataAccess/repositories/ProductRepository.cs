@@ -8,18 +8,27 @@ namespace ComputerPeripheralsShop.Models.DataAccess.repositories
     public class ProductRepository : Repository<Product>, IProductRepository
     {
         public ComputerPeripheralsShopEntities AppContext => _context as ComputerPeripheralsShopEntities;
-
         public ProductRepository(ComputerPeripheralsShopEntities context) : base(context)
         {
 
         }
 
-        public ObservableCollection<Product> getMicrophones()
+        public ObservableCollection<Product> getMicrophones() => getProductsByCategory("Microphones");
+
+        public ObservableCollection<Product> getGamingHeadsets() => getProductsByCategory("Gaming Headsets");
+
+        public ObservableCollection<Product> getMices() => getProductsByCategory("Mices");
+
+        public ObservableCollection<Product> getKeyboards() => getProductsByCategory("Keyboards");
+
+        public ObservableCollection<Product> getMousePads() => getProductsByCategory("Mouse Pads");
+
+        public ObservableCollection<Product> getProductsByCategory(string category)
         {
             ObservableCollection<Product> items = new ObservableCollection<Product>();
             foreach (Product item in AppContext.Product)
             {
-                if (item.Category.Equals("Microphones"))
+                if (item.Category.Equals(category))
                     items.Add(item);
             }
             return items;

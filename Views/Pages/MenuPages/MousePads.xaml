@@ -4,61 +4,47 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-      xmlns:local="clr-namespace:ComputerPeripheralsShopModel.Views.Pages.MenuPages"
+      xmlns:local="clr-namespace:ComputerPeripheralsShopModel.Views.Pages.MenuPages" xmlns:components="clr-namespace:ComputerPeripheralsShop.Components"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MousePads" Background="#242424" MinHeight="900">
 
     <Page.Resources>
-        <ResourceDictionary Source="/ResourceDictionaries/MenuPageItemsDictionary.xaml"/>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourceDictionaries/MenuPageItemsDictionary.xaml"/>
+                <ResourceDictionary Source="/ResourceDictionaries/BasketDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <components:ImageConverter x:Key="ConverterImg"/>
+        </ResourceDictionary>
     </Page.Resources>
-    <Border BorderThickness="0" >
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="3*"/>
-                <RowDefinition Height="5*" MinHeight="350"/>
-                <RowDefinition Height="5*" MinHeight="350"/>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0" Style="{StaticResource TopMenuItem}">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="MouseDown" >
-                            <i:InvokeCommandAction Command="{Binding FurySPro_InfoButton}" />
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                    <Image Style="{StaticResource ImageStyle}" Source="/Resources/furyspro-icon.png"/>
-                    <TextBlock Style="{StaticResource TextStyle}">Hyperx Fury S Pro</TextBlock>
-                </Grid>
-                <Grid Grid.Column="1" Style="{StaticResource TopMenuItem}">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="MouseDown" >
-                            <i:InvokeCommandAction Command="{Binding FuryUltra_InfoButton}" />
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                    <Image Style="{StaticResource ImageStyle}" Source="/Resources/furyultra-icon.png"/>
-                    <TextBlock Style="{StaticResource TextStyle}">Hyperx Fury Ultra</TextBlock>
-                </Grid>
-            </Grid>
-            <Grid Grid.Row="1">
-                <Grid.Background>
-                    <ImageBrush ImageSource="/Resources/furysspeed-mousepad.jpg"/>
-                </Grid.Background>
-                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="0 0 85 85" HorizontalAlignment="Right">Fury S Pro</TextBlock>
-                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="41 0 35 0" HorizontalAlignment="Right">Seamlessly stitched and <LineBreak/> textured for precision or speed.</TextBlock>
-                <Button Style="{StaticResource RoundCorner}" Command="{Binding FurySPro_InfoButton}" Content="Learn more" Margin="0 110 165 0" HorizontalAlignment="Right"/>
-            </Grid>
-            <Grid Grid.Row="2">
-                <Grid.Background>
-                    <ImageBrush ImageSource="/Resources/furyultra-mousepad.jpg"/>
-                </Grid.Background>
-                <TextBlock Style="{StaticResource TextItemsStyle}" Margin="40 0 0 110" HorizontalAlignment="Left">Fury Ultra</TextBlock>
-                <TextBlock Style="{StaticResource SmallTextItemsStyle}" Margin="42 0 0 25" HorizontalAlignment="Left">Hard surface mouse pad with 360°<LineBreak/> RGB lighting</TextBlock>
-                <Button Style="{StaticResource RoundCorner}" Command="{Binding FuryUltra_InfoButton}" Content="Learn more" Margin="40 90 0 0" HorizontalAlignment="Left"/>
-            </Grid>
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" MinHeight="120" MaxHeight="150"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#a20520" x:Name="Header_Grid">
+            <TextBlock Style="{StaticResource MainText}" Text="Mouse pads"/>
         </Grid>
-    </Border>
+        <Grid Grid.Row="1">
+            <ItemsControl ItemsSource="{Binding MousePads, UpdateSourceTrigger=PropertyChanged}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid MinHeight="400" MaxHeight="500">
+                            <Grid.Background>
+                                <ImageBrush Opacity="0.5" ImageSource="{Binding MenuPicture, Converter={StaticResource ConverterImg}}"/>
+                            </Grid.Background>
+                            <StackPanel Margin="0 70 0 0 ">
+                                <TextBlock Style="{StaticResource ProductNameMenuTextStyle}" Text="{Binding Model}"/>
+                                <TextBlock Style="{StaticResource ProductNameMenuSmallTextStyle}" Text="{Binding ShortDescription}"/>
+                                <Button Style="{StaticResource RoundCorner}" Command="{Binding ElementName=Header_Grid, Path=DataContext.Info_Button, UpdateSourceTrigger=PropertyChanged}" CommandParameter="{Binding Product_Id}" Content="Learn more"/>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+    </Grid>
 </Page>
