@@ -34,8 +34,19 @@ namespace ComputerPeripheralsShop.Models.DataAccess.repositories
             return items;
         }
 
-        public Product getProductById(int id) => (from product in AppContext.Product
+        public ObservableCollection<string> getCategories() => new ObservableCollection<string>()
+            {
+                "Gaming Headsets",
+                "Microphones",
+                "Keyboards",
+                "Mices",
+                "Mouse Pads"
+            };
+
+        public Product GetProductById(int id) => (from product in AppContext.Product
                                                   where product.Product_Id.Equals(id)
                                                   select product).Single<Product>();
+
+        public void AddProduct(Product product) => AppContext.Product.Add(product);
     }
 }

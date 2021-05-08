@@ -69,6 +69,28 @@
         <Setter Property="Padding" Value="70 15 10 10"/>
     </Style>
 
+    <Style x:Key="ComboBoxStyle1" TargetType="ComboBox">
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="fonts/#Brown Bold"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="MinHeight" Value="40"/>
+        <Setter Property="Padding" Value="20 0"/>
+        <Setter Property="Margin" Value="0 20 200 40"/>
+    </Style>
+
+    <Style x:Key="TextBoxStyle1" TargetType="TextBox">
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="fonts/#Brown Bold"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="MinHeight" Value="40"/>
+        <Setter Property="Padding" Value="20 0"/>
+        <Setter Property="Margin" Value="0 20 200 40"/>
+    </Style>
+
     <Style x:Key="ButtonCommentStyle" TargetType="TextBlock">
         <Setter Property="Foreground" Value="#242424"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>

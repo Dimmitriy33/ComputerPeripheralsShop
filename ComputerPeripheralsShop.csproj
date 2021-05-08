@@ -181,6 +181,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Pages\AddProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Pages\Basket.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -332,6 +336,7 @@
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
     <Compile Include="ViewModels\Menu parts\BaksetToolBarViewModel.cs" />
+    <Compile Include="ViewModels\MenuPagesViewModels\AddProductViewModel.cs" />
     <Compile Include="ViewModels\MenuPagesViewModels\ContactsViewModel.cs" />
     <Compile Include="ViewModels\MenuPagesViewModels\CooperationViewModel.cs" />
     <Compile Include="ViewModels\MenuPagesViewModels\HeadsetsViewModel.cs" />
@@ -349,6 +354,9 @@
     </Compile>
     <Compile Include="Views\Pages\Account.xaml.cs">
       <DependentUpon>Account.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\AddProduct.xaml.cs">
+      <DependentUpon>AddProduct.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\Basket.xaml.cs">
       <DependentUpon>Basket.xaml</DependentUpon>

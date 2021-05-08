@@ -35,7 +35,7 @@ namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
                     (window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}", "Views/Pages/", "Product", ".xaml"), UriKind.RelativeOrAbsolute));
                     using (UnitOfWork context = new UnitOfWork())
                     {
-                        ComputerPeripheralsShop.Models.CurrentProduct.currentProduct = context.ProductRepository.getProductById((int)obj);
+                        ComputerPeripheralsShop.Models.CurrentProduct.currentProduct = context.ProductRepository.GetProductById((int)obj);
                     }
                 }
             }
