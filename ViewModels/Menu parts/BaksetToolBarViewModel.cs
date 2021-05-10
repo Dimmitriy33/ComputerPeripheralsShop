@@ -1,4 +1,5 @@
 ﻿using ComputerPeripheralsShop.Database;
+using ComputerPeripheralsShop.Models;
 using ComputerPeripheralsShopModel.ViewModels;
 using ComputerPeripheralsShopModel.ViewModels.Base;
 using System.Collections.ObjectModel;
@@ -29,9 +30,9 @@ namespace ComputerPeripheralsShop.ViewModels.Menu_parts
 
         private void executeRemoveButton()
         {
-            ObservableCollection<Order_List> curOrderList = ComputerPeripheralsShop.Models.CurrentOrderList.CurOrderList;
+            ObservableCollection<Order_List> curOrderList = CurrentOrderList.CurOrderList;
             curOrderList.Remove(curOrderList.Where(i => i.Product_Id == Product_Id).Single());
-            ComputerPeripheralsShop.Models.CurrentOrderList.CurOrderList = curOrderList;
+            CurrentOrderList.CurOrderList = curOrderList;
         }
     }
 }

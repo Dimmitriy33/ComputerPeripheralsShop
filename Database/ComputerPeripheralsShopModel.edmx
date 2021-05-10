@@ -21,7 +21,7 @@
           </Key>
           <Property Name="Product_Id" Type="int" Nullable="false" />
           <Property Name="Order_Id" Type="int" Nullable="false" />
-          <Property Name="Order_List_Id" Type="int" Nullable="false" />
+          <Property Name="Order_List_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -150,7 +150,7 @@
           </Key>
           <Property Name="Product_Id" Type="Int32" Nullable="false" />
           <Property Name="Order_Id" Type="Int32" Nullable="false" />
-          <Property Name="Order_List_Id" Type="Int32" Nullable="false" />
+          <Property Name="Order_List_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Order" Relationship="Self.FK_Order_List_Order" FromRole="Order_List" ToRole="Order" />
           <NavigationProperty Name="Product" Relationship="Self.FK_Order_List_Product" FromRole="Order_List" ToRole="Product" />
         </EntityType>

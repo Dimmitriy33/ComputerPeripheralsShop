@@ -1,6 +1,8 @@
 ﻿using ComputerPeripheralsShop.Database;
 using ComputerPeripheralsShop.Models;
+using ComputerPeripheralsShop.Models.DataAccess;
 using ComputerPeripheralsShop.ViewModels.Base;
+using ComputerPeripheralsShopModel.Models.Authentication;
 using ComputerPeripheralsShopModel.ViewModels;
 using ComputerPeripheralsShopModel.ViewModels.Base;
 using System;
@@ -59,21 +61,20 @@ namespace ComputerPeripheralsShop.ViewModels
         }
         private void executeNewOrder()
         {
-            using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
+            using (UnitOfWork context = new UnitOfWork())
             {
-                if (ComputerPeripheralsShopModel.Models.Authentication.Account.curUser.Balance >= basket.TotalPrice())
+                if (Account.curUser.Balance >= basket.TotalPrice())
                 {
                     foreach (Order_List list in Order_list)
                     {
-                        Product NewProduct = (from product in context.Product
-                                              where product.Product_Id == list.Product_Id
-                                              select product).Single<Product>();
-                        context.Product.Find(NewProduct).Number_on_warehouse = NewProduct.Number_on_warehouse - 1;
-                        context.Order_List.Add(new Order_List(list.Product_Id, list.Order_Id, list.Order_List_Id));
+                        context.ProductRepository.AppContext.Product.Where(p => p.Product_Id == list.Product_Id).Single().Number_on_warehouse -= 1;
+                        context.ProductRepository.AppContext.Order_List.Add(new Order_List(list.Product_Id, list.Order_Id, list.Order_List_Id));
                     }
-                    context.Order.Add(new Order(ComputerPeripheralsShopModel.Models.Authentication.Account.curUser.User_Id, DateTime.Now, basket.TotalPrice(), Order_list.Count));
-
+                    context.ProductRepository.AppContext.Order.Add(new Order(Account.curUser.User_Id, Order_list.FirstOrDefault().Order_Id, DateTime.Now, basket.TotalPrice(), Order_list.Count));
+                    context.UserRepository.Reducebalance(Account.curUser.User_Id, basket.TotalPrice());
                     context.SaveChanges();
+                    Order_list.Clear();
+                    CurrentOrderList.CurOrderList.Clear();
                     MessageBox.Show("successfully acquired");
                 }
                 else

@@ -11,7 +11,7 @@ namespace ComputerPeripheralsShop.Database
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,9 +20,10 @@ namespace ComputerPeripheralsShop.Database
             this.Order_List = new HashSet<Order_List>();
         }
 
-        public Order(int user_Id, DateTime order_Date, decimal total_Price, int items_Number)
+        public Order(int user_Id, int order_id, DateTime order_Date, decimal total_Price, int items_Number)
         {
             this.User_Id = user_Id;
+            this.Order_Id = order_id;
             this.Order_Date = order_Date;
             this.Total_Price = total_Price;
             this.Items_Number = items_Number;
@@ -33,7 +34,7 @@ namespace ComputerPeripheralsShop.Database
         public System.DateTime Order_Date { get; set; }
         public decimal Total_Price { get; set; }
         public int Items_Number { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order_List> Order_List { get; set; }
         public virtual User User { get; set; }
