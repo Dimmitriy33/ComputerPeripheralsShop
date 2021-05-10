@@ -1,4 +1,5 @@
 ﻿using ComputerPeripheralsShop.Database;
+using ComputerPeripheralsShop.Models.DataAccess;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -15,13 +16,10 @@ namespace ComputerPeripheralsShop.Models.Products
         {
             get
             {
-                ObservableCollection<Product> _curProducts = new ObservableCollection<Product>();
-                using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
+                using (UnitOfWork context = new UnitOfWork())
                 {
-                    foreach (Product el in context.Product)
-                        _curProducts.Add(el);
+                    return context.ProductRepository.GetProducts();
                 }
-                return _curProducts;
             }
         }
 

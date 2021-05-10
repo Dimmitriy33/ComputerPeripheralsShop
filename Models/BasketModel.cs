@@ -1,4 +1,5 @@
 ﻿using ComputerPeripheralsShop.Database;
+using ComputerPeripheralsShop.Models.DataAccess;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
@@ -52,15 +53,12 @@ namespace ComputerPeripheralsShop.Models
 
         public decimal TotalPrice()
         {
-            // ! - нужно оптимизировать(сейчас лень)
             decimal price = 0;
             foreach (Order_List item in Order_list)
             {
-                using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
+                using (UnitOfWork context = new UnitOfWork())
                 {
-                    price += (from product in context.Product
-                              where product.Product_Id == item.Product_Id
-                              select product.Price).Single<decimal>();
+                    price += context.ProductRepository.GetProductPrice(item.Product_Id);
                 }
             }
             return price;

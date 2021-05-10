@@ -41,21 +41,20 @@ namespace ComputerPeripheralsShopModel.Models.Authentication
                 MessageBox.Show("You can't create new account");
                 return;
             }
-            using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
+            using (UnitOfWork context = new UnitOfWork())
             {
-                foreach (User curUser in context.User)
+                foreach (User curUser in context.UserRepository.AppContext.User)
                     if (username.Equals(curUser.Login))
                     {
                         MessageBox.Show("This username already exists");
                         return;
                     }
                 User user = new User(username, HashConverters.GetHashEncryption(password), name, surname, address);
-                context.User.Add(user);
+                context.UserRepository.AppContext.User.Add(user);
                 context.SaveChanges();
                 curUser = user;
                 IsLoggedIn = true;
                 CloseCreateAccountWindow();
-
             }
         }
 

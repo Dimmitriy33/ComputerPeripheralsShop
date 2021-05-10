@@ -1,6 +1,7 @@
-﻿using ComputerPeripheralsShop.Database;
-using ComputerPeripheralsShop.Helpers;
+﻿using ComputerPeripheralsShop.Helpers;
 using ComputerPeripheralsShop.Models;
+using ComputerPeripheralsShop.Models.DataAccess;
+using ComputerPeripheralsShopModel.Models.Authentication;
 using ComputerPeripheralsShopModel.ViewModels;
 using ComputerPeripheralsShopModel.ViewModels.Base;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
             this.account = new AccountModel();
             this.SaveChanges = new CommandViewModel(executeSaveChanges);
             this.RechargeTheBalance = new CommandViewModel(executeRechargeTheBalance);
-            this.VisibilityIsAdmin = ComputerPeripheralsShopModel.Models.Authentication.Account.curUser.IsAdmin;
+            this.VisibilityIsAdmin = Account.curUser.IsAdmin;
         }
         public bool VisibilityIsAdmin
         {
@@ -132,34 +133,33 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
 
         private void executeSaveChanges()
         {
-            using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
+            using (UnitOfWork context = new UnitOfWork())
             {
-                context.User.FirstOrDefault(i => i.User_Id == User_Id).Login = Username;
+                context.UserRepository.AppContext.User.FirstOrDefault(i => i.User_Id == User_Id).Login = Username;
                 try
                 {
-                    context.User.FirstOrDefault(i => i.User_Id == User_Id).Password_hash = HashConverters.GetHashEncryption(account.PasswordString);
+                    context.UserRepository.AppContext.User.FirstOrDefault(i => i.User_Id == User_Id).Password_hash = HashConverters.GetHashEncryption(account.PasswordString);
                 }
                 catch
                 {
                     // else password will be without any changes
                 }
-                context.User.FirstOrDefault(i => i.User_Id == User_Id).Name = Name;
-                context.User.FirstOrDefault(i => i.User_Id == User_Id).Surname = Surname;
-                context.User.FirstOrDefault(i => i.User_Id == User_Id).Address = Address;
+                context.UserRepository.AppContext.User.FirstOrDefault(i => i.User_Id == User_Id).Name = Name;
+                context.UserRepository.AppContext.User.FirstOrDefault(i => i.User_Id == User_Id).Surname = Surname;
+                context.UserRepository.AppContext.User.FirstOrDefault(i => i.User_Id == User_Id).Address = Address;
                 context.SaveChanges();
-                ComputerPeripheralsShopModel.Models.Authentication.Account.curUser = context.User.FirstOrDefault(i => i.User_Id == User_Id);
+                Account.curUser = context.UserRepository.AppContext.User.FirstOrDefault(i => i.User_Id == User_Id);
             }
         }
         private void executeRechargeTheBalance()
         {
             Balance += 500;
-            using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
+            using (UnitOfWork context = new UnitOfWork())
             {
-                context.User.FirstOrDefault(i => i.User_Id == User_Id).Balance = Balance;
+                context.UserRepository.AppContext.User.FirstOrDefault(i => i.User_Id == User_Id).Balance = Balance;
                 context.SaveChanges();
-                ComputerPeripheralsShopModel.Models.Authentication.Account.curUser = context.User.FirstOrDefault(i => i.User_Id == User_Id);
+                Account.curUser = context.UserRepository.AppContext.User.FirstOrDefault(i => i.User_Id == User_Id);
             }
-
         }
 
     }

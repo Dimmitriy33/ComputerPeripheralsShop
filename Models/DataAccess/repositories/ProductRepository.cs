@@ -37,9 +37,25 @@ namespace ComputerPeripheralsShop.Models.DataAccess.repositories
                 "Mouse Pads"
             };
 
+        public ObservableCollection<Product> GetProducts()
+        {
+            ObservableCollection<Product> curProducts = new ObservableCollection<Product>();
+            foreach (Product el in AppContext.Product)
+                curProducts.Add(el);
+            return curProducts;
+        }
+
         public Product GetProductById(int id) => (from product in AppContext.Product
                                                   where product.Product_Id.Equals(id)
                                                   select product).Single();
+
+        public decimal GetProductPrice(int product_id)
+        {
+            using (UnitOfWork context = new UnitOfWork())
+            {
+                return AppContext.Product.Where(p => p.Product_Id == product_id).Single().Price;
+            }
+        }
 
         public void AddProduct(Product product) => AppContext.Product.Add(product);
 

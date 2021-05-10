@@ -1,5 +1,4 @@
-﻿using ComputerPeripheralsShop.Database;
-using ComputerPeripheralsShop.Views.Windows;
+﻿using ComputerPeripheralsShop.Views.Windows;
 using ComputerPeripheralsShopModel.Models.Authentication;
 using ComputerPeripheralsShopModel.ViewModels;
 using ComputerPeripheralsShopModel.ViewModels.Base;
@@ -11,7 +10,6 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
 {
     internal class CreateAccountViewModel : ViewModel
     {
-        ComputerPeripheralsShopEntities computerPeripheralsShopEntities = new ComputerPeripheralsShopEntities();
         private string _username = "";
         private string _password = "";
         private string _name = "";
@@ -97,14 +95,7 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
 
         public void ExecuteClose() => CloseCreateAccountWindow();
 
-        private void executeCreateAccount()
-        {
-            using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
-            {
-                Account.CreateAccount(_agree, Username, Password, Name, Surname, Address);
-            }
-
-        }
+        private void executeCreateAccount() => Account.CreateAccount(_agree, Username, Password, Name, Surname, Address);
 
         private void CloseCreateAccountWindow()
         {

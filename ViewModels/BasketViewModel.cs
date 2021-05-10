@@ -52,9 +52,9 @@ namespace ComputerPeripheralsShop.ViewModels
         private void executeRemoveItem(object id)
         {
             Order_list = basket.RemoveProduct((int)id);
-            using (ComputerPeripheralsShopEntities context = new ComputerPeripheralsShopEntities())
+            using (UnitOfWork context = new UnitOfWork())
             {
-                TotalPrice -= (from product in context.Product
+                TotalPrice -= (from product in context.ProductRepository.AppContext.Product
                                where product.Product_Id == (int)id
                                select product.Price).Single<decimal>();
             }
