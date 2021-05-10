@@ -1,10 +1,7 @@
-﻿using ComputerPeripheralsShop.Database;
-using ComputerPeripheralsShop.Models.DataAccess;
-using ComputerPeripheralsShop.Views.Windows;
+﻿using ComputerPeripheralsShop.Views.Windows;
+using ComputerPeripheralsShopModel.Models.Authentication;
 using ComputerPeripheralsShopModel.ViewModels.Base;
 using ComputerPeripheralsShopModel.Views.Windows;
-using System.Security.Cryptography;
-using System.Text;
 using System.Windows;
 using System.Windows.Input;
 
@@ -34,7 +31,6 @@ namespace ComputerPeripheralsShopModel.ViewModels
             }
         }
 
-
         public ICommand LoginCommand { get; }
         public ICommand CloseCommand { get; }
         public ICommand MoveToCreateAccountCommand { get; }
@@ -48,6 +44,16 @@ namespace ComputerPeripheralsShopModel.ViewModels
 
         private void ExecuteMoveToCreateAccountCommand()
         {
+            CloseLoginWindow();
+            OpenCreateAccountWindow();
+        }
+
+        private void executeLogin() => Account.Login(Username, Password);
+
+        public void ExecuteClose() => CloseLoginWindow();
+
+        private void CloseLoginWindow()
+        {
             foreach (Window window in Application.Current.Windows)
             {
                 if (window.GetType() == typeof(LoginWindow))
@@ -56,84 +62,12 @@ namespace ComputerPeripheralsShopModel.ViewModels
                     (window as LoginWindow).Close();
                 }
             }
+        }
 
+        private void OpenCreateAccountWindow()
+        {
             Window createAccWindow = new CreateAccountWindow();
             createAccWindow.Show();
-        }
-
-        public void ExecuteClose()
-        {
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window.GetType() == typeof(LoginWindow))
-                {
-                    (window as LoginWindow).Hide();
-                    (window as LoginWindow).Close();
-                }
-            }
-        }
-
-        private void executeLogin()
-        {
-            using (UnitOfWork context = new UnitOfWork())
-            {
-                try
-                {
-                    foreach (User curentUser in context.UserRepository.AppContext.User)
-                        if (_username.Equals(curentUser.Login) && (GetHashString(GetHashEncryption(Password)).Equals(GetHashString(curentUser.Password_hash))))
-                        {
-                            ComputerPeripheralsShopModel.Models.Authentication.Account.curUser = curentUser;
-                            ComputerPeripheralsShopModel.Models.Authentication.Account.IsLoggedIn = true;
-                            foreach (Window window in Application.Current.Windows)
-                            {
-                                if (window.GetType() == typeof(LoginWindow))
-                                {
-                                    (window as LoginWindow).Hide();
-                                    (window as LoginWindow).Close();
-                                }
-                            }
-                            return;
-                        }
-                    MessageBox.Show("The username or password is incorrect");
-                }
-                catch
-                {
-                    MessageBox.Show("The username or password is incorrect");
-                }
-            }
-
-        }
-
-        private byte[] GetHashEncryption(string s)
-        {
-            //переводим строку в байт-массим  
-            byte[] bytes = Encoding.Unicode.GetBytes(s);
-
-            //создаем объект для получения средст шифрования  
-            MD5CryptoServiceProvider CSP =
-                new MD5CryptoServiceProvider();
-
-            //вычисляем хеш-представление в байтах  
-            byte[] byteHash = CSP.ComputeHash(bytes);
-
-            /*string hash = string.Empty;*/
-
-            //формируем одну цельную строку из массива  
-            /*foreach (byte b in byteHash)
-                hash += string.Format("{0:x2}", b);*/
-
-            return byteHash;
-        }
-
-        private string GetHashString(byte[] byteHash)
-        {
-            string hash = string.Empty;
-
-            //формируем одну цельную строку из массива  
-            foreach (byte b in byteHash)
-                hash += string.Format("{0:x2}", b);
-
-            return hash;
         }
     }
 }

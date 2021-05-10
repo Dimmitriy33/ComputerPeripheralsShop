@@ -1,7 +1,8 @@
-﻿using ComputerPeripheralsShop.Views.Windows;
+﻿using ComputerPeripheralsShop.Helpers;
+using ComputerPeripheralsShop.Views.Windows;
+using ComputerPeripheralsShopModel.Models.Authentication;
 using ComputerPeripheralsShopModel.ViewModels.Base;
 using ComputerPeripheralsShopModel.Views.Windows;
-using System;
 using System.Windows;
 using System.Windows.Input;
 
@@ -32,16 +33,7 @@ namespace ComputerPeripheralsShopModel.ViewModels
             BasketCommand = new CommandViewModel(ExecuteBasketCommand);
         }
 
-        private void ExecuteBasketCommand()
-        {
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window.GetType() == typeof(MainWindow))
-                {
-                    (window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}", "Views/Pages/", "Basket", ".xaml"), UriKind.RelativeOrAbsolute));
-                }
-            }
-        }
+        private void ExecuteBasketCommand() => MainFrameNavigator.FrameNavigator("Views/Pages/", "Basket");
 
         private void ExecuteCreateAccount()
         {
@@ -51,8 +43,15 @@ namespace ComputerPeripheralsShopModel.ViewModels
 
         private void ExecuteLogin()
         {
-            Window loginWindow = new LoginWindow();
-            loginWindow.Show();
+            if (!Account.IsLoggedIn)
+            {
+                Window loginWindow = new LoginWindow();
+                loginWindow.Show();
+            }
+            else
+            {
+                // notifier
+            }
         }
 
         private void ExecuteTheme()
@@ -61,17 +60,8 @@ namespace ComputerPeripheralsShopModel.ViewModels
 
         private void ExecuteAccount()
         {
-            if (ComputerPeripheralsShopModel.Models.Authentication.Account.curUser != null)
-            {
-                foreach (Window window in Application.Current.Windows)
-                {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        /*(window as MainWindow).MainWindowFrame.Navigate(new Uri(SubName, UriKind.RelativeOrAbsolute));*/
-                        (window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}", "Views/Pages/", "Account", ".xaml"), UriKind.RelativeOrAbsolute));
-                    }
-                }
-            }
+            if (Account.curUser != null)
+                MainFrameNavigator.FrameNavigator("Views/Pages/", "Account");
             else
             {
                 Window loginWindow = new LoginWindow();
@@ -112,9 +102,6 @@ namespace ComputerPeripheralsShopModel.ViewModels
             }
         }
 
-        public void ExecuteClose()
-        {
-            Application.Current.Shutdown();
-        }
+        public void ExecuteClose() => Application.Current.Shutdown();
     }
 }

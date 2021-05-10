@@ -46,30 +46,6 @@ namespace ComputerPeripheralsShop.ViewModels.MenuPagesViewModels
             MenuPicturePath_SetPathCommand = new CommandViewModel(executeMenuPicturePath_SetPath);
         }
 
-
-        private void executePicture_Main_Path_SetPath()
-        {
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Multiselect = false;
-            /*fileDialog.Filter = "";*/
-            if (fileDialog.ShowDialog() == DialogResult.Cancel)
-                return;
-            Picture_Main_Path = fileDialog.FileName;
-        }
-        private void executePicture1Path_SetPath()
-        {
-
-        }
-        private void executePicture2Path_SetPath()
-        {
-
-        }
-        private void executeMenuPicturePath_SetPath()
-        {
-
-        }
-
-
         private void ExecuteAddProduct()
         {
             using (UnitOfWork context = new UnitOfWork())
@@ -291,7 +267,24 @@ namespace ComputerPeripheralsShop.ViewModels.MenuPagesViewModels
                 OnPropertyChanged("VisibilityDPI");
             }
         }
+
         public bool VisibilityMicrophone { get => this._visibilityMicrophone; set => this._visibilityMicrophone = value; }
+
+        private void executePicture_Main_Path_SetPath() => Picture_Main_Path = FilePathfromFIleDialog();
+        private void executePicture1Path_SetPath() => Picture1Path = FilePathfromFIleDialog();
+        private void executePicture2Path_SetPath() => Picture2Path = FilePathfromFIleDialog();
+        private void executeMenuPicturePath_SetPath() => MenuPicturePath = FilePathfromFIleDialog();
+
+        private string FilePathfromFIleDialog()
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Multiselect = false;
+            /*fileDialog.Filter = "";*/
+            if (fileDialog.ShowDialog() == DialogResult.Cancel)
+                return "";
+            else
+                return fileDialog.FileName;
+        }
 
         public byte[] ConvertBitmapSourceToByteArray(string filepath)
         {

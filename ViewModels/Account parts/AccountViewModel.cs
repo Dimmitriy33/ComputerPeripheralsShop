@@ -1,4 +1,5 @@
 ﻿using ComputerPeripheralsShop.Database;
+using ComputerPeripheralsShop.Helpers;
 using ComputerPeripheralsShop.Models;
 using ComputerPeripheralsShopModel.ViewModels;
 using ComputerPeripheralsShopModel.ViewModels.Base;
@@ -136,7 +137,7 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
                 context.User.FirstOrDefault(i => i.User_Id == User_Id).Login = Username;
                 try
                 {
-                    context.User.FirstOrDefault(i => i.User_Id == User_Id).Password_hash = account.GetHashEncryption(account.PasswordString);
+                    context.User.FirstOrDefault(i => i.User_Id == User_Id).Password_hash = HashConverters.GetHashEncryption(account.PasswordString);
                 }
                 catch
                 {

@@ -1,8 +1,7 @@
-﻿using ComputerPeripheralsShopModel.ViewModels.Base;
+﻿using ComputerPeripheralsShop.Helpers;
+using ComputerPeripheralsShopModel.ViewModels.Base;
 using MaterialDesignThemes.Wpf;
-using System;
 using System.Collections.Generic;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -17,14 +16,7 @@ namespace ComputerPeripheralsShopModel.ViewModels
             AddProductOpenPageCommand = new CommandViewModel(executeAddProductOpenPage);
         }
 
-        private void executeAddProductOpenPage()
-        {
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window.GetType() == typeof(MainWindow))
-                    (window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}", "Views/Pages/", "AddProduct", ".xaml"), UriKind.RelativeOrAbsolute));
-            }
-        }
+        private void executeAddProductOpenPage() => MainFrameNavigator.FrameNavigator("Views/Pages/", "AddProduct");
 
         public List<ItemMenu> MenuList => new List<ItemMenu>
                 {
@@ -110,17 +102,7 @@ namespace ComputerPeripheralsShopModel.ViewModels
                 navigateToPage(PageName);
         }
 
-        private void navigateToPage(string SubName)
-        {
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window.GetType() == typeof(MainWindow))
-                {
-                    /*(window as MainWindow).MainWindowFrame.Navigate(new Uri(SubName, UriKind.RelativeOrAbsolute));*/
-                    (window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}", "Views/Pages/MenuPages/", SubName, ".xaml"), UriKind.RelativeOrAbsolute));
-                }
-            }
-        }
+        private void navigateToPage(string SubName) => MainFrameNavigator.FrameNavigator("Views/Pages/MenuPages/", SubName);
 
 
 

@@ -307,6 +307,8 @@
     <Compile Include="Database\User.cs">
       <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HashConverters.cs" />
+    <Compile Include="Helpers\MainFrameNavigator.cs" />
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\Authentication\Account.cs" />
     <Compile Include="Models\Authentication\IAuthentication.cs" />

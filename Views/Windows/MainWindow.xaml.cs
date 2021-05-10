@@ -1,4 +1,4 @@
-﻿using System;
+﻿using ComputerPeripheralsShop.Helpers;
 using System.Windows;
 
 namespace ComputerPeripheralsShopModel
@@ -11,14 +11,7 @@ namespace ComputerPeripheralsShopModel
         public MainWindow()
         {
             InitializeComponent();
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window.GetType() == typeof(MainWindow))
-                {
-                    /*(window as MainWindow).MainWindowFrame.Navigate(new Uri(SubName, UriKind.RelativeOrAbsolute));*/
-                    (window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}", "Views/Pages/MenuPages/", "AboutUs", ".xaml"), UriKind.RelativeOrAbsolute));
-                }
-            }
+            MainFrameNavigator.FrameNavigator("Views/Pages/MenuPages/", "AboutUs");
         }
     }
 }

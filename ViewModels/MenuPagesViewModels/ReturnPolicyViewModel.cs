@@ -1,6 +1,5 @@
-﻿using ComputerPeripheralsShopModel.ViewModels.Base;
-using System;
-using System.Windows;
+﻿using ComputerPeripheralsShop.Helpers;
+using ComputerPeripheralsShopModel.ViewModels.Base;
 using System.Windows.Input;
 
 namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
@@ -14,16 +13,6 @@ namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
             ToContacts = new CommandViewModel(executeToContacts);
         }
 
-        private void executeToContacts()
-        {
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window.GetType() == typeof(MainWindow))
-                {
-                    /*(window as MainWindow).MainWindowFrame.Navigate(new Uri(SubName, UriKind.RelativeOrAbsolute));*/
-                    (window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}", "Views/Pages/MenuPages/", "Contacts", ".xaml"), UriKind.RelativeOrAbsolute));
-                }
-            }
-        }
+        private void executeToContacts() => MainFrameNavigator.FrameNavigator("Views/Pages/MenuPages/", "Contacts");
     }
 }

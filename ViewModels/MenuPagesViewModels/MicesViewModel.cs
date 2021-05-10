@@ -1,18 +1,16 @@
 ﻿using ComputerPeripheralsShop.Database;
+using ComputerPeripheralsShop.Helpers;
 using ComputerPeripheralsShop.Models.DataAccess;
 using ComputerPeripheralsShop.ViewModels.Base;
 using ComputerPeripheralsShopModel.ViewModels.Base;
-using System;
 using System.Collections.ObjectModel;
-using System.Windows;
 using System.Windows.Input;
 
 namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
 {
     internal class MicesViewModel : ViewModel
     {
-        private ObservableCollection<Product> _mices;
-        public ObservableCollection<Product> Mices { get => this._mices; set => this._mices = value; }
+        public ObservableCollection<Product> Mices { get; set; }
 
         public ICommand Info_Button { get; }
 
@@ -20,23 +18,17 @@ namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
         {
             using (var unitOfWork = new UnitOfWork())
             {
-                Mices = unitOfWork.ProductRepository.getMices();
+                Mices = new ObservableCollection<Product>(unitOfWork.ProductRepository.getMices());
             }
             Info_Button = new RelayCommand(executeInfo);
         }
 
         private void executeInfo(object obj)
         {
-            foreach (Window window in Application.Current.Windows)
+            MainFrameNavigator.FrameNavigator("Views/Pages/", "Product");
+            using (UnitOfWork context = new UnitOfWork())
             {
-                if (window.GetType() == typeof(MainWindow))
-                {
-                    (window as MainWindow).MainWindowFrame.Navigate(new Uri(string.Format("{0}{1}{2}", "Views/Pages/", "Product", ".xaml"), UriKind.RelativeOrAbsolute));
-                    using (UnitOfWork context = new UnitOfWork())
-                    {
-                        ComputerPeripheralsShop.Models.CurrentProduct.currentProduct = context.ProductRepository.GetProductById((int)obj);
-                    }
-                }
+                ComputerPeripheralsShop.Models.CurrentProduct.currentProduct = context.ProductRepository.GetProductById((int)obj);
             }
         }
     }

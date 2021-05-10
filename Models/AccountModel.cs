@@ -1,5 +1,4 @@
-﻿using System.Security.Cryptography;
-using System.Text;
+﻿using ComputerPeripheralsShop.Helpers;
 
 namespace ComputerPeripheralsShop.Models
 {
@@ -48,29 +47,20 @@ namespace ComputerPeripheralsShop.Models
         }
         public string Password
         {
-            get
-            {
-                return GetHashString(_password);
-            }
+            get => HashConverters.GetHashString(_password);
             set
             {
                 _passwordString = value;
-                _password = GetHashEncryption(value);
+                _password = HashConverters.GetHashEncryption(value);
                 OnPropertyChanged(nameof(Password));
             }
         }
 
-        public string PasswordString
-        {
-            get => _passwordString;
-        }
+        public string PasswordString => _passwordString;
 
         public string Name
         {
-            get
-            {
-                return _name;
-            }
+            get => _name;
             set
             {
                 _name = value;
@@ -80,10 +70,7 @@ namespace ComputerPeripheralsShop.Models
 
         public string Surname
         {
-            get
-            {
-                return _surname;
-            }
+            get => _surname;
             set
             {
                 _surname = value;
@@ -93,10 +80,7 @@ namespace ComputerPeripheralsShop.Models
 
         public string Address
         {
-            get
-            {
-                return _address;
-            }
+            get => _address;
             set
             {
                 _address = value;
@@ -122,25 +106,6 @@ namespace ComputerPeripheralsShop.Models
             }
         }
 
-        public byte[] GetHashEncryption(string s)
-        {
-            byte[] bytes = Encoding.Unicode.GetBytes(s);
 
-            MD5CryptoServiceProvider CSP = new MD5CryptoServiceProvider();
-
-            byte[] byteHash = CSP.ComputeHash(bytes);
-
-            return byteHash;
-        }
-
-        public string GetHashString(byte[] byteHash)
-        {
-            string hash = string.Empty;
-
-            foreach (byte b in byteHash)
-                hash += string.Format("{0:x2}", b);
-
-            return hash;
-        }
     }
 }

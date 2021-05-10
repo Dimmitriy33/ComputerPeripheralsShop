@@ -1,5 +1,6 @@
 ﻿using ComputerPeripheralsShop.Database;
 using ComputerPeripheralsShop.Models.DataAccess.interfaces;
+using System.Linq;
 
 namespace ComputerPeripheralsShop.Models.DataAccess.repositories
 {
@@ -10,5 +11,7 @@ namespace ComputerPeripheralsShop.Models.DataAccess.repositories
         public UserRepository(ComputerPeripheralsShopEntities context) : base(context)
         {
         }
+
+        public User GetUserByUsername(string username) => AppContext.User.Where(i => i.Login.Equals(username)).FirstOrDefault();
     }
 }

@@ -69,7 +69,9 @@
                 <Button HorizontalAlignment="Left" Content="Create Account" 
                     Background="#a20520" FontSize="18" FontFamily="Impact"
                     Margin="35 20 60 0" Command="{Binding CreateAccountCommand}" CommandParameter="{Binding ElementName=Password}"/>
-                <TextBlock Text="Login?" FontSize="14" Foreground="#20b3ff"  Margin="85 20 0 0"/>
+                <Button Background="Transparent" Margin="65 10 0 0" HorizontalAlignment="Left" VerticalAlignment="Bottom" BorderThickness="0" Command="{Binding MoveToLoginCommand}">
+                    <TextBlock Text="Login?" FontSize="14" Foreground="#20b3ff" />
+                </Button>
             </StackPanel>
 
         </Grid>

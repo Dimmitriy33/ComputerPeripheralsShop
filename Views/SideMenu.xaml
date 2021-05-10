@@ -13,6 +13,8 @@
     </UserControl.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
         <Grid Background="#242424">
+            <StackPanel>
+                
             <ItemsControl ItemsSource="{Binding MenuList}" Foreground="GhostWhite" Padding="20 10">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
@@ -36,6 +38,7 @@
                                      Height="40"
                                      Command="{Binding AddProductOpenPageCommand}"
                                      />
+            </StackPanel>
         </Grid>
     </ScrollViewer>
 </UserControl>
