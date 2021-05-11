@@ -18,7 +18,7 @@ namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
         {
             using (var unitOfWork = new UnitOfWork())
             {
-                Keyboards = new ObservableCollection<Product>(unitOfWork.ProductRepository.getKeyboards());
+                Keyboards = new ObservableCollection<Product>(unitOfWork.ProductRepository.GetKeyboards());
             }
             Info_Button = new RelayCommand(executeInfo);
         }

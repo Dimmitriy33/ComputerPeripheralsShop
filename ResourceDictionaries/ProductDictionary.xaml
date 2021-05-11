@@ -52,7 +52,7 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="FontFamily" Value="fonts/#Brown Bold"/>
-        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="FontSize" Value="20"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
         <Setter Property="Padding" Value="80 15 30 10"/>
@@ -77,7 +77,7 @@
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="MinHeight" Value="40"/>
         <Setter Property="Padding" Value="20 0"/>
-        <Setter Property="Margin" Value="0 20 200 40"/>
+        <Setter Property="Margin" Value="0 20 50 30"/>
     </Style>
 
     <Style x:Key="TextBoxStyle1" TargetType="TextBox">
@@ -88,7 +88,7 @@
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="MinHeight" Value="40"/>
         <Setter Property="Padding" Value="20 0"/>
-        <Setter Property="Margin" Value="0 20 200 40"/>
+        <Setter Property="Margin" Value="0 20 50 30"/>
     </Style>
 
     <Style x:Key="ButtonCommentStyle" TargetType="TextBlock">

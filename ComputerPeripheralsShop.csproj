@@ -307,6 +307,7 @@
     <Compile Include="Database\User.cs">
       <DependentUpon>ComputerPeripheralsShopModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\BitmapConverters.cs" />
     <Compile Include="Helpers\BoolToStringConverters.cs" />
     <Compile Include="Helpers\HashConverters.cs" />
     <Compile Include="Helpers\ImageConverters.cs" />

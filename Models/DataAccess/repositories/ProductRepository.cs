@@ -16,25 +16,49 @@ namespace ComputerPeripheralsShop.Models.DataAccess.repositories
 
         }
 
-        public IEnumerable<Product> getMicrophones() => getProductsByCategory("Microphones");
+        public IEnumerable<Product> GetMicrophones() => GetProductsByCategory("Microphones");
 
-        public IEnumerable<Product> getGamingHeadsets() => getProductsByCategory("Gaming Headsets");
+        public IEnumerable<Product> GetGamingHeadsets() => GetProductsByCategory("Gaming Headsets");
 
-        public IEnumerable<Product> getMices() => getProductsByCategory("Mices");
+        public IEnumerable<Product> GetMices() => GetProductsByCategory("Mices");
 
-        public IEnumerable<Product> getKeyboards() => getProductsByCategory("Keyboards");
+        public IEnumerable<Product> GetKeyboards() => GetProductsByCategory("Keyboards");
 
-        public IEnumerable<Product> getMousePads() => getProductsByCategory("Mouse Pads");
+        public IEnumerable<Product> GetMousePads() => GetProductsByCategory("Mouse Pads");
 
-        public IEnumerable<Product> getProductsByCategory(string category) => AppContext.Product.Where(x => x.Category.Equals(category));
+        public IEnumerable<Product> GetProductsByCategory(string category) => AppContext.Product.Where(x => x.Category.Equals(category));
 
-        public ObservableCollection<string> getCategories() => new ObservableCollection<string>()
+        public ObservableCollection<string> GetCategories() => new ObservableCollection<string>()
             {
                 "Gaming Headsets",
                 "Microphones",
                 "Keyboards",
                 "Mices",
                 "Mouse Pads"
+            };
+
+        public ObservableCollection<string> GetConnectionTypes() => new ObservableCollection<string>()
+            {
+                "Cabel",
+                "Wireless"
+            };
+
+        public ObservableCollection<string> GetBacklight() => new ObservableCollection<string>()
+            {
+                "True",
+                "False"
+            };
+
+        public ObservableCollection<string> GetMicrophone() => new ObservableCollection<string>()
+            {
+                "True",
+                "False"
+            };
+
+        public ObservableCollection<string> GetGamingMode() => new ObservableCollection<string>()
+            {
+                "True",
+                "False"
             };
 
         public ObservableCollection<Product> GetProducts()
@@ -57,7 +81,11 @@ namespace ComputerPeripheralsShop.Models.DataAccess.repositories
             }
         }
 
-        public void AddProduct(Product product) => AppContext.Product.Add(product);
+        public void AddProduct(Product product)
+        {
+            AppContext.Product.Add(product);
+            AppContext.SaveChanges();
+        }
 
         public List<Specifications> AddSpec()
         {

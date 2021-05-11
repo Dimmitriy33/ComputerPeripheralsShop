@@ -103,9 +103,5 @@ namespace ComputerPeripheralsShopModel.ViewModels
         }
 
         private void navigateToPage(string SubName) => MainFrameNavigator.FrameNavigator("Views/Pages/MenuPages/", SubName);
-
-
-
-
     }
 }

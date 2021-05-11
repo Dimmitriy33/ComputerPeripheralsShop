@@ -18,7 +18,7 @@ namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
         {
             using (var unitOfWork = new UnitOfWork())
             {
-                MousePads = new ObservableCollection<Product>(unitOfWork.ProductRepository.getMousePads());
+                MousePads = new ObservableCollection<Product>(unitOfWork.ProductRepository.GetMousePads());
             }
             Info_Button = new RelayCommand(executeInfo);
         }

@@ -63,24 +63,30 @@ namespace ComputerPeripheralsShop.ViewModels
         {
             using (UnitOfWork context = new UnitOfWork())
             {
-                if (Account.curUser.Balance >= basket.TotalPrice())
+                if (Account.IsLoggedIn)
                 {
-                    foreach (Order_List list in Order_list)
+                    if (Account.curUser.Balance >= basket.TotalPrice())
                     {
-                        context.ProductRepository.AppContext.Product.Where(p => p.Product_Id == list.Product_Id).Single().Number_on_warehouse -= 1;
-                        context.ProductRepository.AppContext.Order_List.Add(new Order_List(list.Product_Id, list.Order_Id, list.Order_List_Id));
+                        foreach (Order_List list in Order_list)
+                        {
+                            context.ProductRepository.AppContext.Product.Where(p => p.Product_Id == list.Product_Id).Single().Number_on_warehouse -= 1;
+                            context.ProductRepository.AppContext.Order_List.Add(new Order_List(list.Product_Id, list.Order_Id, list.Order_List_Id));
+                        }
+                        context.ProductRepository.AppContext.Order.Add(new Order(Account.curUser.User_Id, Order_list.FirstOrDefault().Order_Id, DateTime.Now, basket.TotalPrice(), Order_list.Count));
+                        context.UserRepository.Reducebalance(Account.curUser.User_Id, basket.TotalPrice());
+                        context.SaveChanges();
+                        Order_list.Clear();
+                        CurrentOrderList.CurOrderList.Clear();
+                        MessageBox.Show("successfully acquired");
                     }
-                    context.ProductRepository.AppContext.Order.Add(new Order(Account.curUser.User_Id, Order_list.FirstOrDefault().Order_Id, DateTime.Now, basket.TotalPrice(), Order_list.Count));
-                    context.UserRepository.Reducebalance(Account.curUser.User_Id, basket.TotalPrice());
-                    context.SaveChanges();
-                    Order_list.Clear();
-                    CurrentOrderList.CurOrderList.Clear();
-                    MessageBox.Show("successfully acquired");
+                    else
+                    {
+                        MessageBox.Show("Not enough funds for the order");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Not enough funds for the order");
-
+                    MessageBox.Show("Please login or create account to make an order!");
                 }
 
             }

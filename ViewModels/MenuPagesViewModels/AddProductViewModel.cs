@@ -1,20 +1,22 @@
 ﻿using ComputerPeripheralsShop.Database;
+using ComputerPeripheralsShop.Helpers;
 using ComputerPeripheralsShop.Models.DataAccess;
 using ComputerPeripheralsShopModel.ViewModels;
 using ComputerPeripheralsShopModel.ViewModels.Base;
-using System;
 using System.Collections.ObjectModel;
-using System.IO;
 using System.Windows.Forms;
 using System.Windows.Input;
-using System.Windows.Media.Imaging;
 
 namespace ComputerPeripheralsShop.ViewModels.MenuPagesViewModels
 {
     internal class AddProductViewModel : ViewModel
     {
         private Product _product;
-        private ObservableCollection<string> _categories;
+        private ObservableCollection<string> _categories_variants;
+        private ObservableCollection<string> _connection_types_variants;
+        private ObservableCollection<string> _microphones_variants;
+        private ObservableCollection<string> _backlights_variants;
+        private ObservableCollection<string> _gaming_mode_variants;
         private bool _visibilityDPI;
         private bool _visibilityMicrophone;
 
@@ -36,7 +38,11 @@ namespace ComputerPeripheralsShop.ViewModels.MenuPagesViewModels
             AddCommand = new CommandViewModel(ExecuteAddProduct);
             using (UnitOfWork context = new UnitOfWork())
             {
-                _categories = context.ProductRepository.getCategories();
+                _categories_variants = context.ProductRepository.GetCategories();
+                _connection_types_variants = context.ProductRepository.GetConnectionTypes();
+                _backlights_variants = context.ProductRepository.GetBacklight();
+                _microphones_variants = context.ProductRepository.GetMicrophone();
+                _gaming_mode_variants = context.ProductRepository.GetGamingMode();
             }
             _visibilityDPI = false;
             _visibilityMicrophone = false;
@@ -50,16 +56,32 @@ namespace ComputerPeripheralsShop.ViewModels.MenuPagesViewModels
         {
             using (UnitOfWork context = new UnitOfWork())
             {
-                _product.Picture_Main = ConvertBitmapSourceToByteArray(_picture_Main_Path);
-                _product.Picture1 = ConvertBitmapSourceToByteArray(_picture1_Path);
-                _product.Picture2 = ConvertBitmapSourceToByteArray(_picture2_Path);
-                _product.MenuPicture = ConvertBitmapSourceToByteArray(_menuPicture_Path);
-                context.ProductRepository.AddProduct(_product);
+                try
+                {
+                    _product.Weight += "g";
+                    _product.Height += "mm";
+                    _product.Width += "mm";
+                    _product.Picture_Main = BitmapConverters.ConvertBitmapSourceToByteArray(_picture_Main_Path);
+                    _product.Picture1 = BitmapConverters.ConvertBitmapSourceToByteArray(_picture1_Path);
+                    _product.Picture2 = BitmapConverters.ConvertBitmapSourceToByteArray(_picture2_Path);
+                    _product.MenuPicture = BitmapConverters.ConvertBitmapSourceToByteArray(_menuPicture_Path);
+                    context.ProductRepository.AddProduct(_product);
+                    context.SaveChanges();
+                    MessageBox.Show("Product added successfully!");
+                }
+                catch
+                {
+                    MessageBox.Show("Fail to add product!");
+                }
             }
         }
 
 
-        public ObservableCollection<string> Categories => _categories;
+        public ObservableCollection<string> Category_Variants => _categories_variants;
+        public ObservableCollection<string> Connection_Type_Variants => _connection_types_variants;
+        public ObservableCollection<string> Microphone_Variants => _microphones_variants;
+        public ObservableCollection<string> Backlight_Variants => _backlights_variants;
+        public ObservableCollection<string> GamingMode_Variants => _gaming_mode_variants;
 
         public string Category
         {
@@ -124,7 +146,10 @@ namespace ComputerPeripheralsShop.ViewModels.MenuPagesViewModels
             get => _product.Backlight;
             set
             {
-                _product.Backlight = value;
+                if (value.Equals("True"))
+                    _product.Backlight = true;
+                else
+                    _product.Backlight = false;
                 OnPropertyChanged("Backlight");
             }
         }
@@ -172,7 +197,10 @@ namespace ComputerPeripheralsShop.ViewModels.MenuPagesViewModels
             }
             set
             {
-                _product.Microphone = value;
+                if (value.Equals("True"))
+                    _product.Backlight = true;
+                else
+                    _product.Backlight = false;
                 OnPropertyChanged("Microphone");
             }
         }
@@ -181,7 +209,10 @@ namespace ComputerPeripheralsShop.ViewModels.MenuPagesViewModels
             get => _product.Gaming_mode;
             set
             {
-                _product.Gaming_mode = value;
+                if (value.Equals("True"))
+                    _product.Gaming_mode = true;
+                else
+                    _product.Gaming_mode = false;
                 OnPropertyChanged("Gaming_mode");
             }
         }
@@ -286,18 +317,6 @@ namespace ComputerPeripheralsShop.ViewModels.MenuPagesViewModels
                 return fileDialog.FileName;
         }
 
-        public byte[] ConvertBitmapSourceToByteArray(string filepath)
-        {
-            var image = new BitmapImage(new Uri(filepath));
-            byte[] data;
-            BitmapEncoder encoder = new JpegBitmapEncoder();
-            encoder.Frames.Add(BitmapFrame.Create(image));
-            using (MemoryStream ms = new MemoryStream())
-            {
-                encoder.Save(ms);
-                data = ms.ToArray();
-            }
-            return data;
-        }
+
     }
 }

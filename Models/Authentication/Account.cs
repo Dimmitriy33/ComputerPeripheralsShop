@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace ComputerPeripheralsShopModel.Models.Authentication
 {
-    public class Account
+    public class Account : IAuthentication
     {
         public static User curUser { get; set; }
         public static bool IsLoggedIn { get; set; }

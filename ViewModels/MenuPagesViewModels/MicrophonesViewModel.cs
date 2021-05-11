@@ -18,7 +18,7 @@ namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
         {
             using (var unitOfWork = new UnitOfWork())
             {
-                Microphones = new ObservableCollection<Product>(unitOfWork.ProductRepository.getMicrophones());
+                Microphones = new ObservableCollection<Product>(unitOfWork.ProductRepository.GetMicrophones());
             }
             Info_Button = new RelayCommand(executeInfo);
         }
