@@ -9,15 +9,6 @@ namespace ComputerPeripheralsShopModel.ViewModels
 {
     internal class SideMenuViewModel : ViewModel
     {
-        public ICommand AddProductOpenPageCommand { get; }
-
-        public SideMenuViewModel()
-        {
-            AddProductOpenPageCommand = new CommandViewModel(executeAddProductOpenPage);
-        }
-
-        private void executeAddProductOpenPage() => MainFrameNavigator.FrameNavigator("Views/Pages/", "AddProduct");
-
         public List<ItemMenu> MenuList => new List<ItemMenu>
                 {
                     //Prodeucts

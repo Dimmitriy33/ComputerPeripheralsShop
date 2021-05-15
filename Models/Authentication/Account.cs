@@ -30,7 +30,7 @@ namespace ComputerPeripheralsShopModel.Models.Authentication
 
                 }
 
-                MessageBox.Show("The username or password is incorrect");
+                NotificationWindowContoller.NewNotification("Error!", "The username or password is incorrect", ComputerPeripheralsShop.Models.Notification.NotificationType.Success);
             }
         }
 
@@ -38,7 +38,7 @@ namespace ComputerPeripheralsShopModel.Models.Authentication
         {
             if (!agree)
             {
-                MessageBox.Show("You can't create new account");
+                NotificationWindowContoller.NewNotification("Error!", "You can't create new account", ComputerPeripheralsShop.Models.Notification.NotificationType.Success);
                 return;
             }
             using (UnitOfWork context = new UnitOfWork())
@@ -46,7 +46,7 @@ namespace ComputerPeripheralsShopModel.Models.Authentication
                 foreach (User curUser in context.UserRepository.AppContext.User)
                     if (username.Equals(curUser.Login))
                     {
-                        MessageBox.Show("This username already exists");
+                        NotificationWindowContoller.NewNotification("Error!", "This username already exists", ComputerPeripheralsShop.Models.Notification.NotificationType.Success);
                         return;
                     }
                 User user = new User(username, HashConverters.GetHashEncryption(password), name, surname, address);
@@ -56,6 +56,20 @@ namespace ComputerPeripheralsShopModel.Models.Authentication
                 IsLoggedIn = true;
                 CloseCreateAccountWindow();
             }
+        }
+
+        public static void LogOut()
+        {
+            if (curUser != null)
+            {
+                curUser = null;
+                IsLoggedIn = false;
+                NotificationWindowContoller.NewNotification("Success!", "You successfully logged out", ComputerPeripheralsShop.Models.Notification.NotificationType.Success);
+                MainFrameNavigator.FrameGoBack();
+                return;
+            }
+            else
+                NotificationWindowContoller.NewNotification("Error!", "You are not logged in", ComputerPeripheralsShop.Models.Notification.NotificationType.Danger);
         }
 
         private static void CloseLoginWindow()

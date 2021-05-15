@@ -1,5 +1,6 @@
 ﻿using ComputerPeripheralsShop.Database;
 using ComputerPeripheralsShop.Helpers;
+using ComputerPeripheralsShop.Models;
 using ComputerPeripheralsShop.Models.DataAccess;
 using ComputerPeripheralsShopModel.ViewModels;
 using ComputerPeripheralsShopModel.ViewModels.Base;
@@ -67,11 +68,11 @@ namespace ComputerPeripheralsShop.ViewModels.MenuPagesViewModels
                     _product.MenuPicture = BitmapConverters.ConvertBitmapSourceToByteArray(_menuPicture_Path);
                     context.ProductRepository.AddProduct(_product);
                     context.SaveChanges();
-                    MessageBox.Show("Product added successfully!");
+                    NotificationWindowContoller.NewNotification("Success!", "Product added successfully!", Notification.NotificationType.Success);
                 }
                 catch
                 {
-                    MessageBox.Show("Fail to add product!");
+                    NotificationWindowContoller.NewNotification("Error!", "Fail to add product!", Notification.NotificationType.Danger);
                 }
             }
         }

@@ -14,17 +14,24 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
         public AccountModel account;
         private bool _visibilityIsAdmin;
 
-
+        public ICommand LogOut { get; }
         public ICommand SaveChanges { get; }
         public ICommand RechargeTheBalance { get; }
+
+        public ICommand AddProductOpenPageCommand { get; }
 
         public AccountViewModel()
         {
             this.account = new AccountModel();
             this.SaveChanges = new CommandViewModel(executeSaveChanges);
             this.RechargeTheBalance = new CommandViewModel(executeRechargeTheBalance);
+            this.AddProductOpenPageCommand = new CommandViewModel(executeAddProductOpenPage);
+            this.LogOut = new CommandViewModel(executeLogOut);
             this.VisibilityIsAdmin = Account.curUser.IsAdmin;
         }
+
+        private void executeLogOut() => Account.LogOut();
+
         public bool VisibilityIsAdmin
         {
             get => _visibilityIsAdmin;
@@ -161,6 +168,8 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
                 Account.curUser = context.UserRepository.AppContext.User.FirstOrDefault(i => i.User_Id == User_Id);
             }
         }
+
+        private void executeAddProductOpenPage() => MainFrameNavigator.FrameNavigator("Views/Pages/", "AddProduct");
 
     }
 }

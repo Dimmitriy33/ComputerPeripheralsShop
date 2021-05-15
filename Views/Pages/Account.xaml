@@ -3,9 +3,11 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:ComputerPeripheralsShop.Views.Pages" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:components="clr-namespace:ComputerPeripheralsShopModel.Components"
+      xmlns:local="clr-namespace:ComputerPeripheralsShop.Views.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+      xmlns:components="clr-namespace:ComputerPeripheralsShopModel.Components"
       mc:Ignorable="d" 
-      d:DesignHeight="1000" d:DesignWidth="1000"
+      d:DesignHeight="1200" d:DesignWidth="1000"
       Title="Account" FontFamily="/ComputerPeripheralsShop;component/ResourceDictionaries/fonts/#Brown">
     <Page.Resources>
         <ResourceDictionary Source="/ResourceDictionaries/MenuPagesDictionary.xaml"/>
@@ -58,9 +60,15 @@
                     <TextBlock Style="{StaticResource MainText2}" Text="Admin: "/>
                     <TextBox x:Name="IsAdmin" Style="{StaticResource TextBoxStyle1}" IsEnabled="False" Text="{Binding IsAdminString, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20 30 20 0" Visibility="{Binding Path=VisibilityIsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <Button Style="{StaticResource ButtonStyle2}" Command="{Binding AddProductOpenPageCommand}" Margin="50 0" MinWidth="160" Width="200" Content="Add product"/>
+                </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="20 30">
                     <Button Style="{StaticResource ButtonStyle2}" Command="{Binding RechargeTheBalance}" Margin="50 0" MinWidth="160" Width="200" Content="Recharge the balance"/>
-                    <Button Style="{StaticResource ButtonStyle2}" Command="{Binding SaveChanges}" Content="Save changes"/>
+                    <Button Style="{StaticResource ButtonStyle2}" Command="{Binding SaveChanges}" MinWidth="160" Width="200" Content="Save changes"/>
+                </StackPanel>
+                <StackPanel>
+                    <Button Style="{StaticResource ButtonStyle2}" Command="{Binding LogOut}" Margin="70 0" MinWidth="160" Width="200" Content="Log out" HorizontalAlignment="Left"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

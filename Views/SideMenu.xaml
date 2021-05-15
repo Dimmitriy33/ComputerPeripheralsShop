@@ -32,12 +32,6 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-            <RadioButton             Style="{StaticResource AdminSideBarButtonStyle}" 
-                                     Foreground="GhostWhite" Padding="20 0"
-                                     Content="Add product"
-                                     Height="40"
-                                     Command="{Binding AddProductOpenPageCommand}"
-                                     />
             </StackPanel>
         </Grid>
     </ScrollViewer>

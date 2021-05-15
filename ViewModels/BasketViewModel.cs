@@ -1,4 +1,5 @@
 ﻿using ComputerPeripheralsShop.Database;
+using ComputerPeripheralsShop.Helpers;
 using ComputerPeripheralsShop.Models;
 using ComputerPeripheralsShop.Models.DataAccess;
 using ComputerPeripheralsShop.ViewModels.Base;
@@ -8,7 +9,6 @@ using ComputerPeripheralsShopModel.ViewModels.Base;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Windows;
 using System.Windows.Input;
 
 namespace ComputerPeripheralsShop.ViewModels
@@ -77,18 +77,13 @@ namespace ComputerPeripheralsShop.ViewModels
                         context.SaveChanges();
                         Order_list.Clear();
                         CurrentOrderList.CurOrderList.Clear();
-                        MessageBox.Show("successfully acquired");
+                        NotificationWindowContoller.NewNotification("Success!", "Order successfully acquired", Notification.NotificationType.Success);
                     }
                     else
-                    {
-                        MessageBox.Show("Not enough funds for the order");
-                    }
+                        NotificationWindowContoller.NewNotification("Error!", "Not enough funds for the order", Notification.NotificationType.Danger);
                 }
                 else
-                {
-                    MessageBox.Show("Please login or create account to make an order!");
-                }
-
+                    NotificationWindowContoller.NewNotification("Error!", "Please login or create account to make an order!", Notification.NotificationType.Danger);
             }
         }
     }
