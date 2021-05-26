@@ -1,0 +1,664 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ComputerPeripheralsShop.Components.ImageConverter" Collapsed="true">
+    <Position X="1.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\ImageConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Database.ComputerPeripheralsShopEntities" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEDAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Database\ComputerPeripheralsShopModel.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Database.Order" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACABAAAAIAAEAAAAAAAIAAAAAACAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Database\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Database.Order_List" Collapsed="true">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Database\Order_List.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Database.Product" Collapsed="true">
+    <Position X="3.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAACABQgkAAAEIAEpAEAAECAAAAgAAQwAAABACAA=</HashCode>
+      <FileName>Database\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Database.sysdiagrams" Collapsed="true">
+    <Position X="5.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAIAAAAAAAAAAAAAAAQAAAFAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Database\sysdiagrams.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Database.User" Collapsed="true">
+    <Position X="7.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACEAAAAAAAAAAABAAAgAAAQADAAAAAACAAAQAAAAAAA=</HashCode>
+      <FileName>Database\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Helpers.BitmapConverters" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\BitmapConverters.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Helpers.BoolToStringConverters" Collapsed="true">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\BoolToStringConverters.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Helpers.HashConverters" Collapsed="true">
+    <Position X="4" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Helpers\HashConverters.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Helpers.ImageConverters" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\ImageConverters.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Helpers.MainFrameNavigator" Collapsed="true">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAEAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\MainFrameNavigator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Helpers.NotificationWindowContoller" Collapsed="true">
+    <Position X="4" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Helpers\NotificationWindowContoller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Models.AccountModel" Collapsed="true">
+    <Position X="12.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECQAIAAAAAAAAAEAAQgAAAQADAAAAAALAAIAAEAEAAA=</HashCode>
+      <FileName>Models\AccountModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Models.BasketModel" Collapsed="true">
+    <Position X="14.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAQIACAAiAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\BasketModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Models.CurrentOrderList" Collapsed="true">
+    <Position X="16.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CurrentOrderList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Models.CurrentProduct" Collapsed="true">
+    <Position X="18.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\CurrentProduct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Models.Model" Collapsed="true">
+    <Position X="12.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAQAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Model.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Models.Notification" Collapsed="true">
+    <Position X="14.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAEAAAAAAAAAAAAAAAAAAAQAgIAEAAAI=</HashCode>
+      <FileName>Models\Notification.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Models.DataAccess.repositories.Repository&lt;T&gt;" Collapsed="true">
+    <Position X="3.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAABABAAAAABAAAAAAIAAAAAgAAAIAEAAA=</HashCode>
+      <FileName>Models\DataAccess\repositories\base\Repository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Models.DataAccess.repositories.OrderListRepository" Collapsed="true">
+    <Position X="2.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DataAccess\repositories\OrderListRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Models.DataAccess.repositories.OrderRepository" Collapsed="true">
+    <Position X="5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DataAccess\repositories\OrderRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Models.DataAccess.repositories.ProductRepository" Collapsed="true">
+    <Position X="7.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIAAAAAAAAAIQAAgAwAAQAQQAQAgAgCAQAAABAAAAQA=</HashCode>
+      <FileName>Models\DataAccess\repositories\ProductRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Models.DataAccess.repositories.UserRepository" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAQAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DataAccess\repositories\UserRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Models.DataAccess.UnitOfWork" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAACAQAAAKAAAEAAEAAAABAAAAAAAAAAAAEAAIAAEAA=</HashCode>
+      <FileName>Models\DataAccess\UnitOfWork.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Models.Products.ProductsMenuModel" Collapsed="true">
+    <Position X="16.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQABAAAAAAAAAAAAAAUAAAAAAQ=</HashCode>
+      <FileName>Models\Products\ProductsMenuModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.ViewModels.BasketViewModel" Collapsed="true">
+    <Position X="11.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAICAAAAAAAAAAAAAAAEACAAAQAAAAQAAQAAAAAA=</HashCode>
+      <FileName>ViewModels\BasketViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.ViewModels.NotificationViewModel" Collapsed="true">
+    <Position X="15" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAQEAAAAAAAEAAAIAAAACAEAAgIQEAAAA=</HashCode>
+      <FileName>ViewModels\NotificationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.ViewModels.ProductViewModel" Collapsed="true">
+    <Position X="11.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAkQAAAIAABAAAAECACAAAAAAgAMABAAAA=</HashCode>
+      <FileName>ViewModels\ProductViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.ViewModels.Account_parts.AccountViewModel" Collapsed="true">
+    <Position X="11.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gCAQgAAAAAAAEAEAAwgAAAQgDAgAAAACIgAAQAAAAAE=</HashCode>
+      <FileName>ViewModels\Account parts\AccountViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.ViewModels.Account_parts.CreateAccountViewModel" Collapsed="true">
+    <Position X="13.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAICAAAAAAAABCAUAAAEQABIAQAAgCAAIAAkCEAAA=</HashCode>
+      <FileName>ViewModels\Account parts\CreateAccountViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.ViewModels.Base.RelayCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Base\RelayCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShop.ViewModels.Menu_parts.BaksetToolBarViewModel" Collapsed="true">
+    <Position X="15" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAIAAAAAAAAAAAAAAAAEAAAABAAAA=</HashCode>
+      <FileName>ViewModels\Menu parts\BaksetToolBarViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.ViewModels.MenuPagesViewModels.AddProductViewModel" Collapsed="true">
+    <Position X="13.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIgAAggCBQgkQQAGhKEgCEgAICCGkAgQgYwFAkEECCA=</HashCode>
+      <FileName>ViewModels\MenuPagesViewModels\AddProductViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Views.BasketToolBar" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\BasketToolBar.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Views.Pages.Account" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Pages\Account.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Views.Pages.AddProduct" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Pages\AddProduct.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Views.Pages.Basket" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Pages\Basket.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Views.Pages.Product" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Pages\Product.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Views.Windows.CreateAccountWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Windows\CreateAccountWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShop.Views.Windows.Notification" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Windows\Notification.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.App" Collapsed="true">
+    <Position X="4" Y="11" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="13" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Windows\MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Components.BindablePasswordBox" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="11" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAQgAAAAAAAAAAAAAAAAAAAAABACAAAAAAIAAAA=</HashCode>
+      <FileName>Components\BindablePasswordBox.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Models.Authentication.Account" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="11" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAhCAgAABAAAAQAAAAAAIAASAAAAAAA=</HashCode>
+      <FileName>Models\Authentication\Account.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Properties.Resources" Collapsed="true">
+    <Position X="0.5" Y="14" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Properties.Settings" Collapsed="true">
+    <Position X="5.75" Y="14" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.ViewModels.LoginWindowViewModel" Collapsed="true">
+    <Position X="10" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAgAAQBAQEAAAIAIAAACIAIAAACAAAA=</HashCode>
+      <FileName>ViewModels\Account parts\LoginWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.ViewModels.CommandViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="11" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>ViewModels\Base\CommandViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.ViewModels.LoadingWindowViewModel" Collapsed="true">
+    <Position X="14.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAABAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\LoadingWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.ViewModels.SideMenuViewModel" Collapsed="true">
+    <Position X="21.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Menu parts\SideMenuViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.ViewModels.ItemMenu" Collapsed="true">
+    <Position X="5.75" Y="12" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>IAAEAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>ViewModels\Menu parts\SideMenuViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.ViewModels.SubItem" Collapsed="true">
+    <Position X="9.25" Y="14" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAQABAAEAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>ViewModels\Menu parts\SideMenuViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.ViewModels.TopRightToolBarViewModel" Collapsed="true">
+    <Position X="32.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAEAAAAAAACAAAAAAAACAMCAAMAAAABAAAIAAiCAAAE=</HashCode>
+      <FileName>ViewModels\Menu parts\TopRightToolBarViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.ViewModels.Base.ViewModel" Collapsed="true">
+    <Position X="19" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAQAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Base\ViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="0.362" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.ViewModels.Base.MainWindowViewModel" Collapsed="true">
+    <Position X="14.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\MainWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels.ContactsViewModel" Collapsed="true">
+    <Position X="16.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAABAAgAAAAAAAA=</HashCode>
+      <FileName>ViewModels\MenuPagesViewModels\ContactsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels.CooperationViewModel" Collapsed="true">
+    <Position X="23.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\MenuPagesViewModels\CooperationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels.HeadsetsViewModel" Collapsed="true">
+    <Position X="28" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAgAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\MenuPagesViewModels\HeadsetsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels.KeyboardsViewModel" Collapsed="true">
+    <Position X="30.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\MenuPagesViewModels\KeyboardsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels.MicesViewModel" Collapsed="true">
+    <Position X="34.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAIEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\MenuPagesViewModels\MicesViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels.MicrophonesViewModel" Collapsed="true">
+    <Position X="12.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAQAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\MenuPagesViewModels\MicrophonesViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels.MousePadsViewModel" Collapsed="true">
+    <Position X="11.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAIAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\MenuPagesViewModels\MousePadsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels.ProductVerificationViewModel" Collapsed="true">
+    <Position X="19" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAEAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\MenuPagesViewModels\ProductVerificationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels.ReturnPolicyViewModel" Collapsed="true">
+    <Position X="25.75" Y="9.75" Width="1.5" />
+    <InheritanceLine Type="ComputerPeripheralsShopModel.ViewModels.Base.ViewModel" ManuallyRouted="true">
+      <Path>
+        <Point X="19.75" Y="8.312" />
+        <Point X="19.75" Y="9.494" />
+        <Point X="26.5" Y="9.494" />
+        <Point X="26.5" Y="9.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\MenuPagesViewModels\ReturnPolicyViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Views.Pages.MenuPages.AboutUs" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="11" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Pages\MenuPages\AboutUs.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Views.Pages.MenuPages.Belarus" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="11" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Pages\MenuPages\Belarus.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Views.Pages.MenuPages.Contacts" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="12" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Pages\MenuPages\Contacts.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Views.Pages.MenuPages.Cooperation" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="12" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Pages\MenuPages\Cooperation.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Views.Pages.MenuPages.GamingHeadsets" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="12" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Pages\MenuPages\GamingHeadsets.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Views.Pages.MenuPages.Keyboards" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="12" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Pages\MenuPages\Keyboards.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Views.Pages.MenuPages.Mices" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="13" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Pages\MenuPages\Mices.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="0.491" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Views.Pages.MenuPages.Microphones" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="13" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Pages\MenuPages\Microphones.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Views.Pages.MenuPages.MousePads" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="13" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Pages\MenuPages\MousePads.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Views.Pages.MenuPages.ProductVerification" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="13" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Pages\MenuPages\ProductVerification.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Views.Pages.MenuPages.ReturnPolicy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="14" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Pages\MenuPages\ReturnPolicy.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Views.Pages.MenuPages.Russia" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="14" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Pages\MenuPages\Russia.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Views.Pages.MenuPages.Ukraine" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="15" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Pages\MenuPages\Ukraine.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Views.SideMenu" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="14" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\SideMenu.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Views.TopRightToolBar" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="15" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\TopRightToolBar.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Views.Windows.LoadingWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="12" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Windows\LoadingWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ComputerPeripheralsShopModel.Views.Windows.LoginWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="13" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Windows\LoginWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="ComputerPeripheralsShop.Models.DataAccess.interfaces.@base.IRepository&lt;T&gt;" Collapsed="true">
+    <Position X="3.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAABAAAAABAAAAAAIAAAAAgAAAIAEAAA=</HashCode>
+      <FileName>Models\DataAccess\interfaces\base\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ComputerPeripheralsShop.Models.DataAccess.interfaces.IOrderListRepository" Collapsed="true">
+    <Position X="2.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DataAccess\interfaces\IOrderListRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ComputerPeripheralsShop.Models.DataAccess.interfaces.IOrderRepository" Collapsed="true">
+    <Position X="5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DataAccess\interfaces\IOrderRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ComputerPeripheralsShop.Models.DataAccess.interfaces.IProductRepository" Collapsed="true">
+    <Position X="7.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DataAccess\interfaces\IProductRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ComputerPeripheralsShop.Models.DataAccess.interfaces.IUserRepository" Collapsed="true">
+    <Position X="0.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DataAccess\interfaces\IUserRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ComputerPeripheralsShopModel.Models.Authentication.IAuthentication" Collapsed="true">
+    <Position X="0.5" Y="16.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Authentication\IAuthentication.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

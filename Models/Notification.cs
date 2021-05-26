@@ -51,7 +51,7 @@ namespace ComputerPeripheralsShop.Models
                 case NotificationType.Default:
                     return Brushes.FloralWhite;
                 case NotificationType.Danger:
-                    return Brushes.Tomato;
+                    return Brushes.IndianRed;
                 case NotificationType.Success:
                     return Brushes.PaleGreen;
                 case NotificationType.Warning:

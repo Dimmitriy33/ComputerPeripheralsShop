@@ -461,6 +461,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ComputerPeripheralsShopModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="ClassDiagram.cd" />
     <None Include="Database\ComputerPeripheralsShopModel.edmx.diagram">
       <DependentUpon>ComputerPeripheralsShopModel.edmx</DependentUpon>
     </None>

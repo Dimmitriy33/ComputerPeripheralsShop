@@ -30,7 +30,7 @@ namespace ComputerPeripheralsShopModel.Models.Authentication
 
                 }
 
-                NotificationWindowContoller.NewNotification("Error!", "The username or password is incorrect", ComputerPeripheralsShop.Models.Notification.NotificationType.Success);
+                NotificationWindowContoller.NewNotification("Error!", "The username or password is incorrect", ComputerPeripheralsShop.Models.Notification.NotificationType.Danger);
             }
         }
 
@@ -46,7 +46,7 @@ namespace ComputerPeripheralsShopModel.Models.Authentication
                 foreach (User curUser in context.UserRepository.AppContext.User)
                     if (username.Equals(curUser.Login))
                     {
-                        NotificationWindowContoller.NewNotification("Error!", "This username already exists", ComputerPeripheralsShop.Models.Notification.NotificationType.Success);
+                        NotificationWindowContoller.NewNotification("Error!", "This username already exists", ComputerPeripheralsShop.Models.Notification.NotificationType.Danger);
                         return;
                     }
                 User user = new User(username, HashConverters.GetHashEncryption(password), name, surname, address);

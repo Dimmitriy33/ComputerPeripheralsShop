@@ -156,6 +156,7 @@ namespace ComputerPeripheralsShop.ViewModels.Account_parts
                 context.UserRepository.AppContext.User.FirstOrDefault(i => i.User_Id == User_Id).Address = Address;
                 context.SaveChanges();
                 Account.curUser = context.UserRepository.AppContext.User.FirstOrDefault(i => i.User_Id == User_Id);
+                NotificationWindowContoller.NewNotification("Success!", "Changes saved successfully", Notification.NotificationType.Success);
             }
         }
         private void executeRechargeTheBalance()

@@ -70,6 +70,7 @@ namespace ComputerPeripheralsShop.ViewModels
                 CurrentOrderList.CurOrderList.Add(new Order_List(Product_Id, count_of_orders, CurrentOrderList.CurOrderList.Count));
                 CurrentOrderList.CurOrderList = curOrderList;
             }
+
         }
 
     }
