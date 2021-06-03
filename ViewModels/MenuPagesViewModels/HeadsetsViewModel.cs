@@ -20,6 +20,7 @@ namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
             {
                 Headsets = new ObservableCollection<Product>(unitOfWork.ProductRepository.GetGamingHeadsets());
                 // add this commit for test
+                // add this commit for test 2
             }
             Info_Button = new RelayCommand(executeInfo);
         }
