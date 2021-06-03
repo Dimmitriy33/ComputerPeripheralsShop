@@ -19,6 +19,7 @@ namespace ComputerPeripheralsShopModel.ViewModels.MenuPagesViewModels
             using (var unitOfWork = new UnitOfWork())
             {
                 Headsets = new ObservableCollection<Product>(unitOfWork.ProductRepository.GetGamingHeadsets());
+                // add this commit for test
             }
             Info_Button = new RelayCommand(executeInfo);
         }
